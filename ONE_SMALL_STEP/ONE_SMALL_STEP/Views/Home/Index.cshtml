@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "GET THIS GOING NOW";
+}
+
+<h2>Home222</h2>
+
+
+
+    <title>ONE SMALL STEP</title>
+
+    @*<script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-route.js"></script>
+    <script src="~/AngularApp/app.js"></script>
+    <link href="Content/bootstrap-lumen.css" rel="stylesheet" />*@
+
+
+    <div>Tincidunt magna quod eos dolores vero sed tempor erat et at et euismod enim illum invidunt dolores sit et dolore</div>
+    <div ng-controller="indexViewModel">
+        <span>{{1 + 2}}</span>
+        <h1>{{ 1 + 2 }}</h1>
+        <h1>TESTING HOME\INDEX.CSHTML</h1>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <td>First Name</td>
+                <td>Last Name</td>
+            </tr>
+            <tr ng-repeat="person in persons">
+                <td ng-bind="person.FirstName"></td>
+                <td>{{person.LastName}}</td>
+                <td>{{1 + 2}}</td>
+            </tr>
+        </table>
+    </div>
+
+
