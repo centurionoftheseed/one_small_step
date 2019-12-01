@@ -46,6 +46,15 @@ personModule.config(function ($routeProvider,
         controller: 'personViewModel'
     });
 
+    //$routeProvider.when('/person/update/:personId', {
+    $routeProvider.when('/home', {
+        //templateUrl: '/AngularApp/Person/Views/PersonListView.html',
+        templateUrl: '/AngularApp/Person/Views/mainHomeView.html',
+        controller: 'mainPersonListViewModel'
+    });
+
+
+    
 
 
     //    //$routeProvider.when('/person/:personId', {
@@ -53,9 +62,12 @@ personModule.config(function ($routeProvider,
     //    //    controller: 'personViewModel'
     //    //});
 
-        $routeProvider.otherwise({
+       /* $routeProvider.otherwise({
             redirectTo: '/person'
-        });
+        });*/
+    $routeProvider.otherwise({
+        redirectTo: '/home'
+    });
         $locationProvider.html5Mode({
             enabled: true,
             requireBase: false

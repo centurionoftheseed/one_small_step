@@ -14,14 +14,14 @@ namespace ONE_SMALL_STEP
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
 
-            routes.MapRoute(
-                name: "person",
-                url: "person/{*catch-all}",
-                defaults: new
-                {
-                    controller = "Person",
-                    action = "Index"
-                });
+            //routes.MapRoute(
+            //    name: "person",
+            //    url: "person/{*catch-all}",
+            //    defaults: new
+            //    {
+            //        controller = "Person",
+            //        action = "Index"
+            //    });
 
             routes.MapMvcAttributeRoutes();
 

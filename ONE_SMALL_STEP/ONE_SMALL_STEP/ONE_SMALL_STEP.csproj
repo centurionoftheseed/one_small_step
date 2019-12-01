@@ -276,6 +276,7 @@
     <Content Include="AngularApp\App.js" />
     <Content Include="AngularApp\NavbarController.js" />
     <Content Include="AngularApp\Person\App.js" />
+    <Content Include="AngularApp\Person\ViewModels\mainPersonListViewModel.js" />
     <Content Include="AngularApp\Person\ViewModels\NavbarController.js" />
     <Content Include="AngularApp\Person\ViewModels\PersonCreateViewModel.js" />
     <Content Include="AngularApp\Person\ViewModels\PersonDeleteViewModel.js" />
@@ -283,6 +284,7 @@
     <Content Include="AngularApp\Person\ViewModels\PersonListViewModel.js" />
     <Content Include="AngularApp\Person\ViewModels\PersonViewModel.js" />
     <Content Include="AngularApp\Person\ViewModels\RootViewModel.js" />
+    <Content Include="AngularApp\Person\Views\mainHomeView.html" />
     <Content Include="AngularApp\Person\Views\PersonCreateView.html" />
     <Content Include="AngularApp\Person\Views\PersonDeleteView.html" />
     <Content Include="AngularApp\Person\Views\PersonHomeView.html" />
