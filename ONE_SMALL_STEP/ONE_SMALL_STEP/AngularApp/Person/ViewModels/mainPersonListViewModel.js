@@ -1,11 +1,14 @@
-﻿mainModule.controller("mainPersonListViewModel", function ($scope, personService, $http, $q, $routeParams, $window, $location, viewModelHelper) {
+﻿//mainModule.controller("mainPersonListViewModel", function ($scope, $http, $q, $routeParams, $window, $location, viewModelHelper) {
+
+
+mainModule.controller("mainPersonListViewModel", function ($scope, $http, $q, $window, $location, viewModelHelper) {
 
 
     //personModule.controller("PersonListViewModel", function ($scope, $http, $q, $routeParams, $window, $location, viewModelHelper) {
-
+    console.log("Loading main personal list...")
 
     $scope.viewModelHelper = viewModelHelper;
-    $scope.personService = personService;
+    // $scope.personService = personService;
 
 
 
@@ -24,6 +27,7 @@
                 //console.log(result.data);
                 $scope.personList = result.data; //need to change persons to personList elsewhere
                 //alert("TESTING");
+                console.table($scope.personList);
             });
     }
 

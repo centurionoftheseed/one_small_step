@@ -20,38 +20,34 @@ personModule.config(function ($routeProvider,
     $routeProvider.when('/person/list', {
         templateUrl: '/AngularApp/Person/Views/PersonListView.html',
         controller: 'personListViewModel'
-    });
-    $routeProvider.when('/person/show/:personId', {
+    })
+    .when('/person/show/:personId', {
         templateUrl: '/AngularApp/Person/Views/PersonView.html',
         controller: 'personViewModel'
-    });
-
-
-    $routeProvider.when('/person/delete/:personId', {
+    })
+        .when('/person/delete/:personId', {
         templateUrl: '/AngularApp/Person/Views/PersonDeleteView.html',
         //controller: 'personDeleteViewModel'
         controller: 'personDeleteViewModel'
 
-    });
-
-
-    $routeProvider.when('/person/create', {
+    })
+        .when('/person/create', {
         templateUrl: '/AngularApp/Person/Views/PersonCreateView.html',
         controller: 'personCreateViewModel'
-    });
+    })
 
     //$routeProvider.when('/person/update/:personId', {
-    $routeProvider.when('/person/update', {
+    .when('/person/update', {
         templateUrl: '/AngularApp/Person/Views/PersonView.html',
         controller: 'personViewModel'
-    });
+    })
 
     //$routeProvider.when('/person/update/:personId', {
-    $routeProvider.when('/home', {
+    .when('/home', {
         //templateUrl: '/AngularApp/Person/Views/PersonListView.html',
         templateUrl: '/AngularApp/Person/Views/mainHomeView.html',
         controller: 'mainPersonListViewModel'
-    });
+    })
 
 
     
@@ -65,7 +61,7 @@ personModule.config(function ($routeProvider,
        /* $routeProvider.otherwise({
             redirectTo: '/person'
         });*/
-    $routeProvider.otherwise({
+   .otherwise({
         redirectTo: '/home'
     });
         $locationProvider.html5Mode({
