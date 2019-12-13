@@ -274,7 +274,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AngularApp\App.js" />
-    <Content Include="AngularApp\NavbarController.js" />
+    <Content Include="AngularApp\NavbarService.js" />
     <Content Include="AngularApp\Person\App.js" />
     <Content Include="AngularApp\Person\ViewModels\mainPersonListViewModel.js" />
     <Content Include="AngularApp\Person\ViewModels\NavbarController.js" />

@@ -1,9 +1,45 @@
-﻿var commonModule = angular.module('common', ['ngRoute']);
+﻿
+
+
+
+var commonModule = angular.module('common', ['ngRoute']);
 //var mainModule = angular.module("main", ['common','personModule']);
-var mainModule = angular.module("main", ['common']);
+var mainModule = angular.module('main', []);
+
+var personModule = angular.module('person', []);
+//var personModule = angular.module('person', []);
+//var rootApp = angular.module('rootApp', ['common', 'mainModule', 'personModule']);
+var rootApp = angular.module('rootApp', ['common', 'main', 'person']);
+
+
+//var rootApp = angular.module('rootApp',['common'])
 //var mainModule = angular.module("main", []);
 
 //var mainModule = angular.module('main', ['common','person']);
+
+
+//rootApp.factory('Scopes', function ($rootScope) {
+//    var mem = {};
+
+//    return {
+//        store: function (key, value) {
+//            mem[key] = value;
+//        },
+//        get: function (key) {
+//            return mem[key];
+//        }
+//    };
+//});
+
+
+//app.controller('OneController', function ($scope, Scopes) {
+//    Scopes.store('OneController', $scope);
+//    //...
+//});
+//app.controller('TwoController', function ($scope, Scopes) {
+//    Scopes.store('TwoController', $scope);
+//    //...
+//});
 
 
 
@@ -14,6 +50,28 @@ commonModule.factory('viewModelHelper',
     });
 
 commonModule.factory('validator', function () { return valJs.validator(); });
+
+
+rootApp.controller("indexViewModel", function (
+    $scope, $rootScope,$http, $q, $routeParams, $window,
+    $location, viewModelHelper, navbarService) {
+
+    var self = this;
+
+    $scope.topic =
+        "COMING FROM APP.JS -- MAIN";
+    $scope.author = "Richard W. Memmer";
+    $scope.randomText = "Et ipsum ea sit magna facer nostrud sit vel wisi amet exerci enim eum dolore ipsum dolore voluptua ipsum erat"
+
+
+    //$scope.personList = function () {
+    //    //alert("hello");
+
+    //    $scope.showPersonList = false;
+    //    alert($scope.showPersonList);
+    //    viewModelHelper.navigateTo('person/list')
+    //}
+});
 
 
     //viewModelHelper.navigateTo('person/list');

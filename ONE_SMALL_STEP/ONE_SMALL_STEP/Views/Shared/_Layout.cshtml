@@ -10,7 +10,7 @@
     @Scripts.Render("~/bundles/modernizr")
   
 </head>
-<body ng-app="main">
+<body ng-app="rootApp">
     @*<h1>{{topic}}TOPIC</h1>*@
 
     @*<h1 style="text-align: center">The answer is . . . {{3+1}}?</h1>*@
@@ -93,7 +93,7 @@
         </nav>*@
 
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" ng-controller="rootViewModel">
         <a class="navbar-brand" href="#" [routerLink]='["/"]'>ONE_SMALL_STEP</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -106,8 +106,8 @@
                     <a class="nav-link" href="#" [routerLink]='["/"]'>Home <span class="sr-only">(current)</span></a>
                 </li>
                 @*<li class="nav-item" [routerLinkActive]='["link-active"]'>
-                        <a class="nav-link" href="#" [routerLink]='["/personlist"]'>Person</a>
-                    </li>*@
+            <a class="nav-link" href="#" [routerLink]='["/personlist"]'>Person</a>
+        </li>*@
 
 
                 <li class="nav-item dropdown">
@@ -143,21 +143,24 @@
                         <a class="dropdown-item" href="#">Separated link</a>
                     </div>
                 </li>
-                <li class="nav-item">@Html.ActionLink("Contacts", "Index", "Person", null, new { @class = "nav-link" })</li>
-
+                
+                <li class="nav-item">
+                    @*<a class="nav-link" href="#" ng-click="personList()">Contacts 2</a>*@*
+                    <a class="nav-link" ng-click="personList()" ng-href="#">Contacts</a>
+                </li>
 
                 <!-- Dropdown
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                        Dropdown link
-                    </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Link 1</a>
-                        <a class="dropdown-item" href="#">Link 2</a>
-                        <a class="dropdown-item" href="#">Link 3</a>
-                    </div>
-                </li>
-                -->
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            Dropdown link
+        </a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Link 1</a>
+            <a class="dropdown-item" href="#">Link 2</a>
+            <a class="dropdown-item" href="#">Link 3</a>
+        </div>
+    </li>
+    -->
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search">
@@ -171,12 +174,11 @@
 
 
     <div class="container body-content">
-        @*<h1>{{topic}}TOPIC</h1>
         <h1>
-            {{test_value}} test value test
-        </h1>*@
+            {{test_value}} LAYOUT BEGIN
+        </h1>
         @RenderBody()
-        <h1>@*{{1 + 299}} test value test*@</h1>
+        <h1>{{1 + 299}} LAYOUT END</h1>
         @*<button class="btn btn-primary" ng-click="personList()">TEST BUTTON</button>*@
         <hr />
         <footer>

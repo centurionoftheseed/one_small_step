@@ -2,9 +2,8 @@
 //var personModule = angular.module('personModule', [])
 
 
-
-
 personModule.controller("rootViewModel",
+//personModule.controller("rootViewModel",
 
 //main.controller("rootViewModel",[
 
@@ -16,6 +15,7 @@ personModule.controller("rootViewModel",
     // This is the parent controller/viewmodel for 'personModule' and its $scope is accesible
     // down controllers set by the routing engine. This controller is bound to the 
     //Index.cshtml in the Person view-folder.
+    //Scopes.store('rootViewModel', $scope);
 
     $scope.test_value = "TESTING 123"
     $scope.viewModelHelper = viewModelHelper;
@@ -34,10 +34,10 @@ personModule.controller("rootViewModel",
 
 
         $scope.personList = function () {
-            alert("hello");
+            //alert("hello");
 
             $scope.showPersonList = false;
-            alert($scope.showPersonList);
+            //alert($scope.showPersonList);
             viewModelHelper.navigateTo('person/list');
             
         //alert("nagigate to person/list");

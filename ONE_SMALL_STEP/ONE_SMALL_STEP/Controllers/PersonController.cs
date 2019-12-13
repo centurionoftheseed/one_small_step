@@ -22,6 +22,7 @@ namespace ONE_SMALL_STEP.Controllers
             _unitOfWork = unitOfWork;
             _context = context;
         }
+        
 
         //IEnumerable<TEntity> GetAll();
         //GET: Person
@@ -30,11 +31,11 @@ namespace ONE_SMALL_STEP.Controllers
         {
 
 
-            //var domainModel = _unitOfWork.Person.Get(null, x => x.OrderBy(z => z.LastName), includeProperties: "PersonType");  
-            //var vm = Mapper.Map<IEnumerable<Person>, IEnumerable<PersonViewModel>>(domainModel);
-            //return View(vm);        
+            var domainModel = _unitOfWork.Person.Get(null, x => x.OrderBy(z => z.LastName), includeProperties: "PersonType");
+            var vm = Mapper.Map<IEnumerable<Person>, IEnumerable<PersonViewModel>>(domainModel);
+            return View(vm);
 
-            return View();
+       
      
         }
 

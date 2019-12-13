@@ -1,7 +1,7 @@
 ﻿//mainModule.controller("mainPersonListViewModel", function ($scope, $http, $q, $routeParams, $window, $location, viewModelHelper) {
 
 
-mainModule.controller("mainPersonListViewModel", function ($scope, $http, $q, $window, $location, viewModelHelper) {
+rootApp.controller("mainPersonListViewModel", function ($scope, $http, $q, $window, $location, viewModelHelper) {
 
 
     //personModule.controller("PersonListViewModel", function ($scope, $http, $q, $routeParams, $window, $location, viewModelHelper) {
@@ -15,7 +15,7 @@ mainModule.controller("mainPersonListViewModel", function ($scope, $http, $q, $w
     var initialize = function () {
         $scope.refreshPersons();
         $scope.DISPLAY_TEST = "DISPLAY TEST";
-        alert("TEST");
+        //alert("TEST");
         //alert("initialize")
     }
 

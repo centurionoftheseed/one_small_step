@@ -7,6 +7,7 @@
 }
 
 @section scripts {
+    <script src="~/AngularApp/App.js"></script>
     <script src="~/AngularApp/Person/App.js"></script>
     <script src="~/AngularApp/Person/ViewModels/RootViewModel.js"></script>
     <script src="~/AngularApp/Person/ViewModels/PersonHomeViewModel.js"></script>
@@ -16,78 +17,80 @@
     <script src="~/AngularApp/Person/ViewModels/PersonDeleteViewModel.js"></script>
 
 
+
 }
 
-@section jsCode {
-    angular.bootstrap(document.getElementById("person"), ['person']);
-}
-
-
-<div ng-non-bindable>
-
-    <div ng-controller="mainPersonListViewModel">
-        @*<h1>THIS IS THE PERSON INDEX</h1>*@
-        <h2 class="testing-blue">{{personHomeText}}</h2>
-        @*<h2>{{9 * 9}}TEST</h2>*@
-        <h2>{{pageHeading}}</h2>
-        @*<h1>TESTING PERSON\INDEX.CSHTML</h1>*@
-        <div class="row">
-            <div class="col-md-4">
-                <button class="btn btn-primary"
-                        @*ng-click="personList()" ng-show="showPersonList">  *@
-                        ng-click="personList()">
-                    View Contact List
-                </button>
-            </div>
-            <!--<div class="col-md-4">
-            <button class="btn btn-primary"
-                    ng-click="showPerson()">
-                Person details
-
-            </button>&nbsp;
+@*@section jsCode {
+        angular.bootstrap(document.getElementById("person"), ['person']);
+    }*@
 
 
 
-            @*<button class="btn btn-primary"
-                        ng-click="DeletePerson()">
-                    Delete Person
-                </button>*@
+  <div id="person" ng-controller="rootViewModel">
 
-
-
-            <input type="text" value="1"
-                   ng-model="personService.personId" />
-        </div>
-            -->
-            <div class="col-md-4">
-                <button class="btn btn-primary"
-                        ng-click="createPerson()">
-                    Create Contact
-
-                </button>
-            </div>
-
-        </div>
-        <br />
-        <br />
-        <div ng-view></div>
-
-    </div>
-</div>
-
-
-
-
-@*<!DOCTYPE html>
-
-    <html>
-    <head>
-        <meta name="viewport" content="width=device-width" />
-        <title></title>
-    </head>
-    <body>
         <div>
+            <h1>THIS IS THE PERSON INDEX</h1>
+            <h2 class="testing-blue">{{personHomeText}}</h2>
+            <h2>{{9 * 9}}TEST</h2>
+            <h2>{{pageHeading}}</h2>
+            @*<h1>TESTING PERSON\INDEX.CSHTML</h1>*@
+            <div class="row">
+                <div class="col-md-4">
+                    <button class="btn btn-primary"
+                            @*ng-click="personList()" ng-show="showPersonList">  *@
+                            ng-click="personList()">
+                        View Contact List
+                    </button>
+                </div>
+                <!--<div class="col-md-4">
+                    <button class="btn btn-primary"
+                            ng-click="showPerson()">
+                        Person details
+
+                    </button>&nbsp;
+
+
+
+                    @*<button class="btn btn-primary"
+                                ng-click="DeletePerson()">
+                            Delete Person
+                        </button>*@
+
+
+
+                    <input type="text" value="1"
+                           ng-model="personService.personId" />
+                </div>
+                    -->
+                <div class="col-md-4">
+                    <button class="btn btn-primary"
+                            ng-click="createPerson()">
+                        Create Contact
+
+                    </button>
+                </div>
+
+            </div>
+            <br />
+            <br />
+            <div ng-view></div>
 
         </div>
-    </body>
-    </html>*@
+    </div>
+
+
+
+
+    @*<!DOCTYPE html>
+
+        <html>
+        <head>
+            <meta name="viewport" content="width=device-width" />
+            <title></title>
+        </head>
+        <body>
+            <div>
+
+            </div>
+        </body>
+        </html>*@

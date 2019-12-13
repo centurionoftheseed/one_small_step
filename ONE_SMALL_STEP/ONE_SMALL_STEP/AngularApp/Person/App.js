@@ -7,9 +7,11 @@
 //var personModule = angular.module('person', ['common']);
 
 
-var personModule = angular.module('person', ['common']);
+//var personModule = angular.module('person', ['common']);
 //var personModule = main.module('person', ['common']);
-//var personModule = main.controller('person', ['common']);
+//var personModule = personModule.controller('personModule', ['common']);
+//var personModule = angular.module('person', ['common']);
+//var personModule = angular.module('person', ['common']);
 
 personModule.config(function ($routeProvider,
     $locationProvider) {
@@ -17,6 +19,7 @@ personModule.config(function ($routeProvider,
     //    templateUrl: '/AngularApp/Person/Views/PersonHomeView.html',
     //    controller: 'personHomeViewModel'
     //});
+    console.log("person module is working-person-app");
     $routeProvider.when('/person/list', {
         templateUrl: '/AngularApp/Person/Views/PersonListView.html',
         controller: 'personListViewModel'
@@ -43,7 +46,7 @@ personModule.config(function ($routeProvider,
     })
 
     //$routeProvider.when('/person/update/:personId', {
-    .when('/home', {
+    .when('/', {
         //templateUrl: '/AngularApp/Person/Views/PersonListView.html',
         templateUrl: '/AngularApp/Person/Views/mainHomeView.html',
         controller: 'mainPersonListViewModel'
@@ -62,7 +65,7 @@ personModule.config(function ($routeProvider,
             redirectTo: '/person'
         });*/
    .otherwise({
-        redirectTo: '/home'
+        redirectTo: '/'
     });
         $locationProvider.html5Mode({
             enabled: true,
