@@ -1,14 +1,20 @@
 ﻿
 //var personModule = angular.module('personModule', [])
 
+//rootApp.controller("mainPersonListViewModel", function ($scope, $http, $q, $window, $location, viewModelHelper) {
 
-personModule.controller("rootViewModel",
+personModule.controller("rootViewModel", function ($scope, personService, $http, $q, $window, $location, viewModelHelper) {
+//rootApp.controller("rootViewModel",
 //personModule.controller("rootViewModel",
 
 //main.controller("rootViewModel",[
 
     //mainModule.controller("rootViewModel",
-    function ($scope, personService, $http, viewModelHelper) {
+
+
+    //function ($scope, personService, $http, viewModelHelper) {
+
+
     //personModule.controller("rootViewModel",
     //function ($scope, $http) {
 
@@ -18,6 +24,9 @@ personModule.controller("rootViewModel",
     //Scopes.store('rootViewModel', $scope);
 
     $scope.test_value = "TESTING 123"
+    $scope.test_value_root_view_model = "test value root view model"
+    //alert("TESTING 123");
+
     $scope.viewModelHelper = viewModelHelper;
     $scope.personService = personService;
     $scope.showPersonList = true;
@@ -34,11 +43,13 @@ personModule.controller("rootViewModel",
 
 
         $scope.personList = function () {
-            //alert("hello");
-
-            $scope.showPersonList = false;
+           
+            console.log("in root view model trying to hit person list")
+            //$scope.showPersonList = false;
             //alert($scope.showPersonList);
-            viewModelHelper.navigateTo('person/list');
+            //viewModelHelper.navigateTo('/person/list');
+            viewModelHelper.navigateTo("person/list");
+            console.log("path", viewModelHelper)
             
         //alert("nagigate to person/list");
         }

@@ -3,12 +3,13 @@
 
     //mainModule.controller("personListViewModel", function ($scope, personService, $http, $q, $routeParams, $window, $location, viewModelHelper) {
 
+//personModule.controller("personListViewModel", function ($scope, $http, $q, $routeParams, $window, $location, viewModelHelper) {
 
-    personModule.controller("personListViewModel", function ($scope, $http, $q, $routeParams, $window, $location, viewModelHelper) {
+personModule.controller("personListViewModel", function ($scope, personService, $http, $q, $routeParams, $window, $location, viewModelHelper) {
     console.log("Loading person list view.")
 
     $scope.viewModelHelper = viewModelHelper;
-    //$scope.personService = personService;
+    $scope.personService = personService;
     
    
 

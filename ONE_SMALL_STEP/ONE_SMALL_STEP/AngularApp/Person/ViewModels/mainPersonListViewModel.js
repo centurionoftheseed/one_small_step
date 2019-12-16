@@ -1,7 +1,7 @@
 ﻿//mainModule.controller("mainPersonListViewModel", function ($scope, $http, $q, $routeParams, $window, $location, viewModelHelper) {
 
 
-rootApp.controller("mainPersonListViewModel", function ($scope, $http, $q, $window, $location, viewModelHelper) {
+personModule.controller("mainPersonListViewModel", function ($scope, $http, $q, $window, $location, viewModelHelper) {
 
 
     //personModule.controller("PersonListViewModel", function ($scope, $http, $q, $routeParams, $window, $location, viewModelHelper) {
@@ -11,6 +11,13 @@ rootApp.controller("mainPersonListViewModel", function ($scope, $http, $q, $wind
     // $scope.personService = personService;
 
 
+    $scope.personList = function () {
+        alert("hello 33");
+
+        //$scope.showPersonList = false;
+        //alert($scope.showPersonList);
+        viewModelHelper.navigateTo('person/list');
+    }
 
     var initialize = function () {
         $scope.refreshPersons();

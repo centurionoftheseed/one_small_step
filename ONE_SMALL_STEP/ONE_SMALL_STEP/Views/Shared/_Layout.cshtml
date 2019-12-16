@@ -8,9 +8,12 @@
 
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-  
+    @*@Scripts.Render("~/bundles/angular")*@
 </head>
+
 <body ng-app="rootApp">
+
+
     @*<h1>{{topic}}TOPIC</h1>*@
 
     @*<h1 style="text-align: center">The answer is . . . {{3+1}}?</h1>*@
@@ -93,7 +96,7 @@
         </nav>*@
 
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" ng-controller="rootViewModel">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="#" [routerLink]='["/"]'>ONE_SMALL_STEP</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -105,49 +108,20 @@
 
                     <a class="nav-link" href="#" [routerLink]='["/"]'>Home <span class="sr-only">(current)</span></a>
                 </li>
-                @*<li class="nav-item" [routerLinkActive]='["link-active"]'>
-            <a class="nav-link" href="#" [routerLink]='["/personlist"]'>Person</a>
-        </li>*@
 
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Contact</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#" ng-click="personList()">Contact List</a>
-                        <a class="dropdown-item" href="#">Contact Type</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                    </div>
-                </li>
+                @*<li>
+                    @Html.ActionLink("Contacts HTML.Action Link: TEST",
+                                 "index",
+                                 "person")
+                </li>*@
 
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Message</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Message Type</a>
-                        <a class="dropdown-item" href="#">Message/Contact</a>
-                        <a class="dropdown-item" href="#">Message</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                    </div>
-                </li>
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Source</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Source Type</a>
-                        <a class="dropdown-item" href="#">Source</a>
-                        <a class="dropdown-item" href="#">Message</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                    </div>
-                </li>
-                
                 <li class="nav-item">
                     @*<a class="nav-link" href="#" ng-click="personList()">Contacts 2</a>*@*
-                    <a class="nav-link" ng-click="personList()" ng-href="#">Contacts</a>
+                    <a class="nav-link" href="/person">Contacts</a>
                 </li>
+
+             
 
                 <!-- Dropdown
     <li class="nav-item dropdown">
@@ -170,10 +144,21 @@
     </nav>
 
 
+    @*@section jsCode {
+        angular.bootstrap(document.getElementById("person"), ['person']);
+    }*@
 
 
 
     <div class="container body-content">
+        <input type="text" name="name" value={{test_value_root_view_model}} />
+
+        <button class="btn btn-primary" 
+                @*ng-click="personList()" ng-show="showPersonList">  *@
+                ng-click="personList()">
+            View Contact List
+        </button>
+
         <h1>
             {{test_value}} LAYOUT BEGIN
         </h1>
@@ -191,6 +176,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+
+
+
     @*<script src="~/AngularApp/Person/ViewModels/PersonListViewModel.js"></script>*@
 
 
@@ -207,8 +195,13 @@
     <script src="~/AngularApp/Validator.js"></script>
     <script src="~/AngularApp/app.js"></script>
 
+    <script src="~/AngularApp/Person/App.js"></script>
+    @*<script src="~/AngularApp/Person/ViewModels/RootViewModel.js"></script>*@
+
+
+
     @*<script src="~/AngularApp/Person/ViewModels/RootViewModel.js"></script>
-    <script src="~/AngularApp/Person/App.js"></script>*@
+        <script src="~/AngularApp/Person/App.js"></script>*@
 
 
 

@@ -1,4 +1,5 @@
 ﻿<h3>Contact List</h3>
+<h1>PersonListView.html</h1>
 <div>
     <a href="#" ng-click="refreshPersons()"><span class="glyphicon glyphicon-refresh"></span></a>
     <!--<div>{{DISPLAY_TEST}}</div>-->
@@ -26,7 +27,7 @@
                 <td>{{ p.PersonTypeName}}</td>
                 <!-- <td><a href="#" ng-click="showPerson(p)">View Details</a></td>   -->
                 <!--<td><a href="#" ng-click="editPerson">Edit</a></td>
-    <td><a href="#" ng-class="deletePerson">Delete</a></td>-->
+                <td><a href="#" ng-class="deletePerson">Delete</a></td>-->
                 <td>
                     <!--<button class="btn btn-primary" ng-click="deletePersonView(p.PersonID)">Delete View</button>-->
                     <button class="btn btn-primary" ng-click="showPerson(p.PersonID)">View Details</button>
@@ -40,5 +41,5 @@
 
             </tr>
         </tbody>
-        </table>
-    </div>
+    </table>
+</div>

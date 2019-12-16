@@ -27,17 +27,33 @@ namespace ONE_SMALL_STEP.Controllers
         //IEnumerable<TEntity> GetAll();
         //GET: Person
         //[AutoMap()]
+        //public ActionResult Index()
+        //{
+
+
+        //    var domainModel = _unitOfWork.Person.Get(null, x => x.OrderBy(z => z.LastName), includeProperties: "PersonType");
+        //    var vm = Mapper.Map<IEnumerable<Person>, IEnumerable<PersonViewModel>>(domainModel);
+        //    //return View(vm);
+
+           
+        //    //return View("~/Views/Person/Index.cshtml");
+        //    return View("Person2");
+        //}
+
+
         public ActionResult Index()
         {
 
 
-            var domainModel = _unitOfWork.Person.Get(null, x => x.OrderBy(z => z.LastName), includeProperties: "PersonType");
-            var vm = Mapper.Map<IEnumerable<Person>, IEnumerable<PersonViewModel>>(domainModel);
-            return View(vm);
+            //var domainModel = _unitOfWork.Person.Get(null, x => x.OrderBy(z => z.LastName), includeProperties: "PersonType");
+            //var vm = Mapper.Map<IEnumerable<Person>, IEnumerable<PersonViewModel>>(domainModel);
+            ////return View(vm);
 
-       
-     
+
+            return View();
+            //return View("IndexPerson");
         }
+
 
 
         public ActionResult Create()

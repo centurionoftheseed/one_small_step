@@ -14,6 +14,7 @@
 //var personModule = angular.module('person', ['common']);
 
 personModule.config(function ($routeProvider,
+//rootApp.config(function ($routeProvider,
     $locationProvider) {
     //$routeProvider.when('/person', {
     //    templateUrl: '/AngularApp/Person/Views/PersonHomeView.html',
@@ -45,15 +46,24 @@ personModule.config(function ($routeProvider,
         controller: 'personViewModel'
     })
 
-    //$routeProvider.when('/person/update/:personId', {
-    .when('/', {
-        //templateUrl: '/AngularApp/Person/Views/PersonListView.html',
-        templateUrl: '/AngularApp/Person/Views/mainHomeView.html',
-        controller: 'mainPersonListViewModel'
+    .when('/person', {
+        templateUrl: '/AngularApp/Person/Views/PersonListView.html',
+        controller: 'personListViewModel'
     })
 
 
-    
+    ////$routeProvider.when('/person/update/:personId', {
+    //.when('/', {
+    //    //templateUrl: '/AngularApp/Person/Views/PersonListView.html',
+    //    templateUrl: '/AngularApp/Person/Views/mainHomeView.html',
+    //    controller: 'mainPersonListViewModel'
+    //})
+
+
+        .when('/', {
+            templateUrl: '/AngularApp/Person/Views/mainHomeView.html',
+            controller: 'mainPersonListViewModel'
+        })
 
 
     //    //$routeProvider.when('/person/:personId', {
@@ -64,9 +74,9 @@ personModule.config(function ($routeProvider,
        /* $routeProvider.otherwise({
             redirectTo: '/person'
         });*/
-   .otherwise({
-        redirectTo: '/'
-    });
+   //.otherwise({
+   //     redirectTo: '/'
+    //});
         $locationProvider.html5Mode({
             enabled: true,
             requireBase: false

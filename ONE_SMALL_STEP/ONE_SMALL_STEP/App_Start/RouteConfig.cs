@@ -15,6 +15,14 @@ namespace ONE_SMALL_STEP
 
 
             routes.MapRoute(
+           name: "Default",
+           url: "{controller}/{action}/{id}",
+           defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+       //defaults: new { controller = "Person", action = "Index", id = UrlParameter.Optional }
+       );
+
+
+            routes.MapRoute(
                 name: "person",
                 url: "person/{*catch-all}",
                 defaults: new
@@ -25,11 +33,7 @@ namespace ONE_SMALL_STEP
 
             routes.MapMvcAttributeRoutes();
 
-            routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+       
         }
     }
 }
