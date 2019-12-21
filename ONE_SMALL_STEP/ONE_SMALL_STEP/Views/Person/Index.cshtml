@@ -7,7 +7,6 @@
 }
 
 @section scripts {
-    <script src="~/AngularApp/App.js"></script>
     <script src="~/AngularApp/Person/App.js"></script>
     <script src="~/AngularApp/Person/ViewModels/RootViewModel.js"></script>
     <script src="~/AngularApp/Person/ViewModels/PersonHomeViewModel.js"></script>
@@ -17,29 +16,23 @@
     <script src="~/AngularApp/Person/ViewModels/PersonDeleteViewModel.js"></script>
 
 
-
 }
 
-@*@section jsCode {
-        angular.bootstrap(document.getElementById("person"), ['person']);
-
-    <div id="person">
-
-    }*@
+@section jsCode {
+    angular.bootstrap(document.getElementById("person"), ['person']);
+}
 
 
-<div>
+<div ng-non-bindable>
 
-    <div>
+    <div id="person" ng-controller="rootViewModel">
         <h1>THIS IS THE PERSON INDEX</h1>
         <h2 class="testing-blue">{{personHomeText}}</h2>
-        <h2>{{9 * 9}}TEST</h2>
+        @* <h2>{{9 * 9}}</h2>*@
         <h2>{{pageHeading}}</h2>
-        @*<h1>TESTING PERSON\INDEX.CSHTML</h1>*@
         <div class="row">
             <div class="col-md-4">
                 <button class="btn btn-primary"
-                        @*ng-click="personList()" ng-show="showPersonList">  *@
                         ng-click="personList()">
                     View Contact List
                 </button>

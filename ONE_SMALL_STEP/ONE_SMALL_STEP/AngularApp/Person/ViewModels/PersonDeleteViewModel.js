@@ -66,10 +66,10 @@
 
                     //alert(personId);
                 });
-            
-                viewModelHelper.navigateTo('person/list');
-           
-            
+
+            viewModelHelper.navigateTo('person/list');
+
+
         }
 
 

@@ -36,7 +36,7 @@
                 function (result) {
                     //   alert("here is result " + personId);
                     //  personService.personId = personId;
-                      //alert("hello" + result.data);
+                    //alert("hello" + result.data);
                     $scope.personType = result.data;
 
                     //$scope.personTypeList();
@@ -122,8 +122,8 @@
                     //$scope.
                 });
         }
-   
-    
+
+
         //$scope.postPerson = function () {
         //    viewModelHelper.apiPost("api/person/create", personData,
         //        function (result) {
@@ -139,7 +139,7 @@
         //            //alert(personId);
         //        });
         //}
-        
+
 
 
 

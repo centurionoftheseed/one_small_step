@@ -1,26 +1,22 @@
-﻿//personModule.controller("personListViewModel", function ($scope, personService, $http, $q, $routeParams, $window, $location, viewModelHelper) {
+﻿
 
-
-    //mainModule.controller("personListViewModel", function ($scope, personService, $http, $q, $routeParams, $window, $location, viewModelHelper) {
-
-//personModule.controller("personListViewModel", function ($scope, $http, $q, $routeParams, $window, $location, viewModelHelper) {
 
 personModule.controller("personListViewModel", function ($scope, personService, $http, $q, $routeParams, $window, $location, viewModelHelper) {
-    console.log("Loading person list view.")
+
+
+    //personModule.controller("PersonListViewModel", function ($scope, $http, $q, $routeParams, $window, $location, viewModelHelper) {
+
 
     $scope.viewModelHelper = viewModelHelper;
     $scope.personService = personService;
-    
-   
 
     var initialize = function () {
         $scope.refreshPersons();
         $scope.DISPLAY_TEST = "DISPLAY TEST";
-        //alert("TEST");
         //alert("initialize")
     }
 
-        $scope.refreshPersons = function () {
+    $scope.refreshPersons = function () {
         viewModelHelper.apiGet('api/person', null,
             function (result) {
                 //$scope.customers = result.data;
@@ -29,7 +25,7 @@ personModule.controller("personListViewModel", function ($scope, personService, 
                 $scope.persons = result.data;
                 //alert("TESTING");
             });
-        }
+    }
 
     initialize();
 
@@ -70,30 +66,30 @@ personModule.controller("personListViewModel", function ($scope, personService, 
     }
 
 
-        //alert("after initialize");
+    //alert("after initialize");
 
-        /*
-        var url = "http://localhost:54064/api/person";
-        var MainController = function ($scope, $http) {
+    /*
+    var url = "http://localhost:54064/api/person";
+    var MainController = function ($scope, $http) {
 
-            var onSuccess = function (response) {
-                $scope.persons = response.data
-            };
-            var onFailure = function (error) {
-                $scope.error = reason
-            };
+        var onSuccess = function (response) {
+            $scope.persons = response.data
+        };
+        var onFailure = function (error) {
+            $scope.error = reason
+        };
 
-            var getAllPersons = function () {
-                $http.get(url)
-                    .then(onSuccess, onFailure)
-
-            }
-
-            getAllPersons();
-           
+        var getAllPersons = function () {
+            $http.get(url)
+                .then(onSuccess, onFailure)
 
         }
-         */
+
+        getAllPersons();
+       
+
+    }
+     */
     //$scope.showCustomer = function (customer) {
     //    $scope.flags.shownFromList = true; // note this object is declared in the RootViewModel
     //    viewModelHelper.navigateTo('customer/show/' + customer.CustomerId);
@@ -112,5 +108,5 @@ personModule.controller("personListViewModel", function ($scope, personService, 
     //}
 
 
-    
+
 });

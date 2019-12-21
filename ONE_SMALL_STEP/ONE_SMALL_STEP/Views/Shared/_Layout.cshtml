@@ -11,46 +11,11 @@
     @*@Scripts.Render("~/bundles/angular")*@
 </head>
 
-<body ng-app="rootApp">
-
-
-    @*<h1>{{topic}}TOPIC</h1>*@
-
-    @*<h1 style="text-align: center">The answer is . . . {{3+1}}?</h1>*@
-
-
-    @*<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarColor01">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </div>
-        </nav>*@
+<body ng-app="main">
 
 
 
-
-    @*<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
             @Html.ActionLink("ONE_SMALL_STEP", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
 
@@ -61,153 +26,57 @@
         </div>
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown link
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
                 <li class="nav-item active">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>
-                <li class="nav-item">@Html.ActionLink("Contacts", "Index", "Person", null, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Contact Type", "Index", "PersonType", null, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Source", "Index", "Source", null, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Source Type", "Index", "SourceType", null, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Message", "Index", "Person", null, new { @class = "nav-link" })</li>
-
-
-                @*</ul>
-
-                    <form class="form-inline my-2 my-lg-0">
-                        <div class="col-md-8">
-                            <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                        </div>
-                        <div class="col-md-2">
-                            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                        </div>
-
-                    </form>*@
-    @*@Html.Partial("_LoginPartial")
-            </div>
-
-        </nav>*@
-
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="#" [routerLink]='["/"]'>ONE_SMALL_STEP</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-
-                    <a class="nav-link" href="#" [routerLink]='["/"]'>Home <span class="sr-only">(current)</span></a>
-                </li>
-
-
-                @*<li>
-                    @Html.ActionLink("Contacts HTML.Action Link: TEST",
-                                 "index",
-                                 "person")
-                </li>*@
-
-                <li class="nav-item">
-                    @*<a class="nav-link" href="#" ng-click="personList()">Contacts 2</a>*@*
-                    <a class="nav-link" href="/person">Contacts</a>
-                </li>
-
-             
-
-                <!-- Dropdown
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-            Dropdown link
-        </a>
-        <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Link 1</a>
-            <a class="dropdown-item" href="#">Link 2</a>
-            <a class="dropdown-item" href="#">Link 3</a>
-        </div>
-    </li>
-    -->
+                <li class="nav-item">@Html.ActionLink("Person", "Index", "Person", null, new { @class = "nav-link" })</li>
+                <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
             </ul>
+
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                <div class="col-md-8">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                </div>
+
             </form>
+            @Html.Partial("_LoginPartial")
         </div>
+
     </nav>
 
 
-    @*@section jsCode {
-        angular.bootstrap(document.getElementById("person"), ['person']);
-    }*@
+
+
 
 
 
     <div class="container body-content">
-        <input type="text" name="name" value={{test_value_root_view_model}} />
-
-        <button class="btn btn-primary" 
-                @*ng-click="personList()" ng-show="showPersonList">  *@
-                ng-click="personList()">
-            View Contact List
-        </button>
-
-        <h1>
-            {{test_value}} LAYOUT BEGIN
-        </h1>
         @RenderBody()
-        <h1>{{1 + 299}} LAYOUT END</h1>
-        @*<button class="btn btn-primary" ng-click="personList()">TEST BUTTON</button>*@
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
 
+
     @Scripts.Render("~/bundles/angular")
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 
 
-
-    @*<script src="~/AngularApp/Person/ViewModels/PersonListViewModel.js"></script>*@
-
-
-
-    @*@Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")*@
     <script type="text/javascript">
             window.MyApp = {};
             MyApp.rootPath = '@Url.Content("~")';
     </script>
 
-    @*<script src="~/Scripts/angular.js"></script>
-        <script src="~/Scripts/angular-route.js"></script>*@
     <script src="~/AngularApp/Validator.js"></script>
     <script src="~/AngularApp/app.js"></script>
-
     <script src="~/AngularApp/Person/App.js"></script>
-    @*<script src="~/AngularApp/Person/ViewModels/RootViewModel.js"></script>*@
 
 
 
-    @*<script src="~/AngularApp/Person/ViewModels/RootViewModel.js"></script>
-        <script src="~/AngularApp/Person/App.js"></script>*@
-
-
-
-    @*<script src="~/AngularApp/Services/person.service.js"></script>*@
-    @*<script src="~/AngularApp/Services/person.service.js"></script>*@
-    @*<script src="~/AngularApp/Person/ViewModels/RootViewModel.js"></script>*@
 
 
     @RenderSection("scripts", required: false)

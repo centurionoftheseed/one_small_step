@@ -4,11 +4,10 @@
         $scope.viewModelHelper = viewModelHelper;
         $scope.personService = personService;
         $scope.personIdTEST = 0;
-        
 
         var initialize = function () {
             //alert($routeParams.personId);
-            
+
             $scope.refreshPerson($routeParams.personId);
             //$scope.personTypeList();
         }
@@ -16,7 +15,7 @@
         $scope.refreshPerson = function (personId) {
             viewModelHelper.apiGet("api/person/" + personId, null,
                 function (result) {
-                   // alert("here is result " + personId);
+                    // alert("here is result " + personId);
                     personService.personId = personId;
 
                     $scope.personId = personId;
@@ -25,9 +24,9 @@
                     $scope.disableField();
                     //alert(personId);
 
-                   // alert(result.data);
+                    // alert(result.data);
                     //console.log(result.data);
-                  
+
                     //alert(personId);
                 });
         }
@@ -53,7 +52,7 @@
             alert(personId);
             viewModelHelper.apiDelete("api/person/delete/" + personId, null,
                 function (result) {
-                   
+
                     // alert("here is result " + personId);
                     //personService.personId = personId;
                     //$scope.person = result.data;
@@ -111,8 +110,8 @@
         //            alert("calling before result" + result.data);
         //            $scope.personType = result.data;
         //            alert("calling after result" + result.data);
-                    
-                  
+
+
         //        };
         //};
 
@@ -120,8 +119,8 @@
         //personTypeList();
 
         $scope.disableField = function () {
-                document.getElementById("personFieldset").disabled = true;
-          }
+            document.getElementById("personFieldset").disabled = true;
+        }
 
         $scope.enableField = function () {
             document.getElementById("personFieldset").disabled = false;
@@ -161,16 +160,16 @@
             //$scope.postPerson();
             //viewModelHelper.apiPut("api/person/update" + personId, personData,
             //test_func();
-   
+
             viewModelHelper.apiPut("api/person/update", person,
                 function (result) {
-                       //alert("here is result ");
+                    //alert("here is result ");
                     //  personService.personId = personId;
                     //  alert("hello" + result.data);
                     //alert("api/create/person");
                     //alert("hello");
                     //alert(person.LastName);
-                    $scope.personId = result.data;            
+                    $scope.personId = result.data;
                 });
             $scope.disableField();
         }
@@ -190,7 +189,7 @@
         //        function (result) {
         //            //   alert("here is result " + personId);
         //            //  personService.personId = personId;
-                    
+
         //            $scope.person = result.data;
 
         //            //$scope.personType = result.data;
@@ -202,15 +201,15 @@
         //        });
         //    $scope.disableField();
         //}
-//        <script>
-//            function disableField() {
-//                document.getElementById("myFieldset").disabled = true;
-//          }
-          
-//function undisableField() {
-//                document.getElementById("myFieldset").disabled = false;
-//          }
-          
-          
-//              //alert("initialize");
-          });
+        //        <script>
+        //            function disableField() {
+        //                document.getElementById("myFieldset").disabled = true;
+        //          }
+
+        //function undisableField() {
+        //                document.getElementById("myFieldset").disabled = false;
+        //          }
+
+
+        //              //alert("initialize");
+    });

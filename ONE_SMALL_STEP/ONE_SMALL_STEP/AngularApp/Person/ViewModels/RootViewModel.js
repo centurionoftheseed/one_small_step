@@ -1,57 +1,29 @@
 ﻿
-//var personModule = angular.module('personModule', [])
 
-//rootApp.controller("mainPersonListViewModel", function ($scope, $http, $q, $window, $location, viewModelHelper) {
+personModule.controller("rootViewModel",
+    function ($scope, personService, $http, viewModelHelper) {
+        //personModule.controller("rootViewModel",
+        //function ($scope, $http) {
 
-personModule.controller("rootViewModel", function ($scope, personService, $http, $q, $window, $location, viewModelHelper) {
-//rootApp.controller("rootViewModel",
-//personModule.controller("rootViewModel",
+        // This is the parent controller/viewmodel for 'personModule' and its $scope is accesible
+        // down controllers set by the routing engine. This controller is bound to the 
+        //Index.cshtml in the Person view-folder.
 
-//main.controller("rootViewModel",[
-
-    //mainModule.controller("rootViewModel",
-
-
-    //function ($scope, personService, $http, viewModelHelper) {
-
-
-    //personModule.controller("rootViewModel",
-    //function ($scope, $http) {
-
-    // This is the parent controller/viewmodel for 'personModule' and its $scope is accesible
-    // down controllers set by the routing engine. This controller is bound to the 
-    //Index.cshtml in the Person view-folder.
-    //Scopes.store('rootViewModel', $scope);
-
-    $scope.test_value = "TESTING 123"
-    $scope.test_value_root_view_model = "test value root view model"
-    //alert("TESTING 123");
-
-    $scope.viewModelHelper = viewModelHelper;
-    $scope.personService = personService;
-    $scope.showPersonList = true;
+        $scope.TEST_FROM_ROOT_VIEW_MODEL = "test from root view model";
+        $scope.viewModelHelper = viewModelHelper;
+        $scope.personService = personService;
 
         $scope.flags = { shownFromList: false };
 
-        $scope.pageHeading = "Person Section";
-
-
-    //var initialize = function () {
-    //    $scope.pageHeading = "Person Section";
-    //    //$scope.personHomeText = "PersonViewModel.js TEST TEXT"
-    //    }
+        //var initialize = function () {
+        //    $scope.pageHeading = "Person Section";
+        //    //$scope.personHomeText = "PersonViewModel.js TEST TEXT"
+        //    }
 
 
         $scope.personList = function () {
-           
-            console.log("in root view model trying to hit person list")
-            //$scope.showPersonList = false;
-            //alert($scope.showPersonList);
-            //viewModelHelper.navigateTo('/person/list');
-            viewModelHelper.navigateTo("person/list");
-            console.log("path", viewModelHelper)
-            
-        //alert("nagigate to person/list");
+            viewModelHelper.navigateTo('person/list');
+            //alert("nagigate to person/list");
         }
 
 
@@ -63,7 +35,7 @@ personModule.controller("rootViewModel", function ($scope, personService, $http,
         //                'person/show/' + personService.personId);
         //            //alert(personService.personId);
         //    };  
-      
+
         //}
         $scope.showPerson = function (personId) {
             viewModelHelper.navigateTo("person/show/" + personId);
@@ -73,7 +45,7 @@ personModule.controller("rootViewModel", function ($scope, personService, $http,
         $scope.deletePersonView = function (personId) {
             //alert("GOTO deletePersonView: " + personId);
             if (personId != 0) {
-               // $scope.flags.shownFromList = false;
+                // $scope.flags.shownFromList = false;
                 //alert("hello");
                 viewModelHelper.navigateTo(
                     'person/delete/' + personId);
@@ -108,7 +80,7 @@ personModule.controller("rootViewModel", function ($scope, personService, $http,
         }
 
 
-    //initialize();
-    //alert("initialize");
-});
+        //initialize();
+        //alert("initialize");
+    });
 

@@ -1,53 +1,46 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-    //Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-@{
-    ViewBag.Title = "GET THIS GOING NOW";
-}
-
-
+﻿@*@{
+        Layout = null;
+    }*@
 
 @{
     ViewBag.Title = "Person List";
 }
 
 @section scripts {
-    <script src="~/AngularApp/App.js"></script>
     <script src="~/AngularApp/Person/App.js"></script>
     <script src="~/AngularApp/Person/ViewModels/RootViewModel.js"></script>
-    <script src="~/AngularApp/Person/ViewModels/mainPersonListViewModel.js"></script>
-
     <script src="~/AngularApp/Person/ViewModels/PersonHomeViewModel.js"></script>
     <script src="~/AngularApp/Person/ViewModels/PersonListViewModel.js"></script>
     <script src="~/AngularApp/Person/ViewModels/PersonCreateViewModel.js"></script>
     <script src="~/AngularApp/Person/ViewModels/PersonViewModel.js"></script>
     <script src="~/AngularApp/Person/ViewModels/PersonDeleteViewModel.js"></script>
+    <script src="~/AngularApp/Person/ViewModels/mainPersonListViewModel.js"></script>
 
-    @*<script src="~/AngularApp/NavbarService.js"></script>*@
 }
 
 @*@section jsCode {
         angular.bootstrap(document.getElementById("person"), ['person']);
     }*@
-<h2>Home222</h2>
 
 
-    <div ng-controller="mainPersonListViewModel">
+@section jsCode {
+    angular.bootstrap(document.getElementById("main"), ['main']);
+}
+
+<div ng-non-bindable>
+
+    <div id="main" ng-controller="mainPersonListViewModel">
         <h1>THIS IS THE HOME INDEX</h1>
         <h2 class="testing-blue">{{personHomeText}}</h2>
-        <h2>{{9 * 9}}TEST</h2>
-        <h2>{{pageHeading}}</h2>
-        @*<h1>TESTING PERSON\INDEX.CSHTML</h1>*@
+        <h2>{{9 * 9}}</h2>
+        <h2>{{TEST_FROM_ROOT_VIEW_MODEL}}</h2>
         <div class="row">
-            <div class="col-md-4">
+            @*<div class="col-md-4">
                 <button class="btn btn-primary"
-                        @*ng-click="personList()" ng-show="showPersonList">  *@
                         ng-click="personList()">
                     View Contact List
                 </button>
-            </div>
+            </div>*@
             <!--<div class="col-md-4">
                 <button class="btn btn-primary"
                         ng-click="showPerson()">
@@ -68,7 +61,13 @@
                        ng-model="personService.personId" />
             </div>
                 -->
-       
+            @*<div class="col-md-4">
+                <button class="btn btn-primary"
+                        ng-click="createPerson()">
+                    Create Contact
+
+                </button>
+            </div>*@
 
         </div>
         <br />
@@ -76,6 +75,21 @@
         <div ng-view></div>
 
     </div>
+</div>
 
 
 
+
+@*<!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title></title>
+    </head>
+    <body>
+        <div>
+
+        </div>
+    </body>
+    </html>*@

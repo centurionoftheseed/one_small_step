@@ -1,9 +1,9 @@
 ﻿//mainModule.controller("mainPersonListViewModel", function ($scope, $http, $q, $routeParams, $window, $location, viewModelHelper) {
 
 
-personModule.controller("mainPersonListViewModel", function ($scope, $http, $q, $window, $location, viewModelHelper) {
+//mainModule.controller("mainPersonListViewModel", function ($scope, $http, $q, $window, $location, viewModelHelper) {
 
-
+    mainModule.controller("mainPersonListViewModel", function ($scope, $http, $q, $window, viewModelHelper) {
     //personModule.controller("PersonListViewModel", function ($scope, $http, $q, $routeParams, $window, $location, viewModelHelper) {
     console.log("Loading main personal list...")
 
@@ -11,17 +11,24 @@ personModule.controller("mainPersonListViewModel", function ($scope, $http, $q, 
     // $scope.personService = personService;
 
 
-    $scope.personList = function () {
-        alert("hello 33");
+    //$scope.personList = function () {
+    //    alert("hello 33");
 
-        //$scope.showPersonList = false;
-        //alert($scope.showPersonList);
-        viewModelHelper.navigateTo('person/list');
+    //    //$scope.showPersonList = false;
+    //    //alert($scope.showPersonList);
+    //    viewModelHelper.navigateTo('person/list');
+    //}
+    $scope.DISPLAY_TEST_MAIN = "DISPLAY TEST MAIN PERSON LIST VIEW MODEL.";
+
+
+    $scope.showPerson = function (personId) {
+        viewModelHelper.navigateTo("person/show/" + personId);
     }
+
 
     var initialize = function () {
         $scope.refreshPersons();
-        $scope.DISPLAY_TEST = "DISPLAY TEST";
+
         //alert("TEST");
         //alert("initialize")
     }
@@ -31,7 +38,7 @@ personModule.controller("mainPersonListViewModel", function ($scope, $http, $q, 
             function (result) {
                 //$scope.customers = result.data;
                 //alert("person list");
-                //console.log(result.data);
+                console.log(result.data);
                 $scope.personList = result.data; //need to change persons to personList elsewhere
                 //alert("TESTING");
                 console.table($scope.personList);

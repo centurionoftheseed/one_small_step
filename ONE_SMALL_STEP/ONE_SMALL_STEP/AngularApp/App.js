@@ -1,8 +1,5 @@
-﻿
-
-
-
-var commonModule = angular.module('common', ['ngRoute']);
+﻿var commonModule = angular.module('common', ['ngRoute']);
+var mainModule = angular.module('main', ['person']);
 
 commonModule.factory('viewModelHelper',
     function ($http, $q, $window, $location) {
@@ -10,87 +7,31 @@ commonModule.factory('viewModelHelper',
             $http, $q, $window, $location);
     });
 
-//var mainModule = angular.module("main", ['common','personModule']);
-var mainModule = angular.module('main', ['common']);
-
-var personModule = angular.module('person', ['common']);
-//var personModule = angular.module('person', []);
-//var rootApp = angular.module('rootApp', ['common', 'mainModule', 'personModule']);
-
-
-var rootApp = angular.module('rootApp', ['common', 'main', 'person']);
-
-
-
-//var rootApp = angular.module('rootApp',['common'])
-//var mainModule = angular.module("main", []);
-
-//var mainModule = angular.module('main', ['common','person']);
-
-
-//rootApp.factory('Scopes', function ($rootScope) {
-//    var mem = {};
-
-//    return {
-//        store: function (key, value) {
-//            mem[key] = value;
-//        },
-//        get: function (key) {
-//            return mem[key];
-//        }
-//    };
-//});
-
-
-//app.controller('OneController', function ($scope, Scopes) {
-//    Scopes.store('OneController', $scope);
-//    //...
-//});
-//app.controller('TwoController', function ($scope, Scopes) {
-//    Scopes.store('TwoController', $scope);
-//    //...
-//});
-
-
-
-//commonModule.factory('viewModelHelper',
-//    function ($http, $q, $window, $location) {
-//        return MyApp.viewModelHelper(
-//            $http, $q, $window, $location);
-//    });
-
 commonModule.factory('validator', function () { return valJs.validator(); });
 
+mainModule.controller("indexViewModel", function (
+    $scope, $http, $q, $routeParams, $window,
+    $location, viewModelHelper) {
 
-//rootApp.controller("indexViewModel", function (
-//    $scope, $rootScope, $http, $q, $routeParams, $window,
-//    $location, viewModelHelper, navbarService) {
+    var self = this;
 
-//    //$rootScope.$on("dummyevent"), function () {
-//    //    var t = navbarService.getData();
-//    //    alert(t);
-//    //}
-
-//    //var self = this;
-//    //$scope.TEST_DATA = "TESTING 123";
-
-//    //$scope.topic =
-//    //    "COMING FROM APP.JS -- MAIN";
-//    //$scope.author = "Richard W. Memmer";
-//    //$scope.randomText = "Et ipsum ea sit magna facer nostrud sit vel wisi amet exerci enim eum dolore ipsum dolore voluptua ipsum erat"
-
-//    $scope.personList = function () {
-//        alert("hello 2");
-
-//        $scope.showPersonList = false;
-//        alert($scope.showPersonList);
-//        viewModelHelper.navigateTo('person/list');
-//    }
-
-//});
+    $scope.topic =
+        "COMING FROM APP.JS -- MAIN";
+    $scope.author = "Richard W. Memmer";
+    $scope.randomText = "Et ipsum ea sit magna facer nostrud sit vel wisi amet exerci enim eum dolore ipsum dolore voluptua ipsum erat"
 
 
+    //$scope.personList = function () {
+    //    
 
+    console.log("coming from app.js indexViewModel controller")
+    //refreshPersons();
+    //$scope.showPersonList = false;
+    //alert($scope.showPersonList);
+    //viewModelHelper.navigateTo('person/list');
+    //viewModelHelper.navigateTo('person/list');
+
+});
 
 
 
@@ -109,12 +50,51 @@ commonModule.factory('validator', function () { return valJs.validator(); });
         }
 
 
+        //Function to Delete Employee based upon id
+        //this.delete = function (id) {
 
+        //self.apiDelete = function (id) {
+        //    var request = $http({
+        //        method: "delete",
+        //        url: uri
+        //    });
+        //    return request;
+        //};
+
+        //self.apiDelete = function (uri, data, success, failure, always) {
+        //    self.modelIsValid = true;
+
+        //    alert("url is " + uri + "   " + data);
+        //    //$http.delete(MyApp.rootPath + uri, data)
+        //    //    .then(function (result) {
+        //    //        success(result);
+        //    //        if (always != null)
+        //    //            always();
+        //    //    }, function (result) {
+        //    //        if (failure != null) {
+        //    //            failure(result);
+        //    //        }
+        //    //        else {
+        //    //            var errorMessage = result.status + ':' + result.statusText;
+        //    //            if (result.data != null) {
+        //    //                if (result.data.Message != null)
+        //    //                    errorMessage += ' - ' + result.data.Message;
+        //    //                if (result.data.ExceptionMessage != null)
+        //    //                    errorMessage += ' - ' + result.data.ExceptionMessage;
+        //    //            }
+        //    //            self.modelErrors = [errorMessage];
+        //    //            self.modelIsValid = false;
+        //    //        }
+        //    //        if (always != null)
+        //    //            always();
+        //    //    });
+        //    //alert(uri);
+        //}
 
         self.apiDelete = function (uri, data, success, failure, always) {
             self.modelIsValid = true;
             //alert("delete method" + MyApp.rootPath + uri);
-            
+
             $http.delete(MyApp.rootPath + uri, data)
                 .then(function (result) {
                     success(result);
@@ -242,7 +222,7 @@ commonModule.factory('validator', function () { return valJs.validator(); });
 
         self.navigateTo = function (path, params) {
             if (params == null)
-                $location.path(MyApp.rootPath + path);  
+                $location.path(MyApp.rootPath + path);
             else
                 $location.path(MyApp.rootPath + path).search(params);
         }
@@ -270,5 +250,39 @@ commonModule.factory('validator', function () { return valJs.validator(); });
     };
     myApp.viewModelHelper = viewModelHelper;
 }(window.MyApp));
+
+//app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $locationProvider) {
+//    $routeProvider
+//    when("/", { templateUrl: "/Home/Index" })
+//        //.when("/", { templateUrl: "/Home/Home" })
+//        .when("/contact", { templateUrl: "/Home/Contact" })
+//        .otherwise({ redirectTo: "/" });
+
+//    $locationProvider.html5Mode(false).hashPrefix("!");
+//}]);
+/*
+var url = "http://localhost:54064/api/person";
+var MainController = function ($scope, $http) {
+
+    var onSuccess = function (response) {
+        $scope.persons = response.data
+    };
+    var onFailure = function (error) {
+        $scope.error = reason
+    };
+
+    var getAllPersons = function () {
+        $http.get(url)
+            .then(onSuccess, onFailure)
+
+    }
+
+    getAllPersons();
+
+}
+
+app.controller("MainController", MainController);
+
+*/
 
 
