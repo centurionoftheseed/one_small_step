@@ -11,6 +11,11 @@
     // $scope.personService = personService;
 
 
+
+    $scope.showPerson = function (personId) {
+        viewModelHelper.navigateTo("person/show/" + personId);
+    }
+
     //$scope.personList = function () {
     //    alert("hello 33");
 

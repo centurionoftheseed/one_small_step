@@ -1,5 +1,49 @@
 ﻿var commonModule = angular.module('common', ['ngRoute']);
-var mainModule = angular.module('main', ['person']);
+
+
+var mainModule = angular.module('main', ['common'])
+    .config(function ($routeProvider, $locationProvider) {
+        $routeProvider.when('/', {
+            templateUrl: '/AngularApp/Person/Views/mainHomeView.html',
+            //controller: 'mainPersonListViewModel'
+            controller: 'mainPersonListViewModel'
+        })
+        //$routeProvider.when('/order/list', { templateUrl: '/App/Order/Views/OrderListView.html', controller: 'orderListViewModel' });
+        //$routeProvider.when('/order/show/:orderId', { templateUrl: '/App/Order/Views/OrderView.html', controller: 'orderViewModel' });
+        //$routeProvider.when('/order/detail/:orderId/:orderDetailId', { templateUrl: '/App/Order/Views/OrderDetailView.html', controller: 'orderDetailViewModel' });
+        //$routeProvider.otherwise({ redirectTo: '/order' });
+        $locationProvider.html5Mode({
+            enabled: true,
+            requireBase: false
+        });
+    });
+
+//orderModule.factory('orderService', function ($rootScope, $http, $q, $location, viewModelHelper) { return MyApp.orderService($rootScope, $http, $q, $location, viewModelHelper); });
+
+//(function (myApp) {
+//    var orderService = function ($rootScope, $http, $q, $location, viewModelHelper) {
+
+//        var self = this;
+
+//        self.orderId = 0;
+
+//        return this;
+//    };
+//    myApp.orderService = orderService;
+//}(window.MyApp));
+
+
+
+
+
+
+
+
+
+
+
+
+//var mainModule = angular.module('main', ['common']);
 
 commonModule.factory('viewModelHelper',
     function ($http, $q, $window, $location) {
@@ -285,4 +329,59 @@ app.controller("MainController", MainController);
 
 */
 
+//mainModule.config(function ($routeProvider,
+//    $locationProvider) {
+//    $routeProvider.when('/person', {
+//        templateUrl: '/AngularApp/Person/Views/PersonListView.html',
+//        controller: 'personListViewModel'
+//    });
+//    $routeProvider.when('/person/list', {
+//        templateUrl: '/AngularApp/Person/Views/PersonListView.html',
+//        controller: 'personListViewModel'
+//    });
+//    $routeProvider.when('/person/show/:personId', {
+//        templateUrl: '/AngularApp/Person/Views/PersonView.html',
+//        controller: 'personViewModel'
+//    });
+
+
+//    $routeProvider.when('/person/delete/:personId', {
+//        templateUrl: '/AngularApp/Person/Views/PersonDeleteView.html',
+//        //controller: 'personDeleteViewModel'
+//        controller: 'personDeleteViewModel'
+
+//    });
+
+
+//    $routeProvider.when('/person/create', {
+//        templateUrl: '/AngularApp/Person/Views/PersonCreateView.html',
+//        controller: 'personCreateViewModel'
+//    });
+
+//    ////$routeProvider.when('/person/update/:personId', {
+//    //$routeProvider.when('/person/update', {
+//    //    templateUrl: '/AngularApp/Person/Views/PersonView.html',
+//    //    controller: 'personViewModel'
+//    //});
+
+//    $routeProvider.when('/', {
+//        templateUrl: '/AngularApp/Person/Views/mainHomeView.html',
+//        //controller: 'mainPersonListViewModel'
+//        controller: 'mainPersonListViewModel'
+//    })
+
+
+    //$routeProvider.when('/person/:personId', {
+    //    templateUrl: '/AngularApp/Person/Views/PersonView.html',
+    //    controller: 'personViewModel'
+    //});
+
+    //$routeProvider.otherwise({
+    //    redirectTo: '/person'
+    //});
+    //$locationProvider.html5Mode({
+    //    enabled: true,
+    //    requireBase: false
+    //});
+//});
 
