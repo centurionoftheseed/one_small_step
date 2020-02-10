@@ -7,13 +7,13 @@ namespace ONE_SMALL_STEP.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class defaultdate : IMigrationMetadata
+    public sealed partial class person_type_change : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(defaultdate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(person_type_change));
         
         string IMigrationMetadata.Id
         {
-            get { return "201908100132541_defaultdate"; }
+            get { return "202001260222544_person_type_change"; }
         }
         
         string IMigrationMetadata.Source

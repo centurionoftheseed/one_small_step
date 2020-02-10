@@ -7,13 +7,13 @@ namespace ONE_SMALL_STEP.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class adddummycol : IMigrationMetadata
+    public sealed partial class source_type_map_change : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(adddummycol));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(source_type_map_change));
         
         string IMigrationMetadata.Id
         {
-            get { return "201908100037485_adddummycol"; }
+            get { return "202001260224466_source_type_map_change"; }
         }
         
         string IMigrationMetadata.Source

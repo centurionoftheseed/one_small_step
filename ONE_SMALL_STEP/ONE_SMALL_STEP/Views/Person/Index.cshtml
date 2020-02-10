@@ -3,7 +3,7 @@
     }*@
 
 @{
-    ViewBag.Title = "Person List";
+    ViewBag.Title = "One Small Step";
 }
 
 @section scripts {
@@ -13,22 +13,24 @@
     <script src="~/AngularApp/Person/ViewModels/PersonListViewModel.js"></script>
     <script src="~/AngularApp/Person/ViewModels/PersonCreateViewModel.js"></script>
     <script src="~/AngularApp/Person/ViewModels/PersonViewModel.js"></script>
-    <script src="~/AngularApp/Person/ViewModels/PersonDeleteViewModel.js"></script>
+    <script src="~/AngularApp/Person/ViewModels/mainHomeViewModel.js"></script>
 
+
+    @*<script src="~/AngularApp/Person/ViewModels/PersonDeleteViewModel.js"></script>*@
+    @*<script src="~/AngularApp/Person/ViewModels/PersonListViewModel.js"></script>*@
 
 }
 
-@section jsCode {
+@*@section jsCode {
     angular.bootstrap(document.getElementById("person"), ['person']);
-}
+}*@
 
 
-<div ng-non-bindable>
+<div>
 
-    <div id="person" ng-controller="rootViewModel">
+    <div id="person" ng-controller="personViewModel">
         <h1>THIS IS THE PERSON INDEX</h1>
         <h2 class="testing-blue">{{personHomeText}}</h2>
-        @* <h2>{{9 * 9}}</h2>*@
         <h2>{{pageHeading}}</h2>
         <div class="row">
             <div class="col-md-4">
@@ -37,26 +39,7 @@
                     View Contact List
                 </button>
             </div>
-            <!--<div class="col-md-4">
-                <button class="btn btn-primary"
-                        ng-click="showPerson()">
-                    Person details
 
-                </button>&nbsp;
-
-
-
-                @*<button class="btn btn-primary"
-                            ng-click="DeletePerson()">
-                        Delete Person
-                    </button>*@
-
-
-
-                <input type="text" value="1"
-                       ng-model="personService.personId" />
-            </div>
-                -->
             <div class="col-md-4">
                 <button class="btn btn-primary"
                         ng-click="createPerson()">
@@ -74,18 +57,3 @@
 </div>
 
 
-
-
-@*<!DOCTYPE html>
-
-    <html>
-    <head>
-        <meta name="viewport" content="width=device-width" />
-        <title></title>
-    </head>
-    <body>
-        <div>
-
-        </div>
-    </body>
-    </html>*@

@@ -214,6 +214,7 @@
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\api\MessageTypeController.cs" />
     <Compile Include="Controllers\api\PersonController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -224,16 +225,47 @@
     <Compile Include="Controllers\PersonTypeController.cs" />
     <Compile Include="Controllers\person_oldController.cs" />
     <Compile Include="Controllers\testController.cs" />
+    <Compile Include="Core\Domain\Source.cs" />
+    <Compile Include="Core\Domain\SourceType.cs" />
     <Compile Include="Core\IUnitOfWork.cs" />
     <Compile Include="Core\Repositories\IMessageRepository.cs" />
+    <Compile Include="Core\Repositories\IMessageTypeRepository.cs" />
     <Compile Include="Core\Repositories\IPersonTypeRepository.cs" />
-    <Compile Include="Migrations\201908100037485_adddummycol.cs" />
-    <Compile Include="Migrations\201908100037485_adddummycol.Designer.cs">
-      <DependentUpon>201908100037485_adddummycol.cs</DependentUpon>
+    <Compile Include="Migrations\202001252336381_add-source-and-source-type.cs" />
+    <Compile Include="Migrations\202001252336381_add-source-and-source-type.Designer.cs">
+      <DependentUpon>202001252336381_add-source-and-source-type.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908100132541_defaultdate.cs" />
-    <Compile Include="Migrations\201908100132541_defaultdate.Designer.cs">
-      <DependentUpon>201908100132541_defaultdate.cs</DependentUpon>
+    <Compile Include="Migrations\202001252359274_source-type-map.cs" />
+    <Compile Include="Migrations\202001252359274_source-type-map.Designer.cs">
+      <DependentUpon>202001252359274_source-type-map.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001260113279_source-map.cs" />
+    <Compile Include="Migrations\202001260113279_source-map.Designer.cs">
+      <DependentUpon>202001260113279_source-map.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001260115462_source_map_and_context.cs" />
+    <Compile Include="Migrations\202001260115462_source_map_and_context.Designer.cs">
+      <DependentUpon>202001260115462_source_map_and_context.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001260222544_person_type_change.cs" />
+    <Compile Include="Migrations\202001260222544_person_type_change.Designer.cs">
+      <DependentUpon>202001260222544_person_type_change.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001260224466_source_type_map_change.cs" />
+    <Compile Include="Migrations\202001260224466_source_type_map_change.Designer.cs">
+      <DependentUpon>202001260224466_source_type_map_change.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001260328001_added_Source_To_Person.cs" />
+    <Compile Include="Migrations\202001260328001_added_Source_To_Person.Designer.cs">
+      <DependentUpon>202001260328001_added_Source_To_Person.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001300238475_message_add_columns.cs" />
+    <Compile Include="Migrations\202001300238475_message_add_columns.Designer.cs">
+      <DependentUpon>202001300238475_message_add_columns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002050436564_date_name_changes_and_view_model.cs" />
+    <Compile Include="Migrations\202002050436564_date_name_changes_and_view_model.Designer.cs">
+      <DependentUpon>202002050436564_date_name_changes_and_view_model.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistence\EntityConfigurations\MessageMap.cs" />
@@ -245,11 +277,12 @@
     <Compile Include="Core\Domain\Message.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Core\Domain\MessageType.cs" />
+    <Compile Include="Persistence\EntityConfigurations\SourceMap.cs" />
+    <Compile Include="Persistence\EntityConfigurations\SourceTypeMap.cs" />
     <Compile Include="Persistence\OneSmallStepContext.cs" />
     <Compile Include="Core\Domain\Person.cs" />
     <Compile Include="Core\Domain\PersonMessage.cs" />
     <Compile Include="Core\Domain\PersonType.cs" />
-    <Compile Include="Core\Domain\TEST.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -258,14 +291,18 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Core\Repositories\IPersonRepository.cs" />
     <Compile Include="Core\Repositories\IBaseRepository.cs" />
+    <Compile Include="Persistence\Repositories\MessageTypeRepository.cs" />
     <Compile Include="Persistence\Repositories\PersonRespository.cs" />
     <Compile Include="Persistence\Repositories\BaseRepository.cs" />
     <Compile Include="Persistence\Repositories\PersonTypeRespository.cs" />
     <Compile Include="Persistence\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\MessageTypeCreateViewModel.cs" />
     <Compile Include="ViewModels\CreatePersonViewModel.cs" />
     <Compile Include="ViewModels\DeletePersonViewModel.cs" />
+    <Compile Include="ViewModels\EditMessageTypeViewModel.cs" />
+    <Compile Include="ViewModels\EditMessageViewModel.cs" />
     <Compile Include="ViewModels\EditPersonViewModel.cs" />
     <Compile Include="ViewModels\MessageTypeViewModel.cs" />
     <Compile Include="ViewModels\PersonDetailsViewModel.cs" />
@@ -274,8 +311,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AngularApp\App.js" />
+    <Content Include="AngularApp\Message\ViewModels\MessageTypeCreateViewModel.js" />
+    <Content Include="AngularApp\Message\ViewModels\MessageTypeEditViewModel.js" />
+    <Content Include="AngularApp\Message\ViewModels\MessageTypeListViewModel.js" />
+    <Content Include="AngularApp\Message\ViewModels\MessageTypeViewModel.js" />
+    <Content Include="AngularApp\Message\Views\KEEP.html" />
+    <Content Include="AngularApp\Message\Views\MessageTypeCreateView.html" />
+    <Content Include="AngularApp\Message\Views\MessageTypeListView.html" />
+    <Content Include="AngularApp\Message\Views\MessageTypeView.html" />
     <Content Include="AngularApp\NavbarService.js" />
     <Content Include="AngularApp\Person\App.js" />
+    <Content Include="AngularApp\Person\ViewModels\mainHomeViewModel.js" />
     <Content Include="AngularApp\Person\ViewModels\mainPersonListViewModel.js" />
     <Content Include="AngularApp\Person\ViewModels\NavbarController.js" />
     <Content Include="AngularApp\Person\ViewModels\PersonCreateViewModel.js" />
@@ -352,6 +398,7 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="AngularApp\Message\Services\MessageTypeService.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
@@ -1189,9 +1236,10 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Home\IndexPerson2.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="AngularApp\Source\ViewModels\" />
+    <Folder Include="AngularApp\Source\Views\" />
     <Folder Include="App_Data\" />
     <Folder Include="templates\" />
   </ItemGroup>
@@ -1209,18 +1257,39 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201908100037485_adddummycol.resx">
-      <DependentUpon>201908100037485_adddummycol.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908100132541_defaultdate.resx">
-      <DependentUpon>201908100132541_defaultdate.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202001252336381_add-source-and-source-type.resx">
+      <DependentUpon>202001252336381_add-source-and-source-type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001252359274_source-type-map.resx">
+      <DependentUpon>202001252359274_source-type-map.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001260113279_source-map.resx">
+      <DependentUpon>202001260113279_source-map.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001260115462_source_map_and_context.resx">
+      <DependentUpon>202001260115462_source_map_and_context.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001260222544_person_type_change.resx">
+      <DependentUpon>202001260222544_person_type_change.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001260224466_source_type_map_change.resx">
+      <DependentUpon>202001260224466_source_type_map_change.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001260328001_added_Source_To_Person.resx">
+      <DependentUpon>202001260328001_added_Source_To_Person.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001300238475_message_add_columns.resx">
+      <DependentUpon>202001300238475_message_add_columns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002050436564_date_name_changes_and_view_model.resx">
+      <DependentUpon>202002050436564_date_name_changes_and_view_model.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

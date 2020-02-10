@@ -1,4 +1,4 @@
-﻿personModule.controller("personCreateViewModel",
+﻿app.controller("personCreateViewModel",
     function ($scope, personService, $http, $q, $routeParams, $window, $location, viewModelHelper) {
 
         $scope.viewModelHelper = viewModelHelper;
@@ -123,7 +123,10 @@
                 });
         }
 
+        //$scope.createPerson = function () {
+        //    viewModelHelper.navigateTo("person/create");
 
+        //}
         //$scope.postPerson = function () {
         //    viewModelHelper.apiPost("api/person/create", personData,
         //        function (result) {

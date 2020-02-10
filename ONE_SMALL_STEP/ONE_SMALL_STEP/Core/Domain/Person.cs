@@ -38,8 +38,11 @@ namespace ONE_SMALL_STEP.Core.Domain
         public PersonType PersonType { get; set; }
         public ICollection<PersonMessage> PersonMessage { get; set; }
 
+        public int SourceID { get; set; }
 
- 
+        public Source Source { get; set; }
+
+
 
         //[ForeignKey("personTypeId")]
         //public PersonType PersonType { get; set; }

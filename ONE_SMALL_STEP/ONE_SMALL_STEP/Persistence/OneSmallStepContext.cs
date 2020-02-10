@@ -27,9 +27,11 @@ namespace ONE_SMALL_STEP.Core.Domain
         public DbSet<PersonType> PersonType { get; set; }
         public DbSet<MessageType> MessageType { get; set; }
         public DbSet<PersonMessage> PersonMessage { get; set; }
+        public DbSet<SourceType> SourceType { get; set; }
+        public DbSet<Source> Source { get; set; }
+        
 
 
- 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         { 
@@ -38,7 +40,8 @@ namespace ONE_SMALL_STEP.Core.Domain
             modelBuilder.Configurations.Add(new MessageMap());
             modelBuilder.Configurations.Add(new MessageTypeMap());
             modelBuilder.Configurations.Add(new PersonMessageMap());
-
+            modelBuilder.Configurations.Add(new SourceTypeMap());
+            modelBuilder.Configurations.Add(new SourceMap());
 
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
       

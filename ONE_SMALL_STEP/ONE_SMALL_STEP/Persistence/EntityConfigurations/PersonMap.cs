@@ -14,7 +14,7 @@ namespace ONE_SMALL_STEP.Persistence.EntityConfigurations
     {
 
 
-        //evening  My 2.00am , that wwill your 3.30pmm 
+
         public PersonMap()
         {
             HasRequired(one => one.PersonType)
@@ -23,6 +23,11 @@ namespace ONE_SMALL_STEP.Persistence.EntityConfigurations
 
             Property(one => one.PersonTypeID)
                 .HasColumnName("PersonTypeID");
+
+             HasRequired(one => one.Source)
+            .WithMany(one => one.Person)
+            .HasForeignKey(one => one.SourceID);
+
 
             Property(one => one.EmailAddress)
                .HasMaxLength(50)

@@ -1,4 +1,4 @@
-﻿personModule.controller("personDeleteViewModel",
+﻿app.controller("personDeleteViewModel",
     function ($scope, personService, $http, $q, $routeParams, $window, $location, viewModelHelper) {
 
         $scope.viewModelHelper = viewModelHelper;

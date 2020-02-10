@@ -1,6 +1,6 @@
 ﻿
 
-personModule.controller("rootViewModel",
+app.controller("rootViewModel",
     function ($scope, personService, $http, viewModelHelper) {
         //personModule.controller("rootViewModel",
         //function ($scope, $http) {
@@ -37,9 +37,9 @@ personModule.controller("rootViewModel",
         //    };  
 
         //}
-        $scope.showPerson = function (personId) {
-            viewModelHelper.navigateTo("person/show/" + personId);
-        }
+        //$scope.showPerson = function (personId) {
+        //    viewModelHelper.navigateTo("person/show/" + personId);
+        //}
 
 
         $scope.deletePersonView = function (personId) {

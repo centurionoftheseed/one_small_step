@@ -2,7 +2,10 @@
 
 
 
-    <h3>Contact List</h3>
+    <h3>Message Name</h3>
+    <select>
+        <option value="value">Message Name</option>
+    </select>
     <div>
         <a href="#" ng-click="refreshPersons()"><span class="glyphicon glyphicon-refresh"></span></a>
         <!--<div>{{DISPLAY_TEST}}</div>-->
@@ -33,7 +36,7 @@
                     <td><a href="#" ng-class="deletePerson">Delete</a></td>-->
                     <td>
                         <!--<button class="btn btn-primary" ng-click="deletePersonView(p.PersonID)">Delete View</button>-->
-                        <button class="btn btn-primary" ng-click="showPerson(p.PersonID)">View Details</button>
+                        <button class="btn btn-primary" ng-click="showPerson(p.PersonID)" target="_self">View Details</button>
                     </td>
                     <!--<td>
                         <button class="btn btn-primary" ng-click="editPerson()">Edit</button>

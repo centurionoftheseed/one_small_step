@@ -15,14 +15,33 @@ namespace ONE_SMALL_STEP
 
 
 
+            //routes.MapRoute(
+            //    name: "person",
+            //    url: "person/{*catch-all}",
+            //    defaults: new
+            //    {
+            //        controller = "Person",
+            //        action = "Index"
+            //    });
+
             routes.MapRoute(
-                name: "person",
-                url: "person/{*catch-all}",
-                defaults: new
-                {
-                    controller = "Person",
-                    action = "Index"
-                });
+            name: "messageType",
+            url: "messageType/{*catch-all}",
+            defaults: new
+            {
+                controller = "Home",
+                action = "Index"
+            });
+
+
+            routes.MapRoute(
+            name: "person",
+            url: "person/{*catch-all}",
+            defaults: new
+            {
+                controller = "Home",
+                action = "Index"
+            });
 
             routes.MapMvcAttributeRoutes();
 

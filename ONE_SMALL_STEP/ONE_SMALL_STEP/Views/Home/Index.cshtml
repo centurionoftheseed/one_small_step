@@ -3,71 +3,32 @@
     }*@
 
 @{
-    ViewBag.Title = "Person List";
+    ViewBag.Title = "One Small Step";
 }
 
 @section scripts {
+    @*<script src="~/AngularApp/App.js"></script>*@
     <script src="~/AngularApp/Person/App.js"></script>
     <script src="~/AngularApp/Person/ViewModels/RootViewModel.js"></script>
     <script src="~/AngularApp/Person/ViewModels/PersonHomeViewModel.js"></script>
     <script src="~/AngularApp/Person/ViewModels/PersonListViewModel.js"></script>
     <script src="~/AngularApp/Person/ViewModels/PersonCreateViewModel.js"></script>
     <script src="~/AngularApp/Person/ViewModels/PersonViewModel.js"></script>
-    <script src="~/AngularApp/Person/ViewModels/PersonDeleteViewModel.js"></script>
+    @*<script src="~/AngularApp/Person/ViewModels/PersonDeleteViewModel.js"></script>*@
     <script src="~/AngularApp/Person/ViewModels/mainPersonListViewModel.js"></script>
-
+    <script src="~/AngularApp/Person/ViewModels/mainHomeViewModel.js"></script>
+    <script src="~/AngularApp/Message/ViewModels/MessageTypeListViewModel.js"></script>
+    <script src="~/AngularApp/Message/ViewModels/MessageTypeCreateViewModel.js"></script>
+    <script src="~/AngularApp/Message/ViewModels/MessageTypeViewModel.js"></script>
 }
 
-@*@section jsCode {
-        angular.bootstrap(document.getElementById("person"), ['person']);
-    }*@
 
+<div>
 
-@section jsCode {
-    angular.bootstrap(document.getElementById("main"), ['main']);
-}
-
-<div ng-non-bindable>
-
-    <div id="main" ng-controller="mainPersonListViewModel">
-        <h1>THIS IS THE HOME INDEX</h1>
-        <h2 class="testing-blue">{{personHomeText}}</h2>
-        <h2>{{9 * 59}}</h2>
-        <h2>{{TEST_FROM_ROOT_VIEW_MODEL}}</h2>
+    <div ng-controller="mainPersonListViewModel">
+        <h2>@*THIS IS THE HOME/INDEX PAGE*@</h2>
         <div class="row">
-            @*<div class="col-md-4">
-                <button class="btn btn-primary"
-                        ng-click="personList()">
-                    View Contact List
-                </button>
-            </div>*@
-            <!--<div class="col-md-4">
-                <button class="btn btn-primary"
-                        ng-click="showPerson()">
-                    Person details
 
-                </button>&nbsp;
-
-
-
-                @*<button class="btn btn-primary"
-                            ng-click="DeletePerson()">
-                        Delete Person
-                    </button>*@
-
-
-
-                <input type="text" value="1"
-                       ng-model="personService.personId" />
-            </div>
-                -->
-            @*<div class="col-md-4">
-                <button class="btn btn-primary"
-                        ng-click="createPerson()">
-                    Create Contact
-
-                </button>
-            </div>*@
 
         </div>
         <br />
@@ -76,20 +37,3 @@
 
     </div>
 </div>
-
-
-
-
-@*<!DOCTYPE html>
-
-    <html>
-    <head>
-        <meta name="viewport" content="width=device-width" />
-        <title></title>
-    </head>
-    <body>
-        <div>
-
-        </div>
-    </body>
-    </html>*@

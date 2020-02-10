@@ -3,16 +3,16 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @*<link rel="stylesheet" href="~/Content/bootstrap-spacelab.css">*@
+    <title>@ViewBag.Title</title>
+
 
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    @*@Scripts.Render("~/bundles/angular")*@
+
 </head>
 
-<body ng-app="main">
-
+<body ng-app="appJS">
+    <span>{{99 * 99}}</span>
 
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -23,13 +23,34 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+
+
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/person">Contacts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/messagetype">Message Type</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Message</a>
+                </li>
+            </ul>
+
         </div>
         <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav mr-auto">
+
+            @*<ul class="navbar-nav mr-auto">
                 <li class="nav-item active">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>
                 <li class="nav-item">@Html.ActionLink("Person", "Index", "Person", null, new { @class = "nav-link" })</li>
+                <li class="nav-item">@Html.ActionLink("Message Type", "Index", "MessageType", null, new { @class = "nav-link" })</li>
                 <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
-            </ul>
+            </ul>*@
+
+
 
             <form class="form-inline my-2 my-lg-0">
                 <div class="col-md-8">
@@ -73,7 +94,7 @@
 
     <script src="~/AngularApp/Validator.js"></script>
     <script src="~/AngularApp/app.js"></script>
-    <script src="~/AngularApp/Person/App.js"></script>
+    
 
 
 

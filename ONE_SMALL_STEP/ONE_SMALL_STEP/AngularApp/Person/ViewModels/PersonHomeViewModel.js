@@ -1,4 +1,4 @@
-﻿personModule.controller("personHomeViewModel",
+﻿app.controller("personHomeViewModel",
     function ($scope, personService, viewModelHelper) {
 
         $scope.viewModelHelper = viewModelHelper;

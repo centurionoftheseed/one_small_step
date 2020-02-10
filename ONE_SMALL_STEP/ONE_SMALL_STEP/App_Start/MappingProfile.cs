@@ -34,7 +34,29 @@ namespace ONE_SMALL_STEP.App_Start
 
 
             Mapper.CreateMap<PersonType, PersonTypeViewModel>();
-//.ForMember(dest => dest.PersonTypeName, opt => opt.MapFrom(src => src.PersonType.PersonTypeName));
+
+            Mapper.CreateMap<MessageType, MessageTypeViewModel>();
+
+
+            Mapper.CreateMap<MessageType, EditMessageTypeViewModel>()
+            .ForMember(dest => dest.MessageTypeName, opt => opt.MapFrom(src => src.MessageTypeName));
+            Mapper.CreateMap<EditMessageTypeViewModel, MessageType>().ReverseMap();
+
+
+
+            Mapper.CreateMap<MessageType, MessageTypeCreateViewModel>()
+           .ForMember(dest => dest.MessageTypeName, opt => opt.MapFrom(src => src.MessageTypeName));
+            Mapper.CreateMap<MessageTypeCreateViewModel, MessageType>().ReverseMap();
+
+
+            
+
+            //Mapper.CreateMap<Person, EditPersonViewModel>()
+
+
+
+
+            //.ForMember(dest => dest.PersonTypeName, opt => opt.MapFrom(src => src.PersonType.PersonTypeName));
             //.ForMember(dest => dest., opt => opt.MapFrom(src => src.LastName));
             //Mapper.CreateMap<Person, PersonViewModel>().ReverseMap();
             //Mapper.CreateMap<CreatePersonViewModel, Person>().ReverseMap();

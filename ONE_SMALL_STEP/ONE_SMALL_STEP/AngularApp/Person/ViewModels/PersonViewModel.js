@@ -1,9 +1,11 @@
-﻿personModule.controller("personViewModel",
+﻿app.controller("personViewModel",
     function ($scope, personService, $http, $q, $routeParams, $window, $location, viewModelHelper) {
 
         $scope.viewModelHelper = viewModelHelper;
         $scope.personService = personService;
         $scope.personIdTEST = 0;
+
+        $scope.pageHeading = "Contact Details";
 
         var initialize = function () {
             //alert($routeParams.personId);
@@ -29,6 +31,16 @@
 
                     //alert(personId);
                 });
+        }
+
+        $scope.showPerson = function (personId) {
+            viewModelHelper.navigateTo("person/show/" + personId);
+        }
+
+
+        $scope.createPerson = function () {
+            viewModelHelper.navigateTo("person/create");
+
         }
 
 

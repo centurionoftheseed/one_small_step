@@ -17,6 +17,7 @@ namespace ONE_SMALL_STEP.ViewModels
         public int PersonTypeID { get; set; }
         [Display(Name = "Contact Type")]
         public IEnumerable<PersonType> PersonTypes { get; set; }
+
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
         [Display(Name = "Last Name")]

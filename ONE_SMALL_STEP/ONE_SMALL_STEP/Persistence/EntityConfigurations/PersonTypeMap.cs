@@ -14,6 +14,13 @@ namespace ONE_SMALL_STEP.Persistence.EntityConfigurations
             Property(one => one.PersonTypeName)
             .HasMaxLength(30)
             .IsRequired().IsUnicode(false);
+
+
+             Property(one => one.PersonTypeName)
+            .HasMaxLength(30)
+            .IsRequired()
+            .IsUnicode(false)
+            .HasColumnName("PersonType");
         }
 
 

@@ -1,21 +1,94 @@
-﻿var commonModule = angular.module('common', ['ngRoute']);
+﻿//var commonModule = angular.module('common', ['ngRoute']);
 
 
-var mainModule = angular.module('main', ['common'])
+var app = angular.module('appJS', ['ngRoute'])
     .config(function ($routeProvider, $locationProvider) {
-        $routeProvider.when('/', {
-            templateUrl: '/AngularApp/Person/Views/mainHomeView.html',
-            //controller: 'mainPersonListViewModel'
-            controller: 'mainPersonListViewModel'
-        })
-        //$routeProvider.when('/order/list', { templateUrl: '/App/Order/Views/OrderListView.html', controller: 'orderListViewModel' });
-        //$routeProvider.when('/order/show/:orderId', { templateUrl: '/App/Order/Views/OrderView.html', controller: 'orderViewModel' });
-        //$routeProvider.when('/order/detail/:orderId/:orderDetailId', { templateUrl: '/App/Order/Views/OrderDetailView.html', controller: 'orderDetailViewModel' });
-        //$routeProvider.otherwise({ redirectTo: '/order' });
-        $locationProvider.html5Mode({
-            enabled: true,
-            requireBase: false
+
+        $routeProvider.when('/person/create', {
+            templateUrl: '/AngularApp/Person/Views/PersonCreateView.html',
+            controller: 'personCreateViewModel'
         });
+
+        $routeProvider.when('/person', {
+            templateUrl: '/AngularApp/Person/Views/PersonListView.html',
+            controller: 'messageTypeListViewModel'
+        });
+
+        $routeProvider.when('/person/show/:personId', {
+        templateUrl: '/AngularApp/Person/Views/PersonView.html',
+        controller: 'personViewModel'
+        });
+
+        $routeProvider.when('/person/create', {
+        templateUrl: '/AngularApp/Person/Views/PersonCreateView.html',
+        controller: 'personCreateViewModel'
+        });
+
+
+
+
+
+        //$routeProvider.when('/messageType/show/:messageTypeId', {
+        //    templateUrl: '/AngularApp/Message/Views/MessageTypeView.html',
+        //    controller: 'messageTypeViewModel'
+        //});
+
+        $routeProvider.when('/messagetype/create', {
+            templateUrl: '/AngularApp/Message/Views/messagetypeCreateView.html',
+            controller: 'messageTypeCreateViewModel'
+        });
+
+        $routeProvider.when('/messagetype/:messageTypeId', {
+            templateUrl: '/AngularApp/Message/Views/MessageTypeView.html',
+            controller: 'messageTypeViewModel'
+        });
+        $routeProvider.when('/messagetype', {
+            templateUrl: '/AngularApp/Message/Views/MessageTypeListView.html',
+            controller: 'messageTypeListViewModel'
+        });
+
+
+
+
+
+        
+
+
+        //$routeProvider.when('/customer/show/:customerId', {
+        //    templateUrl: '/App/Customer/Views/CustomerView.html',
+        //    controller: 'customerViewModel'
+        //});
+
+        $routeProvider.when('/', {
+            templateUrl: '/AngularApp/Person/Views/MainHomeView.html',
+            controller: 'mainHomeViewModel'
+        });
+
+        //$routeProvider.when('/', {
+        //    templateUrl: '/App/Customer/Views/MainHomeView.html',
+        //    controller: 'mainHomeViewModel'
+        //});
+
+        //$routeProvider.when('/', {
+        //    templateUrl: '/AngularApp/Person/Views/mainHomeView.html',
+        //    //controller: 'mainPersonListViewModel'
+        //    controller: 'mainHomeViewModel'
+        //})
+
+
+        //$routeProvider.when('/', {
+        //    templateUrl: '/AngularApp/Person/Views/mainHomeView.html',
+        //    //controller: 'mainPersonListViewModel'
+        //    controller: 'mainPersonListViewModel'
+        //})
+    //    //$routeProvider.when('/order/list', { templateUrl: '/App/Order/Views/OrderListView.html', controller: 'orderListViewModel' });
+    //    //$routeProvider.when('/order/show/:orderId', { templateUrl: '/App/Order/Views/OrderView.html', controller: 'orderViewModel' });
+    //    //$routeProvider.when('/order/detail/:orderId/:orderDetailId', { templateUrl: '/App/Order/Views/OrderDetailView.html', controller: 'orderDetailViewModel' });
+    //    //$routeProvider.otherwise({ redirectTo: '/order' });
+    //    $locationProvider.html5Mode({
+    //        enabled: true,
+    //        requireBase: false
+    //    });
     });
 
 //orderModule.factory('orderService', function ($rootScope, $http, $q, $location, viewModelHelper) { return MyApp.orderService($rootScope, $http, $q, $location, viewModelHelper); });
@@ -45,15 +118,33 @@ var mainModule = angular.module('main', ['common'])
 
 //var mainModule = angular.module('main', ['common']);
 
-commonModule.factory('viewModelHelper',
+app.factory('viewModelHelper',
     function ($http, $q, $window, $location) {
         return MyApp.viewModelHelper(
             $http, $q, $window, $location);
     });
 
-commonModule.factory('validator', function () { return valJs.validator(); });
+app.factory('validator', function () { return valJs.validator(); });
 
-mainModule.controller("indexViewModel", function (
+
+app.factory('messageTypeService'), function () {
+
+    return {
+            showMessageType: function (messageTypeId) {
+            viewModelHelper.navigateTo("messagetype/" + messageTypeId);
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+app.controller("indexViewModel", function (
     $scope, $http, $q, $routeParams, $window,
     $location, viewModelHelper) {
 
@@ -235,7 +326,7 @@ mainModule.controller("indexViewModel", function (
                     success(result);
                     if (always != null)
                         always();
-                    alert("http_put 2");
+                    //alert("http_put 2");
                 }, function (result) {
                     if (failure != null) {
                         failure(result);
