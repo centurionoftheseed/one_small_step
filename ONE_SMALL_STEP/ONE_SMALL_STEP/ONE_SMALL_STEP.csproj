@@ -311,14 +311,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AngularApp\App.js" />
-    <Content Include="AngularApp\Message\ViewModels\MessageTypeCreateViewModel.js" />
-    <Content Include="AngularApp\Message\ViewModels\MessageTypeEditViewModel.js" />
-    <Content Include="AngularApp\Message\ViewModels\MessageTypeListViewModel.js" />
-    <Content Include="AngularApp\Message\ViewModels\MessageTypeViewModel.js" />
-    <Content Include="AngularApp\Message\Views\KEEP.html" />
-    <Content Include="AngularApp\Message\Views\MessageTypeCreateView.html" />
-    <Content Include="AngularApp\Message\Views\MessageTypeListView.html" />
-    <Content Include="AngularApp\Message\Views\MessageTypeView.html" />
+    <Content Include="AngularApp\MessageType\ViewModels\MessageTypeCreateViewModel.js" />
+    <Content Include="AngularApp\MessageType\ViewModels\MessageTypeEditViewModel.js" />
+    <Content Include="AngularApp\MessageType\ViewModels\MessageTypeListViewModel.js" />
+    <Content Include="AngularApp\MessageType\ViewModels\MessageTypeViewModel.js" />
+    <Content Include="AngularApp\MessageType\Views\KEEP.html" />
+    <Content Include="AngularApp\MessageType\Views\MessageTypeCreateView.html" />
+    <Content Include="AngularApp\MessageType\Views\MessageTypeListView.html" />
+    <Content Include="AngularApp\MessageType\Views\MessageTypeView.html" />
+    <Content Include="AngularApp\Message\ViewModels\MessageCreateViewModel.js" />
+    <Content Include="AngularApp\Message\Views\MessageListView.html" />
+    <Content Include="AngularApp\Message\Views\MessageView.html" />
     <Content Include="AngularApp\NavbarService.js" />
     <Content Include="AngularApp\Person\App.js" />
     <Content Include="AngularApp\Person\ViewModels\mainHomeViewModel.js" />
@@ -398,7 +401,7 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
-    <Content Include="AngularApp\Message\Services\MessageTypeService.js" />
+    <Content Include="AngularApp\MessageType\Services\MessageTypeService.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
