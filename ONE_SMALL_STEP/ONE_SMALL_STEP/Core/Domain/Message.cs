@@ -28,10 +28,23 @@ namespace ONE_SMALL_STEP.Core.Domain
                    : DateTime.Now;
             }
 
-            set { this._dateCreated = value; }        }
+            set { this._dateCreated = value; }        
+        }
 
+        private DateTime? _dateUpdated = null;
+        public DateTime DateUpdated
 
-        public DateTime DateUpdated { get; set; }
+        {
+            get
+            {
+                return this._dateUpdated.HasValue
+                   ? this._dateUpdated.Value
+                   : DateTime.Now;
+            }
+
+            set { this._dateUpdated = value; }
+        }
+
 
         public virtual ICollection<PersonMessage> PersonMessages { get; set; }
     

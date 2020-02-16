@@ -298,6 +298,10 @@
     <Compile Include="Migrations\202002160143568_MessageType table -- changed public virtual ICollection to public ICollection.Designer.cs">
       <DependentUpon>202002160143568_MessageType table -- changed public virtual ICollection to public ICollection.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002162032259_Message - default date.cs" />
+    <Compile Include="Migrations\202002162032259_Message - default date.Designer.cs">
+      <DependentUpon>202002162032259_Message - default date.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistence\EntityConfigurations\MessageMap.cs" />
     <Compile Include="Persistence\EntityConfigurations\MessageTypeMap.cs" />
@@ -330,6 +334,7 @@
     <Compile Include="Persistence\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\MessageEditViewModel.cs" />
     <Compile Include="ViewModels\MessageTypeCreateViewModel.cs" />
     <Compile Include="ViewModels\CreatePersonViewModel.cs" />
     <Compile Include="ViewModels\DeletePersonViewModel.cs" />
@@ -354,6 +359,8 @@
     <Content Include="AngularApp\MessageType\Views\MessageTypeView.html" />
     <Content Include="AngularApp\Message\ViewModels\MessageCreateViewModel.js" />
     <Content Include="AngularApp\Message\ViewModels\MessageListViewModel.js" />
+    <Content Include="AngularApp\Message\ViewModels\MessageViewModel.js" />
+    <Content Include="AngularApp\Message\Views\MessageCreateView.html" />
     <Content Include="AngularApp\Message\Views\MessageListView.html" />
     <Content Include="AngularApp\Message\Views\MessageView.html" />
     <Content Include="AngularApp\NavbarService.js" />
@@ -1348,6 +1355,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002160143568_MessageType table -- changed public virtual ICollection to public ICollection.resx">
       <DependentUpon>202002160143568_MessageType table -- changed public virtual ICollection to public ICollection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002162032259_Message - default date.resx">
+      <DependentUpon>202002162032259_Message - default date.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

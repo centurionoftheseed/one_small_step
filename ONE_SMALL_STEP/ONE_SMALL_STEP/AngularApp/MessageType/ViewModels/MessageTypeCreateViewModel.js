@@ -21,20 +21,20 @@
             //$scope.personTypeList();
         }
 
-        $scope.refreshPerson = function (personId) {
-            viewModelHelper.apiGet("api/messagetype/" + personId, null,
-                function (result) {
-                    // alert("here is result " + personId);
-                    //personService.personId = personId;
-                    $scope.person = result.data;
-                    //$scope.getPersonType();
-                    //$scope.createPerson();
-                    // alert(result.data);
-                    //console.log(result.data);
+        //$scope.refreshPerson = function (personId) {
+        //    viewModelHelper.apiGet("api/messagetype/" + personId, null,
+        //        function (result) {
+        //            // alert("here is result " + personId);
+        //            //personService.personId = personId;
+        //            $scope.person = result.data;
+        //            //$scope.getPersonType();
+        //            //$scope.createPerson();
+        //            // alert(result.data);
+        //            //console.log(result.data);
 
-                    //alert(personId);
-                });
-        }
+        //            //alert(personId);
+        //        });
+        //}
 
         $scope.cancelMessageType = function () {
             viewModelHelper.navigateTo("messagetype");
