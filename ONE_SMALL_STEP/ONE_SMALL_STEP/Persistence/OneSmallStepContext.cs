@@ -16,6 +16,7 @@ namespace ONE_SMALL_STEP.Core.Domain
         public OneSmallStepContext()
             : base("DefaultConnection")
         {
+            //this.Configuration.LazyLoadingEnabled = false;
             this.Configuration.LazyLoadingEnabled = false;
             this.Configuration.ProxyCreationEnabled = false;
             Database.Log = s => Debug.WriteLine(s);

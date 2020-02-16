@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ONE_SMALL_STEP.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,18 +10,41 @@ namespace ONE_SMALL_STEP.Core.Domain
     public class MessageController : Controller
     {
 
-        // GET: Message
-        private OneSmallStepContext db = new OneSmallStepContext();
-        public ActionResult Index()
-        {
+        //// GET: Message
+        //private OneSmallStepContext db = new OneSmallStepContext();
+        //public ActionResult Index()
+        //{
 
-            using (var dbModel = new OneSmallStepContext())
-            {
-                return View(dbModel.Message.ToList());
-            }
+        //    using (var dbModel = new OneSmallStepContext())
+        //    {
+        //        return View(dbModel.Message.ToList());
+        //    }
 
-  
-        }
+
+        //}
+
+
+
+//        // GET: Message
+//#pragma warning disable CA3147 // Mark Verb Handlers With Validate Antiforgery Token
+//        public ActionResult Index(MessageViewModel messageViewModel)
+//#pragma warning restore CA3147 // Mark Verb Handlers With Validate Antiforgery Token
+//        {
+
+//            using (var dbModel = new OneSmallStepContext())
+//            {
+//                //List<MessageType> dbModel.MessageType.ToList();
+//                var Message = new Message();
+//                Message.MessageName = messageViewModel.MessageName;
+
+//                return View(dbModel.Message.ToList());          
+//            }
+
+
+
+        //}
+
+
 
         // GET: Message/Details/5
         public ActionResult Details(int id)
@@ -28,11 +52,11 @@ namespace ONE_SMALL_STEP.Core.Domain
             return View();
         }
 
-        public ActionResult  AddNewMessages()
-        {
-            ViewBag.MessageTypeID = new SelectList(db.MessageType, "MessageTypeID", "MessageTypeName");
-            return View();
-        }
+        //public ActionResult  AddNewMessages()
+        //{
+        //    ViewBag.MessageTypeID = new SelectList(db.MessageType, "MessageTypeID", "MessageTypeName");
+        //    return View();
+        //}
 
         // GET: Message/Create
         public ActionResult Create()

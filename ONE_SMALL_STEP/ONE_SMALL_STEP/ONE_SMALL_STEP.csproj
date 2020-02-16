@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props" Condition="Exists('..\packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.NetCore.Analyzers.2.9.8\build\Microsoft.NetCore.Analyzers.props" Condition="Exists('..\packages\Microsoft.NetCore.Analyzers.2.9.8\build\Microsoft.NetCore.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\build\Microsoft.CodeQuality.Analyzers.props" Condition="Exists('..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\build\Microsoft.CodeQuality.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props')" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -36,6 +39,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <NoWarn>CA1065;CA1052;CA1707;CA1062;CA2000</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -198,9 +202,6 @@
     <Reference Include="Microsoft.Owin.Security.OAuth">
       <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.0\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -214,6 +215,7 @@
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\api\MessageController.cs" />
     <Compile Include="Controllers\api\MessageTypeController.cs" />
     <Compile Include="Controllers\api\PersonController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -231,6 +233,7 @@
     <Compile Include="Core\Repositories\IMessageRepository.cs" />
     <Compile Include="Core\Repositories\IMessageTypeRepository.cs" />
     <Compile Include="Core\Repositories\IPersonTypeRepository.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Migrations\202001252336381_add-source-and-source-type.cs" />
     <Compile Include="Migrations\202001252336381_add-source-and-source-type.Designer.cs">
       <DependentUpon>202001252336381_add-source-and-source-type.cs</DependentUpon>
@@ -267,6 +270,34 @@
     <Compile Include="Migrations\202002050436564_date_name_changes_and_view_model.Designer.cs">
       <DependentUpon>202002050436564_date_name_changes_and_view_model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002150414304_latest updates to columns.cs" />
+    <Compile Include="Migrations\202002150414304_latest updates to columns.Designer.cs">
+      <DependentUpon>202002150414304_latest updates to columns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002152301264_reorder columns in Message table.cs" />
+    <Compile Include="Migrations\202002152301264_reorder columns in Message table.Designer.cs">
+      <DependentUpon>202002152301264_reorder columns in Message table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002152302216_reorder columns in Message table 2.cs" />
+    <Compile Include="Migrations\202002152302216_reorder columns in Message table 2.Designer.cs">
+      <DependentUpon>202002152302216_reorder columns in Message table 2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002152304194_reorder columns in Message table 3.cs" />
+    <Compile Include="Migrations\202002152304194_reorder columns in Message table 3.Designer.cs">
+      <DependentUpon>202002152304194_reorder columns in Message table 3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002152316091_reorder columns in Message table %28fluent api change%29.cs" />
+    <Compile Include="Migrations\202002152316091_reorder columns in Message table %28fluent api change%29.Designer.cs">
+      <DependentUpon>202002152316091_reorder columns in Message table %28fluent api change%29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002160021001_messing with message type not showing.cs" />
+    <Compile Include="Migrations\202002160021001_messing with message type not showing.Designer.cs">
+      <DependentUpon>202002160021001_messing with message type not showing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002160143568_MessageType table -- changed public virtual ICollection to public ICollection.cs" />
+    <Compile Include="Migrations\202002160143568_MessageType table -- changed public virtual ICollection to public ICollection.Designer.cs">
+      <DependentUpon>202002160143568_MessageType table -- changed public virtual ICollection to public ICollection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistence\EntityConfigurations\MessageMap.cs" />
     <Compile Include="Persistence\EntityConfigurations\MessageTypeMap.cs" />
@@ -291,6 +322,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Core\Repositories\IPersonRepository.cs" />
     <Compile Include="Core\Repositories\IBaseRepository.cs" />
+    <Compile Include="Persistence\Repositories\MessageRepository.cs" />
     <Compile Include="Persistence\Repositories\MessageTypeRepository.cs" />
     <Compile Include="Persistence\Repositories\PersonRespository.cs" />
     <Compile Include="Persistence\Repositories\BaseRepository.cs" />
@@ -305,6 +337,7 @@
     <Compile Include="ViewModels\EditMessageViewModel.cs" />
     <Compile Include="ViewModels\EditPersonViewModel.cs" />
     <Compile Include="ViewModels\MessageTypeViewModel.cs" />
+    <Compile Include="ViewModels\MessageViewModel.cs" />
     <Compile Include="ViewModels\PersonDetailsViewModel.cs" />
     <Compile Include="ViewModels\PersonTypeViewModel.cs" />
     <Compile Include="ViewModels\PersonViewModel.cs" />
@@ -320,6 +353,7 @@
     <Content Include="AngularApp\MessageType\Views\MessageTypeListView.html" />
     <Content Include="AngularApp\MessageType\Views\MessageTypeView.html" />
     <Content Include="AngularApp\Message\ViewModels\MessageCreateViewModel.js" />
+    <Content Include="AngularApp\Message\ViewModels\MessageListViewModel.js" />
     <Content Include="AngularApp\Message\Views\MessageListView.html" />
     <Content Include="AngularApp\Message\Views\MessageView.html" />
     <Content Include="AngularApp\NavbarService.js" />
@@ -402,6 +436,7 @@
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
     <Content Include="AngularApp\MessageType\Services\MessageTypeService.js" />
+    <Content Include=".editorconfig" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
@@ -1293,6 +1328,38 @@
     <EmbeddedResource Include="Migrations\202002050436564_date_name_changes_and_view_model.resx">
       <DependentUpon>202002050436564_date_name_changes_and_view_model.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002150414304_latest updates to columns.resx">
+      <DependentUpon>202002150414304_latest updates to columns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002152301264_reorder columns in Message table.resx">
+      <DependentUpon>202002152301264_reorder columns in Message table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002152302216_reorder columns in Message table 2.resx">
+      <DependentUpon>202002152302216_reorder columns in Message table 2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002152304194_reorder columns in Message table 3.resx">
+      <DependentUpon>202002152304194_reorder columns in Message table 3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002152316091_reorder columns in Message table %28fluent api change%29.resx">
+      <DependentUpon>202002152316091_reorder columns in Message table %28fluent api change%29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002160021001_messing with message type not showing.resx">
+      <DependentUpon>202002160021001_messing with message type not showing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002160143568_MessageType table -- changed public virtual ICollection to public ICollection.resx">
+      <DependentUpon>202002160143568_MessageType table -- changed public virtual ICollection to public ICollection.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\analyzers\dotnet\cs\Microsoft.CodeAnalysis.VersionCheckAnalyzer.resources.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\analyzers\dotnet\Microsoft.CodeAnalysis.VersionCheckAnalyzer.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\analyzers\dotnet\cs\Humanizer.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.CodeQuality.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.CodeQuality.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetCore.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetCore.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetCore.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetCore.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetFramework.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetFramework.CSharp.Analyzers.dll" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -1327,7 +1394,10 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\build\Microsoft.CodeQuality.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\build\Microsoft.CodeQuality.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.NetCore.Analyzers.2.9.8\build\Microsoft.NetCore.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.NetCore.Analyzers.2.9.8\build\Microsoft.NetCore.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

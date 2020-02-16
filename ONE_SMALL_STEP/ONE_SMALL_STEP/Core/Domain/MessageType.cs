@@ -24,6 +24,7 @@ namespace ONE_SMALL_STEP.Core.Domain
             set { this._dateCreated = value; }
         }
 
+        //public virtual ICollection<Message> Message { get; set; }
         public virtual ICollection<Message> Message { get; set; }
 
     }

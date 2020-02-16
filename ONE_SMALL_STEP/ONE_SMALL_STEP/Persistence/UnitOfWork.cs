@@ -22,6 +22,8 @@ namespace ONE_SMALL_STEP.Persistence
             PersonType = new PersonTypeRespository(_context);
             MessageType = new MessageTypeRepository(_context);
 
+            Message = new MessageRepository(_context);
+
             //Authors = new AuthorRepository(_context);
 
         }
@@ -31,8 +33,7 @@ namespace ONE_SMALL_STEP.Persistence
 
         public IMessageTypeRepository MessageType { get; private set; }
 
-
-        public IMessageRepository Message => throw new NotImplementedException();
+        public IMessageRepository Message { get; private set; }  
 
         public PersonViewModel personViewModel => throw new NotImplementedException();
 
@@ -41,6 +42,8 @@ namespace ONE_SMALL_STEP.Persistence
         //public IMessageTypeRepository MessageType => throw new NotImplementedException();
 
         public MessageTypeViewModel messageTypeViewModel => throw new NotImplementedException();
+
+        public MessageViewModel messageViewModel => throw new NotImplementedException();
 
         public int Complete()
         {

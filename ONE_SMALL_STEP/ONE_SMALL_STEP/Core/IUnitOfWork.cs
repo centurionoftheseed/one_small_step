@@ -21,6 +21,8 @@ namespace ONE_SMALL_STEP.Core
 
         MessageTypeViewModel messageTypeViewModel { get; }
 
+        MessageViewModel messageViewModel { get;}
+
         int Complete();
        
     }

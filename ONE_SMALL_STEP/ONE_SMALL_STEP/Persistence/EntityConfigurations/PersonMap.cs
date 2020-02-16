@@ -50,8 +50,8 @@ namespace ONE_SMALL_STEP.Persistence.EntityConfigurations
                 .IsRequired()
                 .IsUnicode(false);
 
-            Property(one => one.CreatedDate)
-                .HasColumnName("CreatedDate");
+            Property(one => one.DateCreated)
+                .HasColumnName("DateCreated");
                  
                 //.HasDefaultValueSql("getdate()");
 

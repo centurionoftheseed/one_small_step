@@ -10,7 +10,7 @@ namespace ONE_SMALL_STEP.ViewModels
     {
         [HiddenInput(DisplayValue = false)]
         public int MessageTypeID { get; set; }
-        public string MessageTypeName { get; set; }
+        public string MessageType { get; set; }
         public DateTime CreateDate { get; set; }
 
     }

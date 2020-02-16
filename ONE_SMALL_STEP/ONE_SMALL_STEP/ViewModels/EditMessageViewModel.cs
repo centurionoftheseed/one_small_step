@@ -13,6 +13,8 @@ namespace ONE_SMALL_STEP.ViewModels
         [HiddenInput(DisplayValue = false)]
         public int MessageID { get; set; }
 
+        public string MessageName { get; set; }
+
         [Display(Name = "Message Description")]
         public string MessageDescription { get; set; }
 

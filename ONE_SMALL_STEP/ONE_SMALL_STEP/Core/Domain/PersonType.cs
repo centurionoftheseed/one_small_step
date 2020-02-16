@@ -17,9 +17,9 @@ namespace ONE_SMALL_STEP.Core.Domain
 
         //look into the option below later (for lazy loading deal)
         //public virtual ICollection<Person> Persons { get; set; }
-        public ICollection<Person> Person { get; set; }
+        public virtual ICollection<Person> Person { get; set; }
 
-
+   
         //public PersonType()
         //{
         //    Persons = new Collection<Person>();

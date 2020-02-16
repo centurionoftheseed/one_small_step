@@ -11,7 +11,7 @@
                 <th>Message ID</th>
                 <th>Message Type</th>
                 <th>Message Name</th>
-                <th>Message Body</th>
+                <!--<th>Message Body</th>-->
                 <th></th>
                 <th></th>
                 <th></th>
@@ -20,9 +20,9 @@
         <tbody ng-repeat="m in messages">
             <tr>
                 <td>{{ m.MessageID}}</td>
-                <td>{{ m.MessageTypeName }}</td>      <!--why doesn't this work: <td ng-model="p.FirstName"></td>-->
+                <td>{{ m.MessageType }}</td>      <!--why doesn't this work: <td ng-model="p.FirstName"></td>-->
                 <td>{{ m.MessageName }}</td>   
-                <td>{{ m.MessageBody}}</td>
+                <!--<td>{{ m.MessageBody}}</td>-->
                 <!-- <td><a href="#" ng-click="showPerson(p)">View Details</a></td>   -->
                 <!--<td><a href="#" ng-click="editPerson">Edit</a></td>
     <td><a href="#" ng-class="deletePerson">Delete</a></td>-->

@@ -44,21 +44,21 @@ var app = angular.module('appJS', ['ngRoute'])
         });
         $routeProvider.when('/messagetype', {
             templateUrl: '/AngularApp/MessageType/Views/MessageTypeListView.html',
-            controller: 'messageListViewModel'
+            controller: 'messageTypeListViewModel'
         });
 
 
         $routeProvider.when('/message/create', {
-            templateUrl: '/AngularApp/MessageType/Views/messageCreateView.html',
+            templateUrl: '/AngularApp/Message/Views/messageCreateView.html',
             controller: 'messageCreateViewModel'
         });
 
         $routeProvider.when('/message/:messageId', {
-            templateUrl: '/AngularApp/MessageType/Views/MessageView.html',
+            templateUrl: '/AngularApp/Message/Views/MessageView.html',
             controller: 'messageViewModel'
         });
         $routeProvider.when('/message', {
-            templateUrl: '/AngularApp/MessageType/Views/MessageTypeListView.html',
+            templateUrl: '/AngularApp/Message/Views/MessageListView.html',
             controller: 'messageListViewModel'
         });
 

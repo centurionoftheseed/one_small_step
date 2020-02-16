@@ -17,18 +17,18 @@ namespace ONE_SMALL_STEP.Core.Domain
         //public DateTime CreatedDate { get; set; }
 
 
-        private DateTime? _createdDate = null;
+        private DateTime? _DateCreated = null;
 
-        public DateTime CreatedDate
+        public DateTime DateCreated
         {
             get
             {
-                return this._createdDate.HasValue
-                   ? this._createdDate.Value
+                return this._DateCreated.HasValue
+                   ? this._DateCreated.Value
                    : DateTime.Now;
             }
 
-            set { this._createdDate = value; }
+            set { this._DateCreated = value; }
         }
 
         

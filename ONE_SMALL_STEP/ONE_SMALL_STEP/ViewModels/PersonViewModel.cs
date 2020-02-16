@@ -25,7 +25,7 @@ namespace ONE_SMALL_STEP.ViewModels
         //public Person person { get; set; }
         [Display(Name = "Contact Type")]
         //public PersonType PersonTypeName { get; set; }
-        public string PersonTypeName { get; set; }
+        public string PersonType { get; set; }
 
         //public int PersonTypeID { get; set; }
         //public PersonType PersonType { get; set; }
