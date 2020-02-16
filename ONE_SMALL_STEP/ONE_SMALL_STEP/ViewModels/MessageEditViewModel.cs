@@ -23,11 +23,18 @@ namespace ONE_SMALL_STEP.ViewModels
         [Display(Name = "Description")]
         public string MessageDescription { get; set; }
         public string MessageFileName { get; set; }
+
+        public string MessageLocation { get; set; }
         //public string Screenshot { get; set; }
         //[System.ComponentModel.DefaultValue(typeof(DateTime), "")]
         //public DateTime CreateDate { get; set; }
 
+        [System.ComponentModel.DefaultValue(typeof(DateTime), "")]
+        public DateTime DateCreated { get; set; }
 
+
+        [System.ComponentModel.DefaultValue(typeof(DateTime), "")]
+        public DateTime DateUpdated { get; set; }
 
 
         /*

@@ -8,7 +8,9 @@
 
         var initialize = function () {
 
+            
             $scope.getMessageType();
+            $scope.getMessageType($routeParams.messageTypeId);
         }
 
 

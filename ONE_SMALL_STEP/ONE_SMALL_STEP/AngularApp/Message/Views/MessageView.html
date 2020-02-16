@@ -21,7 +21,7 @@
         </button>
     </div>
     <div class="col-1">
-        <button class="btn btn-primary" ng-click="cancelPerson(person.PersonID)">
+        <button class="btn btn-primary" ng-click="cancelMessage(person.PersonID)">
             Cancel
         </button>
     </div>
@@ -36,26 +36,30 @@
 <fieldset id="messageFieldset">
     <!-- disabled false>-->
     <div>
-        <span class="input-group-addon" style="width: 160px; text-align: left">First Name</span>
-        <input type="text" class="form-control" ng-model="person.FirstName" name="FirstName" />
+        <span class="input-group-addon" style="width: 160px; text-align: left">Message Type ID</span>
+        <input type="text" class="form-control" ng-model="message.MessageTypeID" name="MessageTypeID" />
         <br />
         <br />
-        <span class="input-group-addon" style="width: 160px; text-align: left">Last Name</span>
-        <input type="text" class="form-control" ng-model="person.LastName" name="LastName" />
+        <span class="input-group-addon" style="width: 160px; text-align: left">Name</span>
+        <input type="text" class="form-control" ng-model="message.MessageName" name="MessageName" />
         <br />
         <br />
-        <span class="input-group-addon" style="width: 160px; text-align: left">Email Address</span>
-        <input type="text" class="form-control" ng-model="person.EmailAddress" name="EmailAddress" />
+        <span class="input-group-addon" style="width: 160px; text-align: left">Description</span>
+        <input type="text" class="form-control" ng-model="message.MessageDescription" name="MessageDescription" />
         <br />
         <br />
         <div>
-            <span class="input-group-addon" style="width: 160px; text-align: left">Screenshot</span>
-            <input type="text" class="form-control" ng-model="person.Screenshot" name="Screenshot" value="" />
+            <span class="input-group-addon" style="width: 160px; text-align: left">File Name</span>
+            <input type="text" class="form-control" ng-model="message.MessageFileName" name="MessageFileName" value="" />
+        </div>
+        <div>
+            <span class="input-group-addon" style="width: 160px; text-align: left">Folder Location</span>
+            <input type="text" class="form-control" ng-model="message.MessageLocation" name="MessageLocation" value="" />
         </div>
 
         <br />
         <div>
-            <select class="dropdown" style="width:200px" ng-model="person.PersonTypeID" ng-options="pt.PersonTypeID as pt.PersonTypeName for pt in personType">
+            <select class="dropdown" style="width:200px" ng-model="message.MessageTypeID" ng-options="mt.MessageTypeID as mt.MessageTypeName for mt in messageType">
                 <option value="{{t.PersonTypeID}}">"{{t.PersonTypeName}}"</option>
             </select>
             <!--Selected Person ID : {{person.PersonTypeID}}-->
@@ -63,9 +67,9 @@
 
         <!--{ @class = "form-control" , style = "width:200px-->
         <!--<select ng-options="pt.PersonTypeName for pt in personType" ng-model="personType">
-            <option value="">Person Type</option>
-            <option value=""></option>
-        </select>-->
+        <option value="">Person Type</option>
+        <option value=""></option>
+    </select>-->
 
 
     </div>

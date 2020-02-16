@@ -25,10 +25,11 @@ namespace ONE_SMALL_STEP.Controllers.api
 
         [HttpGet]
         [Route("message/{messageId}")]
+        //public EditMessageViewModel2 Get(int messageId)
         public EditMessageViewModel Get(int messageId)
         {
 
-            var entities = _unitOfWork.Message.SingleOrDefault(mt => mt.MessageID == messageId);
+            var entities = _unitOfWork.Message.SingleOrDefault(m => m.MessageID == messageId);
             var vm = Mapper.Map<Message, EditMessageViewModel>(entities);
             return (vm);
         }
