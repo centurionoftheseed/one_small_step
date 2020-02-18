@@ -11,6 +11,7 @@
         var initialize = function () {
             //$scope.getMessage();
             $scope.getMessage($routeParams.messageId);
+            
         }
 
 
@@ -42,7 +43,7 @@
                     $scope.messageId = messageId;
                     $scope.message = result.data;
                     $scope.getMessageType();
-                    //$scope.disableField();
+                    $scope.disableField();
                     //alert(personId);
 
                     // alert(result.data);
@@ -107,7 +108,7 @@
             //document.getElementById("messageTypeEdit").disabled = true;    
         }
 
-        $scope.cancelMessageType = function () {
+        $scope.cancelMessage = function () {
             viewModelHelper.navigateTo("message");
 
         }
@@ -117,62 +118,45 @@
         //personTypeList();
 
         $scope.disableField = function () {
-            document.getElementById("messageTypeFieldset").disabled = true;
-            document.getElementById("messageTypeSave").disabled = true;
-            document.getElementById("messageTypeCancel").disabled = true;
+            document.getElementById("messageFieldset").disabled = true;
+            document.getElementById("messageSave").disabled = true;
+            document.getElementById("messageCancel").disabled = true;
         }
 
         $scope.enableField = function () {
-            document.getElementById("messageTypeFieldset").disabled = false;
-            document.getElementById("messageTypeSave").disabled = false;
-            document.getElementById("messageTypeCancel").disabled = false;
-            document.getElementById("messageTypeDelete").disabled = true;
-            document.getElementById("messageTypeEdit").disabled = true;
+            document.getElementById("messageFieldset").disabled = false;
+            document.getElementById("messageSave").disabled = false;
+            document.getElementById("messageCancel").disabled = false;
+            document.getElementById("messageDelete").disabled = true;
+            document.getElementById("messageEdit").disabled = true;
         }
 
 
-        $scope.editMessageType = function () {
+        $scope.editMessage= function () {
             $scope.enableField();
 
         }
 
 
-        $scope.saveMessageType = function (messageType) {
+        $scope.saveMessage = function (message) {
 
 
-            viewModelHelper.apiPut("api/message/update", messageType,
+            viewModelHelper.apiPut("api/message/update", message,
                 function (result) {
-                    //alert("here is result ");
-                    //  personService.personId = personId;
-                    //  alert("hello" + result.data);
-                    //alert("api/create/person");
-                    //alert("hello");
-                    //alert(person.LastName);
-                    $scope.messageTypeId = result.data;
+ 
+                    $scope.messageId = result.data;
                 });
             $scope.disableField();
-            //$scope.$apply();
             viewModelHelper.navigateTo("message");
         }
 
 
 
 
-        $scope.deleteMessageType = function (messageTypeId) {
-            //alert(personId);
-            viewModelHelper.apiDelete("api/message/delete/" + messageTypeId, null,
-                function (result) {
-
-                    // alert("here is result " + personId);
-                    //personService.personId = personId;
-                    //$scope.person = result.data;
-                    //$scope.getPersonType();
-                    //alert(personId);
-
-                    // alert(result.data);
-                    //console.log(result.data);
-                    viewModelHelper.navigateTo("message");
-                    //alert(personId);
+        $scope.deleteMessage = function (messageId) {
+            viewModelHelper.apiDelete("api/message/delete/" + messageId, null,
+                function (result) {           
+                    viewModelHelper.navigateTo("message");    
                 });
 
         }

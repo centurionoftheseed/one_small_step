@@ -17,7 +17,7 @@ app.controller("messageListViewModel", function ($scope, personService, $http, $
             function (result) {
 
                 $scope.messages = result.data;
-                console.log($scope.messages);
+                //console.log($scope.messages);
 
             });
     }
@@ -27,9 +27,9 @@ app.controller("messageListViewModel", function ($scope, personService, $http, $
 
 
     $scope.deleteMessageFromList = function (idx) {
-        var messageToDelete = $scope.messageTypes[idx];
-
-        $scope.message.splice(idx, 1);
+        var messageToDelete = $scope.messages[idx];
+        console.log(messageToDelete);
+        $scope.messages.splice(idx, 1);
         //$scope.deletePerson2({ personId: personToDelete.personId }); CHECK ON THIS -- DON'T FOLLOW IT!!
 
         $scope.deleteMessage(messageToDelete.MessageID);
@@ -46,19 +46,9 @@ app.controller("messageListViewModel", function ($scope, personService, $http, $
 
     $scope.deleteMessage = function (messageId) {
         //alert(personId);
-        viewModelHelper.apiDelete("api/message/delete/" + messageTypeId, null,
+        viewModelHelper.apiDelete("api/message/delete/" + messageId, null,
             function (result) {
-
-                // alert("here is result " + personId);
-                //personService.personId = personId;
-                //$scope.person = result.data;
-                //$scope.getPersonType();
-                //alert(personId);
-
-                // alert(result.data);
-                //console.log(result.data);
-
-                //alert(personId);
+ 
             });
 
         //viewModelHelper.navigateTo('person/list');

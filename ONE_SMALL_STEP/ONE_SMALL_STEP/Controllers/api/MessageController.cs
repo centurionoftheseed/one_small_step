@@ -71,33 +71,33 @@ namespace ONE_SMALL_STEP.Controllers.api
         }
 
 
-        //[HttpPut]
-        //[Route("message/update")]
-        //public MessageTypeViewModel Update(MessageType MessageType)
-        //{
-        //    //var domainModel = _unitOfWork.Person.Get(x => x.PersonID == personId).FirstOrDefault();
+        [HttpPut]
+        [Route("message/update")]
+        public MessageViewModel Update(Message Message)
+        {
+            //var domainModel = _unitOfWork.Person.Get(x => x.PersonID == personId).FirstOrDefault();
 
-        //    //_unitOfWork.Person.Update(domainModel);
-        //    _unitOfWork.MessageType.Update(MessageType);
-        //    _unitOfWork.Complete();
-        //    //var vm = Mapper.Map<Person, PersonViewModel>(domainModel);
-        //    var vm = Mapper.Map<MessageType, MessageTypeViewModel>(MessageType);
-        //    return vm;
-        //}
+            //_unitOfWork.Person.Update(domainModel);
+            _unitOfWork.Message.Update(Message);
+            _unitOfWork.Complete();
+            //var vm = Mapper.Map<Person, PersonViewModel>(domainModel);
+            var vm = Mapper.Map<Message, MessageViewModel>(Message);
+            return vm;
+        }
 
 
 
-        //[Route("message/delete/{messageTypeId}")]
-        ////api/person/delete/" + personId,
-        //public MessageTypeViewModel Delete(int messageTypeId)
-        //{
-        //    var domainModel = _unitOfWork.MessageType.Get(x => x.MessageTypeID == messageTypeId).FirstOrDefault();
+        [Route("message/delete/{messageId}")]
+        //api/person/delete/" + personId,
+        public MessageViewModel Delete(int messageId)
+        {
+            var domainModel = _unitOfWork.Message.Get(x => x.MessageID == messageId).FirstOrDefault();
 
-        //    _unitOfWork.MessageType.Remove(domainModel);
-        //    _unitOfWork.Complete();
-        //    var vm = Mapper.Map<MessageType, MessageTypeViewModel>(domainModel);
-        //    return vm;
-        //}
+            _unitOfWork.Message.Remove(domainModel);
+            _unitOfWork.Complete();
+            var vm = Mapper.Map<Message, MessageViewModel>(domainModel);
+            return vm;
+        }
 
 
     }

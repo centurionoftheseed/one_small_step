@@ -47,6 +47,12 @@ var app = angular.module('appJS', ['ngRoute'])
             controller: 'messageTypeListViewModel'
         });
 
+        //$routeProvider.when('/messagetype/update', {
+        //    templateUrl: '/AngularApp/MessageType/Views/MessageTypeView.html',
+        //    controller: 'messageTypeViewModel'
+        //});
+
+
 
         $routeProvider.when('/message/create', {
             templateUrl: '/AngularApp/Message/Views/messageCreateView.html',

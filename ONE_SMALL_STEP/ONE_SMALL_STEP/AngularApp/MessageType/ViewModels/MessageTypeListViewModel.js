@@ -30,21 +30,11 @@ app.controller("messageTypeListViewModel", function ($scope, personService, $htt
 
 
     $scope.deleteMessageTypeFromList = function (idx) {
-        var messageTypeToDelete = $scope.messageTypes[idx];
-        //var messageTypeIDToDelete = messageTypeToDelete.messageTypeId;
-        //console.log(idx);
-        //console.log($scope.messageTypes[idx]);
-        //console.log(messageTypeToDelete.MessageTypeID);
-        //alert("index:" + idx);
-        //alert(personToDelete.PersonID);
-        //console.log(messageTypeToDelete.messageTypeId);
-        //alert(personToDelete);
+        var messageTypeToDelete = $scope.messageTypes[idx]; 
         $scope.messageTypes.splice(idx, 1);
         //$scope.deletePerson2({ personId: personToDelete.personId }); CHECK ON THIS -- DON'T FOLLOW IT!!
 
-        $scope.deleteMessageType(messageTypeToDelete.MessageTypeID);
-        //$scope.deleteMessageType(messageTypeIDToDelete);
-        
+        $scope.deleteMessageType(messageTypeToDelete.MessageTypeID);        
         
     }
 
@@ -58,17 +48,6 @@ app.controller("messageTypeListViewModel", function ($scope, personService, $htt
         //alert(personId);
         viewModelHelper.apiDelete("api/messagetype/delete/" + messageTypeId, null,
             function (result) {
-
-                // alert("here is result " + personId);
-                //personService.personId = personId;
-                //$scope.person = result.data;
-                //$scope.getPersonType();
-                //alert(personId);
-
-                // alert(result.data);
-                //console.log(result.data);
-
-                //alert(personId);
             });
 
         //viewModelHelper.navigateTo('person/list');
