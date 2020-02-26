@@ -1,7 +1,7 @@
 ﻿//var commonModule = angular.module('common', ['ngRoute']);
 
 
-var app = angular.module('appJS', ['ngRoute'])
+var app = angular.module('appJS', ['ngRoute', 'ui.grid', 'ui.grid.pagination'])
     .config(function ($routeProvider, $locationProvider) {
 
         $routeProvider.when('/person/create', {

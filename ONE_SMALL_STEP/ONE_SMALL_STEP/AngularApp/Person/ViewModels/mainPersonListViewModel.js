@@ -10,7 +10,7 @@
     $scope.viewModelHelper = viewModelHelper;
     // $scope.personService = personService;
 
-
+        $scope.personList = "";
 
     $scope.showPerson = function (personId) {
         viewModelHelper.navigateTo("person/show/" + personId);
@@ -129,6 +129,59 @@
     //    };
 
     //}
+
+        //DemoApp.controller('DemoController', function DemoController($scope) {
+
+        //function DemoController($scope) {
+
+
+        $scope.dataGridOptions = {
+            //dataSource: customers,
+            //data: customers,
+            data: customers,
+            columnDefs: [
+                { name: "CompanyName", field: "CompanyName" },
+                { name: "City",  field: "City" },
+                { name: "State",  field: "State" },
+                { name: "Phone",  field: "Phone" },
+                { name: "Fax", field: "Fax" },
+                { name: 'isActive', displayName: 'Active', type: 'boolean', cellTemplate: '<input type="checkbox" ng-model="row.entity.isActive">' }
+
+            ],
+
+            //columns: ["CompanyName", "City", "State", "Phone", "Fax"],
+            showBorders: true,
+            enableRowHeaderSelection: true
+
+        };
+
+
+
+
+        console.log($scope.personList);
+
+
+        $scope.dataGridContacts = {
+            //dataSource: customers,
+            //data: customers,
+            //data: $scope.personList,
+            data: $scope.refreshPersons(),
+            columnDefs: [
+                { name: "First Name", field: "FirstName" },
+                { name: "Last Name", field: "LastName" },
+                { name: "email", field: "EmailAddress" },
+                //{ name: "Phone", field: "Phone" },
+                //{ name: "Fax", field: "Fax" },
+                { name: 'isActive', displayName: 'Active', type: 'boolean', cellTemplate: '<input type="checkbox" ng-model="row.entity.isActive">' }
+
+            ],
+
+            //columns: ["CompanyName", "City", "State", "Phone", "Fax"],
+            showBorders: true,
+            enableRowHeaderSelection: true
+
+        };
+
 
 
 

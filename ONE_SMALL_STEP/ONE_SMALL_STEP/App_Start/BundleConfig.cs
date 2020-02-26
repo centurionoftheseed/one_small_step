@@ -33,13 +33,16 @@ namespace ONE_SMALL_STEP
                 //"~/Content/bootstrap-lumen.css",
                 "~/Content/bootstrap-spacelab.css",
                 "~/Content/site.css",
-                "~/Content/site-testing.css"
+                "~/Content/site-testing.css",
+                "~/Content/ui-grid.css"
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
             "~/Scripts/angular.js",
             "~/Scripts/angular-route.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/uigrid").Include(
+            "~/Scripts/ui-grid.min.js"));
 
 
         }
