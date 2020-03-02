@@ -4,25 +4,28 @@
 var app = angular.module('appJS', ['ngRoute', 'ui.grid', 'ui.grid.pagination'])
     .config(function ($routeProvider, $locationProvider) {
 
-        $routeProvider.when('/person/create', {
+        $routeProvider.when('/contact/create', {
             templateUrl: '/AngularApp/Person/Views/PersonCreateView.html',
             controller: 'personCreateViewModel'
         });
 
-        $routeProvider.when('/person', {
+        $routeProvider.when('/contact', {
             templateUrl: '/AngularApp/Person/Views/PersonListView.html',
-            controller: 'messageTypeListViewModel'
+            //controller: 'messageTypeListViewModel'
+            controller: 'personListViewModel'
         });
 
-        $routeProvider.when('/person/show/:personId', {
+        //$routeProvider.when('/person/show/:personId', {
+        $routeProvider.when('/contact/:personId', {
         templateUrl: '/AngularApp/Person/Views/PersonView.html',
         controller: 'personViewModel'
         });
 
-        $routeProvider.when('/person/create', {
-        templateUrl: '/AngularApp/Person/Views/PersonCreateView.html',
-        controller: 'personCreateViewModel'
-        });
+        ////$routeProvider.when('/person/create', {
+        //$routeProvider.when('/contact/create', {
+        //templateUrl: '/AngularApp/Person/Views/PersonCreateView.html',
+        //controller: 'personCreateViewModel'
+        //});
 
 
 

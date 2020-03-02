@@ -4,7 +4,7 @@
 
     <h3>Message Name</h3>
     <div>{{dataGridContacts.data.length}}</div>
-    <div ui-grid="dataGridContacts" class="container"></div>
+    <!--<div ui-grid="dataGridContacts" class="container"></div>-->
 
 
     <select>
@@ -15,8 +15,7 @@
         <!--<div>{{DISPLAY_TEST}}</div>-->
     </div>
     <div>
-        iv
-        ta
+
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
@@ -32,7 +31,8 @@
             </thead>
             <tbody ng-repeat="p in personList">
                 <tr>
-                    <td>{{ p.FirstName }}</td> <!--why doesn't this work: <td ng-model="p.FirstName"></td>-->
+                    <td>{{ p.FirstName }}</td>
+                    <!--why doesn't this work: <td ng-model="p.FirstName"></td>-->
                     <td>{{ p.LastName }}</td>
                     <td>{{ p.EmailAddress}}</td>
                     <td>{{ p.PersonID}}</td>
@@ -56,7 +56,9 @@
         </table>
     </div>
 
-
+    <br />
+    <br />
+    <div ui-grid="dataGridContacts" class="container"></div>
 
 </div>
 

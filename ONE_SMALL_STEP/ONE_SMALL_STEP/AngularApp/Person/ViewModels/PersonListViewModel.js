@@ -42,6 +42,11 @@ app.controller("personListViewModel", function ($scope, personService, $http, $q
     }
 
 
+    $scope.createPerson = function () {
+        //viewModelHelper.navigateTo("person/create");
+        viewModelHelper.navigateTo("contact/create");
+
+    }
 
     $scope.deletePerson2 = function (personId) {
         //alert(personId);

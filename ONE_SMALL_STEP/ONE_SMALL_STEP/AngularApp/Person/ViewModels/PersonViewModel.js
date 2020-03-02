@@ -5,7 +5,7 @@
         $scope.personService = personService;
         $scope.personIdTEST = 0;
 
-        $scope.pageHeading = "Contact Details";
+        $scope.pageHeading = "Contact";
 
         var initialize = function () {
             //alert($routeParams.personId);
@@ -34,14 +34,15 @@
         }
 
         $scope.showPerson = function (personId) {
-            viewModelHelper.navigateTo("person/show/" + personId);
+            //viewModelHelper.navigateTo("person/show/" + personId);
+            viewModelHelper.navigateTo("contact/" + personId);
         }
 
 
-        $scope.createPerson = function () {
-            viewModelHelper.navigateTo("person/create");
+        //$scope.createPerson = function () {
+        //    viewModelHelper.navigateTo("person/create");
 
-        }
+        //}
 
 
         //$scope.deletePerson = function (){
@@ -185,6 +186,32 @@
                 });
             $scope.disableField();
         }
+
+
+
+
+
+
+        $scope.disableField = function () {
+            document.getElementById("personFieldset").disabled = true;
+            document.getElementById("personSave").disabled = true;
+            document.getElementById("personCancel").disabled = true;
+        }
+
+        $scope.enableField = function () {
+            document.getElementById("personFieldset").disabled = false;
+            document.getElementById("personSave").disabled = false;
+            document.getElementById("personCancel").disabled = false;
+            document.getElementById("personDelete").disabled = true;
+            document.getElementById("personEdit").disabled = true;
+        }
+
+
+        $scope.editPerson = function () {
+            $scope.enableField();
+
+        }
+
 
 
         //var test_func = function () {

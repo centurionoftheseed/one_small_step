@@ -218,6 +218,7 @@
     <Compile Include="Controllers\api\MessageController.cs" />
     <Compile Include="Controllers\api\MessageTypeController.cs" />
     <Compile Include="Controllers\api\PersonController.cs" />
+    <Compile Include="Controllers\api\PersonTypeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MessageTypeController.cs" />
@@ -364,6 +365,7 @@
     <Content Include="AngularApp\Message\Views\MessageListView.html" />
     <Content Include="AngularApp\Message\Views\MessageView.html" />
     <Content Include="AngularApp\NavbarService.js" />
+    <Content Include="AngularApp\PersonType\PersonTypeListViewModel.js" />
     <Content Include="AngularApp\Person\App.js" />
     <Content Include="AngularApp\Person\ViewModels\data.js" />
     <Content Include="AngularApp\Person\ViewModels\mainHomeViewModel.js" />
@@ -371,6 +373,7 @@
     <Content Include="AngularApp\Person\ViewModels\NavbarController.js" />
     <Content Include="AngularApp\Person\ViewModels\PersonCreateViewModel.js" />
     <Content Include="AngularApp\Person\ViewModels\PersonDeleteViewModel.js" />
+    <Content Include="AngularApp\Person\ViewModels\PersonEditViewModel.js" />
     <Content Include="AngularApp\Person\ViewModels\PersonGridViewModel.js" />
     <Content Include="AngularApp\Person\ViewModels\PersonHomeViewModel.js" />
     <Content Include="AngularApp\Person\ViewModels\PersonListViewModel.js" />

@@ -46,8 +46,8 @@ namespace ONE_SMALL_STEP
 
 
             routes.MapRoute(
-            name: "person",
-            url: "person/{*catch-all}",
+            name: "contact",
+            url: "contact/{*catch-all}",
             defaults: new
             {
                 controller = "Home",

@@ -3,17 +3,28 @@
 
 //mainModule.controller("mainPersonListViewModel", function ($scope, $http, $q, $window, $location, viewModelHelper) {
 
-    app.controller("mainPersonListViewModel", function ($scope, $http, $q, $window, viewModelHelper) {
+app.controller("mainPersonListViewModel", function ($scope, $http, $q, $window, viewModelHelper) {
     //personModule.controller("PersonListViewModel", function ($scope, $http, $q, $routeParams, $window, $location, viewModelHelper) {
     console.log("Loading main personal list 1...")
 
     $scope.viewModelHelper = viewModelHelper;
     // $scope.personService = personService;
 
-        $scope.personList = "";
+    //$scope.personList = "";
+
+
+    var personlstNew = [];
+    viewModelHelper.apiGet('api/person', null,
+        function (result) {
+            //debugger;
+            //personlstNew = result.data;
+            $scope.dataGridContacts.data = result.data;
+        });
+
 
     $scope.showPerson = function (personId) {
-        viewModelHelper.navigateTo("person/show/" + personId);
+        //viewModelHelper.navigateTo("person/show/" + personId);
+        viewModelHelper.navigateTo("contact/" + personId);
     }
 
     //$scope.personList = function () {
@@ -26,27 +37,32 @@
     $scope.DISPLAY_TEST_MAIN = "DISPLAY TEST MAIN PERSON LIST VIEW MODEL.";
 
 
-    $scope.showPerson = function (personId) {
-        viewModelHelper.navigateTo("person/show/" + personId);
-    }
+    //$scope.showPerson = function (personId) {
+    //    viewModelHelper.navigateTo("person/show/" + personId);
+    //}
 
 
     var initialize = function () {
+        //debugger;
         $scope.refreshPersons();
 
         //alert("TEST");
         //alert("initialize")
     }
 
+
+
     $scope.refreshPersons = function () {
+
         viewModelHelper.apiGet('api/person', null,
             function (result) {
-                //$scope.customers = result.data;
-                //alert("person list");
-                //console.log(result.data);
-                $scope.personList = result.data; //need to change persons to personList elsewhere
-                //alert("TESTING");
-                //console.table($scope.personList);
+                //debugger;
+
+                $scope.personList = result.data;
+                $scope.dataGridContacts.data = result.data;
+
+                //this.personlstNew = result.data;
+
             });
     }
 
@@ -130,57 +146,54 @@
 
     //}
 
-        //DemoApp.controller('DemoController', function DemoController($scope) {
+    //DemoApp.controller('DemoController', function DemoController($scope) {
 
-        //function DemoController($scope) {
-
-
-        $scope.dataGridOptions = {
-            //dataSource: customers,
-            //data: customers,
-            data: customers,
-            columnDefs: [
-                { name: "CompanyName", field: "CompanyName" },
-                { name: "City",  field: "City" },
-                { name: "State",  field: "State" },
-                { name: "Phone",  field: "Phone" },
-                { name: "Fax", field: "Fax" },
-                { name: 'isActive', displayName: 'Active', type: 'boolean', cellTemplate: '<input type="checkbox" ng-model="row.entity.isActive">' }
-
-            ],
-
-            //columns: ["CompanyName", "City", "State", "Phone", "Fax"],
-            showBorders: true,
-            enableRowHeaderSelection: true
-
-        };
+    //function DemoController($scope) {
 
 
+    $scope.dataGridOptions = {
+        //dataSource: customers,
+        //data: customers,
+        data: customers,
+        columnDefs: [
+            { name: "CompanyName", field: "CompanyName" },
+            { name: "City", field: "City" },
+            { name: "State", field: "State" },
+            { name: "Phone", field: "Phone" },
+            { name: "Fax", field: "Fax" },
+            { name: 'isActive', displayName: 'Active', type: 'boolean', cellTemplate: '<input type="checkbox" ng-model="row.entity.isActive">' }
+
+        ],
+
+        //columns: ["CompanyName", "City", "State", "Phone", "Fax"],
+        showBorders: true,
+        enableRowHeaderSelection: true
+
+    };
 
 
-        console.log($scope.personList);
 
 
-        $scope.dataGridContacts = {
-            //dataSource: customers,
-            //data: customers,
-            //data: $scope.personList,
-            data: $scope.refreshPersons(),
-            columnDefs: [
-                { name: "First Name", field: "FirstName" },
-                { name: "Last Name", field: "LastName" },
-                { name: "email", field: "EmailAddress" },
-                //{ name: "Phone", field: "Phone" },
-                //{ name: "Fax", field: "Fax" },
-                { name: 'isActive', displayName: 'Active', type: 'boolean', cellTemplate: '<input type="checkbox" ng-model="row.entity.isActive">' }
+    //console.log($scope.personList);
 
-            ],
 
-            //columns: ["CompanyName", "City", "State", "Phone", "Fax"],
-            showBorders: true,
-            enableRowHeaderSelection: true
+    $scope.dataGridContacts = {
+        //dataSource: customers,
+        //data: customers,
+        //data: $scope.personList,
+        //data: personlstNew,
+        columnDefs: [
+            { name: "FirstName", field: "FirstName" },
+            { name: "LastName", field: "LastName" },
+            { name: "EmailAddress", field: "EmailAddress" },
+            { name: 'isActive', displayName: 'Active', type: 'boolean', cellTemplate: '<input type="checkbox" ng-model="row.entity.isActive">' }
+        ],
 
-        };
+        //columns: ["CompanyName", "City", "State", "Phone", "Fax"],
+        showBorders: true,
+        enableRowHeaderSelection: true
+
+    };
 
 
 
