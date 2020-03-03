@@ -20,7 +20,7 @@ app.controller("personTypeListViewModel", function ($scope, personService, $http
         viewModelHelper.apiGet('api/contacttype', null,
             function (result) {
 
-                $scope.messageTypes = result.data;
+                $scope.personTypes = result.data;
 
             });
     }

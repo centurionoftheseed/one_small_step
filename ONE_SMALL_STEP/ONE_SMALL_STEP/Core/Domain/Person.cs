@@ -31,7 +31,19 @@ namespace ONE_SMALL_STEP.Core.Domain
             set { this._DateCreated = value; }
         }
 
-        
+        private DateTime? _dateUpdated = null;
+        public DateTime DateUpdated
+
+        {
+            get
+            {
+                return this._dateUpdated.HasValue
+                   ? this._dateUpdated.Value
+                   : DateTime.Now;
+            }
+
+            set { this._dateUpdated = value; }
+        }
 
 
         public int PersonTypeID { get; set; }

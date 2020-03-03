@@ -348,3 +348,5 @@ D:\OneDrive\APP_DEV\GitHub\one_small_step\ONE_SMALL_STEP\ONE_SMALL_STEP\obj\Debu
 D:\OneDrive\APP_DEV\GitHub\one_small_step\ONE_SMALL_STEP\ONE_SMALL_STEP\obj\Debug\ONE_SMALL_STEP.Migrations.messingwithmessagetypenotshowing.resources
 D:\OneDrive\APP_DEV\GitHub\one_small_step\ONE_SMALL_STEP\ONE_SMALL_STEP\obj\Debug\ONE_SMALL_STEP.Migrations.MessageTypetablechangedpublicvirtualICollectiontopublicICollection.resources
 D:\OneDrive\APP_DEV\GitHub\one_small_step\ONE_SMALL_STEP\ONE_SMALL_STEP\obj\Debug\ONE_SMALL_STEP.Migrations.Messagedefaultdate.resources
+D:\OneDrive\APP_DEV\GitHub\one_small_step\ONE_SMALL_STEP\ONE_SMALL_STEP\obj\Debug\ONE_SMALL_STEP.Migrations.addedpersontypecontrollerandchanageddatenames.resources
+D:\OneDrive\APP_DEV\GitHub\one_small_step\ONE_SMALL_STEP\ONE_SMALL_STEP\obj\Debug\ONE_SMALL_STEP.Migrations.moredefaultdatesthatweremissing.resources

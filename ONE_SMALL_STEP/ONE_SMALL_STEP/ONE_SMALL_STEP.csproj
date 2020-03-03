@@ -303,6 +303,14 @@
     <Compile Include="Migrations\202002162032259_Message - default date.Designer.cs">
       <DependentUpon>202002162032259_Message - default date.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003021233137_added person type controller and chanaged date names.cs" />
+    <Compile Include="Migrations\202003021233137_added person type controller and chanaged date names.Designer.cs">
+      <DependentUpon>202003021233137_added person type controller and chanaged date names.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003021242568_more default dates that were missing.cs" />
+    <Compile Include="Migrations\202003021242568_more default dates that were missing.Designer.cs">
+      <DependentUpon>202003021242568_more default dates that were missing.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistence\EntityConfigurations\MessageMap.cs" />
     <Compile Include="Persistence\EntityConfigurations\MessageTypeMap.cs" />
@@ -335,6 +343,7 @@
     <Compile Include="Persistence\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\EditPersonTypeViewModel.cs" />
     <Compile Include="ViewModels\MessageEditViewModel.cs" />
     <Compile Include="ViewModels\MessageTypeCreateViewModel.cs" />
     <Compile Include="ViewModels\CreatePersonViewModel.cs" />
@@ -365,7 +374,8 @@
     <Content Include="AngularApp\Message\Views\MessageListView.html" />
     <Content Include="AngularApp\Message\Views\MessageView.html" />
     <Content Include="AngularApp\NavbarService.js" />
-    <Content Include="AngularApp\PersonType\PersonTypeListViewModel.js" />
+    <Content Include="AngularApp\PersonType\ViewModels\PersonTypeListViewModel.js" />
+    <Content Include="AngularApp\PersonType\Views\PersonTypeListView.html" />
     <Content Include="AngularApp\Person\App.js" />
     <Content Include="AngularApp\Person\ViewModels\data.js" />
     <Content Include="AngularApp\Person\ViewModels\mainHomeViewModel.js" />
@@ -1599,6 +1609,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002162032259_Message - default date.resx">
       <DependentUpon>202002162032259_Message - default date.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003021233137_added person type controller and chanaged date names.resx">
+      <DependentUpon>202003021233137_added person type controller and chanaged date names.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003021242568_more default dates that were missing.resx">
+      <DependentUpon>202003021242568_more default dates that were missing.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

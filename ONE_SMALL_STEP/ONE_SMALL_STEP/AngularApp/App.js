@@ -21,6 +21,25 @@ var app = angular.module('appJS', ['ngRoute', 'ui.grid', 'ui.grid.pagination'])
         controller: 'personViewModel'
         });
 
+
+        $routeProvider.when('/contacttype/create', {
+            templateUrl: '/AngularApp/Person/Views/PersonCreateView.html',
+            controller: 'personCreateViewModel'
+        });
+
+        $routeProvider.when('/contacttype', {
+            templateUrl: '/AngularApp/PersonType/Views/PersonTypeListView.html',
+            //controller: 'messageTypeListViewModel'
+            controller: 'personTypeListViewModel'
+        });
+
+        //$routeProvider.when('/person/show/:personId', {
+        $routeProvider.when('/contacttype/:personId', {
+            templateUrl: '/AngularApp/Person/Views/PersonView.html',
+            controller: 'personViewModel'
+        });
+
+
         ////$routeProvider.when('/person/create', {
         //$routeProvider.when('/contact/create', {
         //templateUrl: '/AngularApp/Person/Views/PersonCreateView.html',
