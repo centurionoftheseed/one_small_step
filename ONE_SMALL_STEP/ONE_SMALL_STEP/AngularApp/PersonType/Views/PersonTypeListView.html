@@ -17,12 +17,12 @@
             <th></th>-->
         </tr>
     </thead>
-    <tbody ng-repeat="mt in personTypes">
+    <tbody ng-repeat="pt in personTypes">
         <tr>
-            <td>{{ mt.PersonTypeID }}</td> <!--why doesn't this work: <td ng-model="p.FirstName"></td>-->
-            <td>{{ mt.PersonTypeName }}</td>
+            <td>{{ pt.PersonTypeID }}</td> <!--why doesn't this work: <td ng-model="p.FirstName"></td>-->
+            <td>{{ pt.PersonTypeName }}</td>
             <td>
-                <button class="btn btn-primary" ng-click="showPersonType(mt.MessageTypeID)">View</button>
+                <button class="btn btn-primary" ng-click="showPersonType(pt.PersonTypeID)">View</button>
             </td>
             <!--<td>
                 <button class="btn btn-primary" ng-click="editMessageType(p.PersonID)">Edit</button>

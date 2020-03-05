@@ -35,7 +35,7 @@ namespace ONE_SMALL_STEP.Controllers.api
         public EditPersonTypeViewModel Get(int personTypeId)
         {
 
-            var entities = _unitOfWork.PersonType.SingleOrDefault(mt => mt.PersonTypeID == personTypeId);
+            var entities = _unitOfWork.PersonType.SingleOrDefault(pt => pt.PersonTypeID == personTypeId);
             //var entities = _unitOfWork.Person.GetByID(p => p.PersonID == id, includeProperties: "PersonType");
 
             //entities = Mapper.Map<IEnumerable<Person>, IEnumerable<EditPersonViewModel>>(entities);

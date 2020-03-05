@@ -35,8 +35,8 @@ var app = angular.module('appJS', ['ngRoute', 'ui.grid', 'ui.grid.pagination'])
 
         //$routeProvider.when('/person/show/:personId', {
         $routeProvider.when('/contacttype/:personId', {
-            templateUrl: '/AngularApp/Person/Views/PersonView.html',
-            controller: 'personViewModel'
+            templateUrl: '/AngularApp/PersonType/Views/PersonTypeView.html',
+            controller: 'personTypeViewModel'
         });
 
 

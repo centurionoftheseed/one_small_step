@@ -375,7 +375,9 @@
     <Content Include="AngularApp\Message\Views\MessageView.html" />
     <Content Include="AngularApp\NavbarService.js" />
     <Content Include="AngularApp\PersonType\ViewModels\PersonTypeListViewModel.js" />
+    <Content Include="AngularApp\PersonType\ViewModels\PersonTypeViewModel.js" />
     <Content Include="AngularApp\PersonType\Views\PersonTypeListView.html" />
+    <Content Include="AngularApp\PersonType\Views\PersonTypeView.html" />
     <Content Include="AngularApp\Person\App.js" />
     <Content Include="AngularApp\Person\ViewModels\data.js" />
     <Content Include="AngularApp\Person\ViewModels\mainHomeViewModel.js" />

@@ -10,13 +10,13 @@ app.controller("personTypeListViewModel", function ($scope, personService, $http
     //$scope.personService = personService;
 
     var initialize = function () {
-        $scope.getMessageTypeList();
+        $scope.getPersonTypeList();
         //$scope.DISPLAY_TEST = "DISPLAY TEST MESSAGE TYPE LIST VIEW MODEL";
         //$scope.pageHeading = "Message Type List"
         //alert("initialize")
     }
 
-    $scope.getMessageTypeList = function () {
+    $scope.getPersonTypeList = function () {
         viewModelHelper.apiGet('api/contacttype', null,
             function (result) {
 
@@ -29,12 +29,12 @@ app.controller("personTypeListViewModel", function ($scope, personService, $http
 
 
 
-    $scope.deleteMessageTypeFromList = function (idx) {
-        var messageTypeToDelete = $scope.messageTypes[idx];
-        $scope.messageTypes.splice(idx, 1);
+    $scope.deletePersonTypeFromList = function (idx) {
+        var personTypeToDelete = $scope.personTypes[idx];
+        $scope.personTypes.splice(idx, 1);
         //$scope.deletePerson2({ personId: personToDelete.personId }); CHECK ON THIS -- DON'T FOLLOW IT!!
 
-        $scope.deleteMessageType(messageTypeToDelete.MessageTypeID);
+        $scope.deletePersonType(personTypeToDelete.MessageTypeID);
 
     }
 
@@ -44,9 +44,9 @@ app.controller("personTypeListViewModel", function ($scope, personService, $http
     }
 
 
-    $scope.deleteMessageType = function (messageTypeId) {
+    $scope.deletePersonType = function (personTypeId) {
         //alert(personId);
-        viewModelHelper.apiDelete("api/persontype/delete/" + messageTypeId, null,
+        viewModelHelper.apiDelete("api/persontype/delete/" + personTypeId, null,
             function (result) {
             });
 
@@ -56,11 +56,11 @@ app.controller("personTypeListViewModel", function ($scope, personService, $http
     }
 
     //showMessageType
-    $scope.showContactType = function (contactTypeId) {
+    $scope.showPersonType = function (personTypeId) {
 
         //$scope.$applyAsync();
         //$scope.data = { pageHeading: "TESTING 22" };
-        viewModelHelper.navigateTo("contacttype/" + contactTypeId);
+        viewModelHelper.navigateTo("contacttype/" + personTypeId);
         //$scope.data.pageHeading = "TESTING 2";
 
         //data.pageHeading = "Message Type";  
