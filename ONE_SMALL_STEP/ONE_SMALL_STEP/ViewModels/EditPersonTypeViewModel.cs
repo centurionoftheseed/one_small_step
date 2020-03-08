@@ -10,10 +10,10 @@ namespace ONE_SMALL_STEP.ViewModels
     public class EditPersonTypeViewModel
     {
         [HiddenInput(DisplayValue = false)]
-        public int ContactTypeID { get; set; }
+        public int PersonTypeID { get; set; }
 
         [Display(Name = "Contact Type")]
-        public string PersonType { get; set; }
+        public string PersonTypeName { get; set; }
 
         [System.ComponentModel.DefaultValue(typeof(DateTime), "")]
         public DateTime CreateDate { get; set; }

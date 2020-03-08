@@ -34,7 +34,7 @@ app.controller("personTypeListViewModel", function ($scope, personService, $http
         $scope.personTypes.splice(idx, 1);
         //$scope.deletePerson2({ personId: personToDelete.personId }); CHECK ON THIS -- DON'T FOLLOW IT!!
 
-        $scope.deletePersonType(personTypeToDelete.MessageTypeID);
+        $scope.deletePersonType(personTypeToDelete.PersonTypeID);
 
     }
 

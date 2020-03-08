@@ -54,6 +54,16 @@ namespace ONE_SMALL_STEP
                 action = "Index"
             });
 
+
+            routes.MapRoute(
+            name: "contacttype",
+            url: "contacttype/{*catch-all}",
+            defaults: new
+            {
+                controller = "Home",
+                action = "Index"
+            });
+
             routes.MapMvcAttributeRoutes();
 
             routes.MapRoute(

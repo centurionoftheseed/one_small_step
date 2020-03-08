@@ -39,7 +39,7 @@ namespace ONE_SMALL_STEP.App_Start
             Mapper.CreateMap<PersonType, PersonTypeViewModel>();
 
             Mapper.CreateMap<PersonType, EditPersonTypeViewModel>()
-            .ForMember(dest => dest.PersonType, opt => opt.MapFrom(src => src.PersonTypeName));
+            .ForMember(dest => dest.PersonTypeName, opt => opt.MapFrom(src => src.PersonTypeName));
 
             Mapper.CreateMap<EditPersonTypeViewModel, PersonType>().ReverseMap();
 

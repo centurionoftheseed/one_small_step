@@ -24,7 +24,7 @@ var app = angular.module('appJS', ['ngRoute', 'ui.grid', 'ui.grid.pagination'])
 
         $routeProvider.when('/contacttype/create', {
             templateUrl: '/AngularApp/Person/Views/PersonCreateView.html',
-            controller: 'personCreateViewModel'
+            controller: 'personTypeCreateViewModel'
         });
 
         $routeProvider.when('/contacttype', {
@@ -34,7 +34,7 @@ var app = angular.module('appJS', ['ngRoute', 'ui.grid', 'ui.grid.pagination'])
         });
 
         //$routeProvider.when('/person/show/:personId', {
-        $routeProvider.when('/contacttype/:personId', {
+        $routeProvider.when('/contacttype/:personTypeId', {
             templateUrl: '/AngularApp/PersonType/Views/PersonTypeView.html',
             controller: 'personTypeViewModel'
         });

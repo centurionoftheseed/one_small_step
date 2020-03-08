@@ -39,6 +39,7 @@
 
                     $scope.personTypeId = personTypeId;
                     $scope.personType = result.data;
+                    console.log($scope.personType);
                     //console.log($scope.messageType);
                     //$scope.getPersonType();
                     $scope.disableField();
@@ -70,9 +71,9 @@
 
 
 
-        $scope.showPersonType = function (personTypeId) {
-            viewModelHelper.navigateTo("contacttype/" + personTypeId);
-        }
+        //$scope.showPersonType = function (personTypeId) {
+        //    viewModelHelper.navigateTo("contacttype/" + personTypeId);
+        //}
 
 
         //$scope.showMessageType = function (messageTypeId) {
@@ -135,16 +136,16 @@
         }
 
 
-        $scope.editMessageType = function () {
+        $scope.editPersonType = function () {
             $scope.enableField();
 
         }
 
 
-        $scope.saveMessageType = function (messageType) {
+        $scope.savePersonType = function (personType) {
 
 
-            viewModelHelper.apiPut("api/contacttype/update", messageType,
+            viewModelHelper.apiPut("api/contacttype/update", personType,
                 function (result) {
                     //alert("here is result ");
                     //  personService.personId = personId;
@@ -152,7 +153,7 @@
                     //alert("api/create/person");
                     //alert("hello");
                     //alert(person.LastName);
-                    $scope.messageTypeId = result.data;
+                    $scope.personTypeId = result.data;
                 });
             $scope.disableField();
             //$scope.$apply();
