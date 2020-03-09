@@ -23,6 +23,7 @@ app.controller("personListViewModel", function ($scope, personService, $http, $q
                 //alert("person list");
                 //console.log(result.data);
                 $scope.persons = result.data;
+         
                 //alert("TESTING");
             });
     }

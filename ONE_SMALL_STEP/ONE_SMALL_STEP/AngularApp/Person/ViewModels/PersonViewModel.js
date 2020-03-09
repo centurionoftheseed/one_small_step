@@ -182,9 +182,12 @@
                     //alert("api/create/person");
                     //alert("hello");
                     //alert(person.LastName);
-                    $scope.personId = result.data;
+                    //$scope.personId = result.data;
+                    $scope.person = result.data;
+                    console.log($scope.person);
                 });
-            $scope.disableField();
+            $scope.disableField();      
+            viewModelHelper.navigateTo("contact");
         }
 
 
