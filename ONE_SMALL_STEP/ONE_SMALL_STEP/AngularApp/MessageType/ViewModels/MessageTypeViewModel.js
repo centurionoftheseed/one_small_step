@@ -153,10 +153,11 @@
                     //alert("hello");
                     //alert(person.LastName);
                     $scope.messageTypeId = result.data;
+                    viewModelHelper.navigateTo("messagetype");
                 });
             $scope.disableField();
             //$scope.$apply();
-            viewModelHelper.navigateTo("messagetype");
+            //viewModelHelper.navigateTo("messagetype");
         }
 
 

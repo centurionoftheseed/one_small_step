@@ -14,6 +14,7 @@ app.controller("messageTypeListViewModel", function ($scope, personService, $htt
         //$scope.DISPLAY_TEST = "DISPLAY TEST MESSAGE TYPE LIST VIEW MODEL";
         //$scope.pageHeading = "Message Type List"
         //alert("initialize")
+        console.log("initialize");
     }
 
     $scope.getMessageTypeList = function () {
@@ -21,7 +22,7 @@ app.controller("messageTypeListViewModel", function ($scope, personService, $htt
             function (result) {           
     
                 $scope.messageTypes = result.data;
-   
+                console.log($scope.messageTypes);
             });
     }
 

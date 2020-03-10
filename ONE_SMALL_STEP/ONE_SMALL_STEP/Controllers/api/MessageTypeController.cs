@@ -89,24 +89,7 @@ namespace ONE_SMALL_STEP.Controllers.api
         }
 
 
-        [HttpGet]
-        [Route("messagetype")]
-        public IEnumerable<MessageTypeViewModel> Get()
 
-        {
-            //return _repository.GetProfileForEdit(User.Identity.Name);
-            var domainModel = _unitOfWork.MessageType.Get(null, x => x.OrderBy(z => z.MessageTypeName));
-
-            //return _unitOfWork.Person.Get(null, x => x.OrderBy(z => z.LastName), includeProperties: "PersonType");
-
-            //return View(courses.ToList());
-
-            var vm = Mapper.Map<IEnumerable<MessageType>, IEnumerable<MessageTypeViewModel>>(domainModel);
-            //var vm = Ok(Mapper.Map<IEnumerable<PersonViewModel>>(domainModel));
-            //return (PersonViewModel)vm;
-            return vm;
-
-        }
 
 
         [HttpPut]
@@ -126,6 +109,25 @@ namespace ONE_SMALL_STEP.Controllers.api
         }
 
 
+
+        [HttpGet]
+        [Route("messagetype")]
+        public IEnumerable<MessageTypeViewModel> Get()
+
+        {
+            //return _repository.GetProfileForEdit(User.Identity.Name);
+            var domainModel = _unitOfWork.MessageType.Get(null, x => x.OrderBy(z => z.MessageTypeName));
+
+            //return _unitOfWork.Person.Get(null, x => x.OrderBy(z => z.LastName), includeProperties: "PersonType");
+
+            //return View(courses.ToList());
+
+            var vm = Mapper.Map<IEnumerable<MessageType>, IEnumerable<MessageTypeViewModel>>(domainModel);
+            //var vm = Ok(Mapper.Map<IEnumerable<PersonViewModel>>(domainModel));
+            //return (PersonViewModel)vm;
+            return vm;
+
+        }
 
         [Route("messagetype/delete/{messageTypeId}")]
         //api/person/delete/" + personId,

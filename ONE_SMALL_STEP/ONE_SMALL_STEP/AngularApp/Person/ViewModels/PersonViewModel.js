@@ -184,10 +184,11 @@
                     //alert(person.LastName);
                     //$scope.personId = result.data;
                     $scope.person = result.data;
-                    console.log($scope.person);
+                    //console.log($scope.person);
+                    viewModelHelper.navigateTo("contact");
                 });
             $scope.disableField();      
-            viewModelHelper.navigateTo("contact");
+            
         }
 
 

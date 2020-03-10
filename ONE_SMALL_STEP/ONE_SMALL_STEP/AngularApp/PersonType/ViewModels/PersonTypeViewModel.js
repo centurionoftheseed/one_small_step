@@ -154,10 +154,11 @@
                     //alert("hello");
                     //alert(person.LastName);
                     $scope.personTypeId = result.data;
+                    viewModelHelper.navigateTo("contacttype");
                 });
             $scope.disableField();
             //$scope.$apply();
-            viewModelHelper.navigateTo("contacttype");
+            
         }
 
 
