@@ -39,14 +39,14 @@ app.controller("personTypeListViewModel", function ($scope, personService, $http
     }
 
 
-    $scope.createMessageType = function () {
+    $scope.createPersonType = function () {
         viewModelHelper.navigateTo("contacttype/create");
     }
 
 
     $scope.deletePersonType = function (personTypeId) {
         //alert(personId);
-        viewModelHelper.apiDelete("api/persontype/delete/" + personTypeId, null,
+        viewModelHelper.apiDelete("api/contacttype/delete/" + personTypeId, null,
             function (result) {
             });
 
@@ -55,7 +55,7 @@ app.controller("personTypeListViewModel", function ($scope, personService, $http
 
     }
 
-    //showMessageType
+    //showPersonType
     $scope.showPersonType = function (personTypeId) {
 
         //$scope.$applyAsync();

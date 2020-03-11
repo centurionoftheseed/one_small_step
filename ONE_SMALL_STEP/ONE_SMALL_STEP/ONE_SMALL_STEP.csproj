@@ -374,8 +374,10 @@
     <Content Include="AngularApp\Message\Views\MessageListView.html" />
     <Content Include="AngularApp\Message\Views\MessageView.html" />
     <Content Include="AngularApp\NavbarService.js" />
+    <Content Include="AngularApp\PersonType\ViewModels\PersonTypeCreateViewModel.js" />
     <Content Include="AngularApp\PersonType\ViewModels\PersonTypeListViewModel.js" />
     <Content Include="AngularApp\PersonType\ViewModels\PersonTypeViewModel.js" />
+    <Content Include="AngularApp\PersonType\Views\PersonTypeCreateView.html" />
     <Content Include="AngularApp\PersonType\Views\PersonTypeListView.html" />
     <Content Include="AngularApp\PersonType\Views\PersonTypeView.html" />
     <Content Include="AngularApp\Person\App.js" />
@@ -397,6 +399,8 @@
     <Content Include="AngularApp\Person\Views\PersonHomeView.html" />
     <Content Include="AngularApp\Person\Views\PersonView.html" />
     <Content Include="AngularApp\Services\person.service.js" />
+    <Content Include="AngularApp\SourceType\ViewModels\SourceTypeView.html" />
+    <Content Include="AngularApp\Source\Views\SourceListView.html" />
     <Content Include="AngularApp\Validator.js" />
     <Content Include="Content\bootstrap-lumen.css" />
     <Content Include="Content\bootstrap-spacelab.css" />
@@ -1536,8 +1540,8 @@
     <Content Include="Scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="AngularApp\SourceType\Views\" />
     <Folder Include="AngularApp\Source\ViewModels\" />
-    <Folder Include="AngularApp\Source\Views\" />
     <Folder Include="App_Data\" />
     <Folder Include="templates\" />
   </ItemGroup>

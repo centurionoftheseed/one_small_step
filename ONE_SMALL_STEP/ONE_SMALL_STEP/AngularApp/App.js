@@ -23,7 +23,7 @@ var app = angular.module('appJS', ['ngRoute', 'ui.grid', 'ui.grid.pagination'])
 
 
         $routeProvider.when('/contacttype/create', {
-            templateUrl: '/AngularApp/Person/Views/PersonCreateView.html',
+            templateUrl: '/AngularApp/PersonType/Views/PersonTypeCreateView.html',
             controller: 'personTypeCreateViewModel'
         });
 

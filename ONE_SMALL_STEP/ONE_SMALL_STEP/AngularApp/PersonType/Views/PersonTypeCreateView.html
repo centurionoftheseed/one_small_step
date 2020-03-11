@@ -1,0 +1,63 @@
+﻿<h3>Contact Type</h3>
+<br />
+
+<form novalidate name="formPersonTypeCreateView" class="form-horizontal" id="create-form">
+
+
+
+    <!--<div class="modal-header">
+        <button type="submit" class="btn-primary" ng-click="savePersonType()">Save</button>
+    </div>
+    <br />-->
+
+    <div class="row">
+        <div>
+            <button id="contactTypeSave" class="btn btn-primary" ng-click="savePersonType(personType)" style="margin-right: 5px">
+                Save
+            </button>
+        </div>
+        <div>
+            <!--<button id="messageTypeEdit" class="btn btn-primary" ng-click="editPersonType()" style="margin-right: 5px">
+                Edit
+            </button>-->
+
+        </div>
+
+        <div>
+            <button id="contactTypeCancel" class="btn btn-primary" ng-click="cancelPersonType(personType.PersonTypeID)" style="margin-right: 5px">
+                Cancel
+            </button>
+        </div>
+        <!--<div>
+            <button id="messageTypeDelete" class="btn btn-primary" ng-click="deletePersonType(messageType.PersonTypeID)">
+                Delete
+            </button>
+        </div>-->
+
+
+
+
+    </div>
+    <br />
+
+    <div class="row">
+        <span class="input-group-addon" style="width: 120px; text-align: left">Message Type</span>
+        <input type="text" class="form-control" ng-model="PersonTypeName" name="PersonTypeName" />
+
+    </div>
+
+    <br />
+    <!--<span class="input-group-addon" style="width: 160px; text-align: left">Message Type</span>
+    <input type="text" class="form-control" ng-model="PersonTypeName" name="PersonTypeName" />
+    <br />
+    <br />-->
+    <br />
+
+
+</form>
+
+<!--{ @class = "form-control" , style = "width:200px-->
+<!--<select ng-options="pt.PersonTypeName for pt in personType" ng-model="personType">
+    <option value="">Person Type</option>
+    <option value=""></option>
+</select>-->
