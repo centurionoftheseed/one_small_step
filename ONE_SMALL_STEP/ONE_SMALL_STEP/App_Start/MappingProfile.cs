@@ -54,9 +54,16 @@ namespace ONE_SMALL_STEP.App_Start
 
 
 
-           // Mapper.CreateMap<MessageType, MessageTypeCreateViewModel>()
-           //.ForMember(dest => dest.MessageType, opt => opt.MapFrom(src => src.m));
-           // Mapper.CreateMap<MessageTypeCreateViewModel, MessageType>().ReverseMap();
+            Mapper.CreateMap<SourceType, EditSourceTypeViewModel>()
+            .ForMember(dest => dest.SourceTypeName, opt => opt.MapFrom(src => src.SourceTypeName));
+
+            Mapper.CreateMap<EditSourceTypeViewModel, SourceType>().ReverseMap();
+
+
+
+            // Mapper.CreateMap<MessageType, MessageTypeCreateViewModel>()
+            //.ForMember(dest => dest.MessageType, opt => opt.MapFrom(src => src.m));
+            // Mapper.CreateMap<MessageTypeCreateViewModel, MessageType>().ReverseMap();
 
 
             Mapper.CreateMap<Message, EditMessageViewModel>()

@@ -7,19 +7,17 @@ using System.Web.Mvc;
 
 namespace ONE_SMALL_STEP.ViewModels
 {
-    public class EditMessageTypeViewModel
+    public class EditSourceTypeViewModel
     {
         [HiddenInput(DisplayValue = false)]
-        public int MessageTypeID { get; set; }
+        public int SourceTypeID { get; set; }
 
-        [Display(Name = "Message Type")]  
-        public string MessageTypeName { get; set; }     
- 
+        [Display(Name = "Source Type")]
+        public string SourceTypeName { get; set; }
+
         [System.ComponentModel.DefaultValue(typeof(DateTime), "")]
         public DateTime DateCreated { get; set; }
         [System.ComponentModel.DefaultValue(typeof(DateTime), "")]
         public DateTime DateUpdated { get; set; }
-
-
     }
 }

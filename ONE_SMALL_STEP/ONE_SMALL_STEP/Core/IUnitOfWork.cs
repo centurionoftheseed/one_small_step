@@ -14,14 +14,17 @@ namespace ONE_SMALL_STEP.Core
         IMessageRepository Message { get; }
         IPersonRepository Person { get; }  
         IPersonTypeRepository PersonType { get; }
+        IMessageTypeRepository MessageType { get; }
+        ISourceTypeRepository SourceType { get; }
+
         PersonViewModel personViewModel { get; }
         PersonTypeViewModel personTypeViewModel { get; }
-
-        IMessageTypeRepository MessageType { get;}
-
+     
         MessageTypeViewModel messageTypeViewModel { get; }
 
         MessageViewModel messageViewModel { get;}
+
+        SourceTypeViewModel sourceTypeViewModel { get; }
 
         int Complete();
        
