@@ -409,6 +409,8 @@
     <Content Include="AngularApp\Person\Views\PersonView.html" />
     <Content Include="AngularApp\Services\person.service.js" />
     <Content Include="AngularApp\SourceType\ViewModels\SourceTypeListViewModel.js" />
+    <Content Include="AngularApp\SourceType\Views\SourceTypeCreateView.html" />
+    <Content Include="AngularApp\SourceType\Views\SourceTypeListView.html" />
     <Content Include="AngularApp\SourceType\Views\SourceTypeView.html" />
     <Content Include="AngularApp\Source\Views\SourceListView.html" />
     <Content Include="AngularApp\Validator.js" />

@@ -10,7 +10,7 @@ namespace ONE_SMALL_STEP.Core.Domain
         public int SourceTypeID { get; set; }
         public string SourceTypeName { get; set; }
 
-        public ICollection<Source> Source { get; set; }
+        public virtual ICollection<Source> Source { get; set; }
 
         private DateTime? _dateCreated = null;
 

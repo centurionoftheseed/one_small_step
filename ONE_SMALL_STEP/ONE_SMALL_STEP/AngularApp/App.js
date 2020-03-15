@@ -93,6 +93,21 @@ var app = angular.module('appJS', ['ngRoute', 'ui.grid', 'ui.grid.pagination'])
 
 
 
+        $routeProvider.when('/sourcetype/create', {
+            templateUrl: '/AngularApp/SourceType/Views/SourceTypeCreateView.html',
+            controller: 'sourceTypeCreateViewModel'
+        });
+
+        $routeProvider.when('/sourcetype/:sourceTypeId', {
+            templateUrl: '/AngularApp/SourceType/Views/SourceTypeView.html',
+            controller: 'sourceTypeViewModel'
+        });
+        $routeProvider.when('/sourcetype', {
+            templateUrl: '/AngularApp/SourceType/Views/SourceTypeListView.html',
+            controller: 'sourceTypeListViewModel'
+        });
+
+
 
 
         

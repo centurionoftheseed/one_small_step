@@ -54,6 +54,9 @@ namespace ONE_SMALL_STEP.App_Start
 
 
 
+
+            Mapper.CreateMap<SourceType, SourceTypeViewModel>();
+
             Mapper.CreateMap<SourceType, EditSourceTypeViewModel>()
             .ForMember(dest => dest.SourceTypeName, opt => opt.MapFrom(src => src.SourceTypeName));
 
