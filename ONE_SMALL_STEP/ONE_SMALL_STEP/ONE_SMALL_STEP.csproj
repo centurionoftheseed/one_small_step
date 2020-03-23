@@ -219,6 +219,7 @@
     <Compile Include="Controllers\api\MessageTypeController.cs" />
     <Compile Include="Controllers\api\PersonController.cs" />
     <Compile Include="Controllers\api\PersonTypeController.cs" />
+    <Compile Include="Controllers\api\SourceController.cs" />
     <Compile Include="Controllers\api\SourceTypeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -235,6 +236,7 @@
     <Compile Include="Core\Repositories\IMessageRepository.cs" />
     <Compile Include="Core\Repositories\IMessageTypeRepository.cs" />
     <Compile Include="Core\Repositories\IPersonTypeRepository.cs" />
+    <Compile Include="Core\Repositories\ISourceRepository.cs" />
     <Compile Include="Core\Repositories\ISourceTypeRepository.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Migrations\202001252336381_add-source-and-source-type.cs" />
@@ -346,6 +348,7 @@
     <Compile Include="Persistence\Repositories\PersonRespository.cs" />
     <Compile Include="Persistence\Repositories\BaseRepository.cs" />
     <Compile Include="Persistence\Repositories\PersonTypeRespository.cs" />
+    <Compile Include="Persistence\Repositories\SourceRepository.cs" />
     <Compile Include="Persistence\Repositories\SourceTypeRepository.cs" />
     <Compile Include="Persistence\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -364,7 +367,9 @@
     <Compile Include="ViewModels\PersonDetailsViewModel.cs" />
     <Compile Include="ViewModels\PersonTypeViewModel.cs" />
     <Compile Include="ViewModels\PersonViewModel.cs" />
+    <Compile Include="ViewModels\EditSourceViewModel.cs" />
     <Compile Include="ViewModels\SourceTypeViewModel.cs" />
+    <Compile Include="ViewModels\SourceViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AngularApp\App.js" />
@@ -408,10 +413,15 @@
     <Content Include="AngularApp\Person\Views\PersonHomeView.html" />
     <Content Include="AngularApp\Person\Views\PersonView.html" />
     <Content Include="AngularApp\Services\person.service.js" />
+    <Content Include="AngularApp\SourceType\ViewModels\SourceTypeCreateViewModel.js" />
     <Content Include="AngularApp\SourceType\ViewModels\SourceTypeListViewModel.js" />
+    <Content Include="AngularApp\SourceType\ViewModels\SourceTypeViewModel.js" />
     <Content Include="AngularApp\SourceType\Views\SourceTypeCreateView.html" />
     <Content Include="AngularApp\SourceType\Views\SourceTypeListView.html" />
     <Content Include="AngularApp\SourceType\Views\SourceTypeView.html" />
+    <Content Include="AngularApp\Source\ViewModels\SourceCreateView.js" />
+    <Content Include="AngularApp\Source\ViewModels\SourceCreateViewModel.js" />
+    <Content Include="AngularApp\Source\ViewModels\SourceListViewModel.js" />
     <Content Include="AngularApp\Source\Views\SourceListView.html" />
     <Content Include="AngularApp\Validator.js" />
     <Content Include="Content\bootstrap-lumen.css" />
@@ -1552,7 +1562,6 @@
     <Content Include="Scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AngularApp\Source\ViewModels\" />
     <Folder Include="App_Data\" />
     <Folder Include="templates\" />
   </ItemGroup>

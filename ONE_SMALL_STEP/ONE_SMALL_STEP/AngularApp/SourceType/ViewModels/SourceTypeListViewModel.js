@@ -3,9 +3,6 @@
 app.controller("sourceTypeListViewModel", function ($scope, personService, $http, $q, $routeParams, $window, $location, viewModelHelper) {
 
 
-    //personModule.controller("PersonListViewModel", function ($scope, $http, $q, $routeParams, $window, $location, viewModelHelper) {
-
-
     $scope.viewModelHelper = viewModelHelper;
     //$scope.personService = personService;
 
@@ -51,7 +48,6 @@ app.controller("sourceTypeListViewModel", function ($scope, personService, $http
             function (result) {
             });
 
-        //viewModelHelper.navigateTo('person/list');
 
 
     }
@@ -59,15 +55,8 @@ app.controller("sourceTypeListViewModel", function ($scope, personService, $http
     //showSourceType
     $scope.showSourceType = function (sourceTypeId) {
 
-        //$scope.$applyAsync();
-        //$scope.data = { pageHeading: "TESTING 22" };
         viewModelHelper.navigateTo("sourcetype/" + sourceTypeId);
-        //$scope.data.pageHeading = "TESTING 2";
 
-        //data.pageHeading = "Message Type";  
-
-
-        //$scope.pageHeading = "Message Type"
     }
 
 

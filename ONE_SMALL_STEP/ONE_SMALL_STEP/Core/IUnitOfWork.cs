@@ -16,6 +16,7 @@ namespace ONE_SMALL_STEP.Core
         IPersonTypeRepository PersonType { get; }
         IMessageTypeRepository MessageType { get; }
         ISourceTypeRepository SourceType { get; }
+        ISourceRepository Source { get; }
 
         PersonViewModel personViewModel { get; }
         PersonTypeViewModel personTypeViewModel { get; }
@@ -25,6 +26,7 @@ namespace ONE_SMALL_STEP.Core
         MessageViewModel messageViewModel { get;}
 
         SourceTypeViewModel sourceTypeViewModel { get; }
+        SourceViewModel sourceViewModel { get; }
 
         int Complete();
        

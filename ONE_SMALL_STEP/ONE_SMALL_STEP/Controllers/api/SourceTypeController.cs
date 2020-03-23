@@ -129,7 +129,7 @@ namespace ONE_SMALL_STEP.Controllers.api
 
         }
 
-        [Route("sourceType/delete/{messageTypeId}")]
+        [Route("sourceType/delete/{sourceTypeId}")]
         //api/person/delete/" + personId,
         public SourceTypeViewModel Delete(int messageTypeId)
         {

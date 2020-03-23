@@ -81,6 +81,13 @@ namespace ONE_SMALL_STEP.App_Start
 
 
 
+            Mapper.CreateMap<Source, SourceViewModel>()
+            .ForMember(dest => dest.SourceType, opt => opt.MapFrom(src => src.SourceType.SourceTypeName));
+            //.ForMember(dest => dest., opt => opt.MapFrom(src => src.LastName));
+            //Mapper.CreateMap<Person, PersonViewModel>().ReverseMap();
+
+            //Mapper.CreateMap<CreateSourceViewModel, Source>().ReverseMap();
+
 
 
             //Mapper.CreateMap<Person, EditPersonViewModel>()

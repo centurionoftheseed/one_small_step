@@ -2,36 +2,36 @@
 <br />
 <div class="row">
     <div>
-        <button id="messageTypeEdit" class="btn btn-primary" ng-click="editMessageType()" style="margin-right: 5px">
+        <button id="sourceTypeEdit" class="btn btn-primary" ng-click="editSourceType()" style="margin-right: 5px">
             Edit
         </button>
 
     </div>
     <div>
         <!--<button class="btn btn-primary" ng-click="savePerson(person.PersonID,person)">  -->
-        <button id="messageTypeSave" class="btn btn-primary" ng-click="saveMessageType(messageType)" style="margin-right: 5px">
+        <button id="sourceTypeSave" class="btn btn-primary" ng-click="saveSourceType(sourceType)" style="margin-right: 5px">
             Save
         </button>
     </div>
     <div>
-        <button id="messageTypeCancel" class="btn btn-primary" ng-click="cancelMessageType(messageType.MessageTypeID)" style="margin-right: 5px">
+        <button id="sourceTypeCancel" class="btn btn-primary" ng-click="cancelSourceType(sourceType.SourceTypeID)" style="margin-right: 5px">
             Cancel
         </button>
     </div>
     <div>
-        <button id="messageTypeDelete" class="btn btn-primary" ng-click="deleteMessageType(messageType.MessageTypeID)">
+        <button id="sourceTypeDelete" class="btn btn-primary" ng-click="deleteSourceType(sourceType.SourceTypeID)">
             Delete
         </button>
     </div>
 
 
 </div>
-<fieldset id="messageTypeFieldset">
+<fieldset id="sourceTypeFieldset">
     <!-- disabled false>-->
     <div>
         <br />
-        <span class="input-group-addon" style="width: 160px; text-align: left">Message Type</span>
-        <input type="text" class="form-control" ng-model="messageType.MessageTypeName" name="MessageType" />
+        <span class="input-group-addon" style="width: 160px; text-align: left">Source Type</span>
+        <input type="text" class="form-control" ng-model="sourceType.SourceTypeName" name="SourceType" />
         <br />
         <br />
 
