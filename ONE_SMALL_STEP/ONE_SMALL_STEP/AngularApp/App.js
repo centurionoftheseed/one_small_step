@@ -1,7 +1,7 @@
 ﻿//var commonModule = angular.module('common', ['ngRoute']);
 
 
-var app = angular.module('appJS', ['ngRoute', 'ui.grid', 'ui.grid.pagination'])
+var app = angular.module('appJS', ['ngRoute', 'ui.grid', 'ui.grid.pagination','ui.grid.selection'])
     .config(function ($routeProvider, $locationProvider) {
 
         $routeProvider.when('/contact/create', {

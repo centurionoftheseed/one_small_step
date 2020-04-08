@@ -161,6 +161,7 @@ app.controller("mainPersonListViewModel", function ($scope, $http, $q, $window, 
             { name: "State", field: "State" },
             { name: "Phone", field: "Phone" },
             { name: "Fax", field: "Fax" },
+            { name: "View", field: 'click', cellTemplate: '<button class="btn primary" ng-click="grid.appScope.sampledetails()">Click Me</button>' },
             { name: 'isActive', displayName: 'Active', type: 'boolean', cellTemplate: '<input type="checkbox" ng-model="row.entity.isActive">' }
 
         ],
@@ -172,8 +173,9 @@ app.controller("mainPersonListViewModel", function ($scope, $http, $q, $window, 
     };
 
 
-
-
+    $scope.sampledetails = function (firstName) {
+        alert('Hi Click is working ' + firstName);
+    }
     //console.log($scope.personList);
 
 
@@ -186,6 +188,7 @@ app.controller("mainPersonListViewModel", function ($scope, $http, $q, $window, 
             { name: "FirstName", field: "FirstName" },
             { name: "LastName", field: "LastName" },
             { name: "EmailAddress", field: "EmailAddress" },
+            { name: "View", field: 'click', cellTemplate: '<button class="btn primary" ng-click="grid.appScope.sampledetails(index)">Click Me</button>' },
             { name: 'isActive', displayName: 'Active', type: 'boolean', cellTemplate: '<input type="checkbox" ng-model="row.entity.isActive">' }
         ],
 
