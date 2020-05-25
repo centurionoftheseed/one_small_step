@@ -12,15 +12,56 @@ app.controller("mainPersonListViewModel", function ($scope, $http, $q, $window, 
 
     //$scope.personList = "";
 
+    //$scope.mailingList = [];
+
+    var store = new DevExpress.data.CustomStore({
+        key: "PersonID",
+        load: function () {
+
+
+            $scope.refreshPersons()
+        }
+
+
+            //viewModelHelper.apiGet('api/person', null,
+            //function (result) {
+                //debugger;
+
+                //$scope.personList = result.data;
+                //$scope.dataGridMailingList.dataSource = result.data;
+
+                //console.log("test");
+                //$scope.mailingList = result.data;
+                //console.log($scope.mailingList);
+                //$scope.dataGridContacts.data = result.data;
+
+                //this.personlstNew = result.data;
+
+            //})
+
+           //$scope.refreshPersons()
+
+        
+});
+
 
     var personlstNew = [];
     viewModelHelper.apiGet('api/person', null,
         function (result) {
             //debugger;
             //personlstNew = result.data;
-            $scope.dataGridContacts.data = result.data;
+            //$scope.mailingList = result.data;
+            //$scope.dataSource = result.data;
+            //$scope.mailingList = result.data;
+            //mailingList = result.data;
+            //console.log($scope.dataGridContacts.data);
+
+            //console.log($scope.mailingList);
+            //console.log(mailingList);
+            //$scope.dataGridMailingList.data = result.data;
         });
 
+    //console.log($scope.mailingList);
 
     $scope.showPerson = function (personId) {
         //viewModelHelper.navigateTo("person/show/" + personId);
@@ -58,8 +99,13 @@ app.controller("mainPersonListViewModel", function ($scope, $http, $q, $window, 
             function (result) {
                 //debugger;
 
-                $scope.personList = result.data;
-                $scope.dataGridContacts.data = result.data;
+                //$scope.personList = result.data;
+                //$scope.dataGridMailingList.dataSource = result.data;
+
+                //console.log("test");
+                //$scope.mailingList = result.data;
+                //console.log($scope.mailingList);
+                //$scope.dataGridContacts.data = result.data;
 
                 //this.personlstNew = result.data;
 
@@ -67,7 +113,8 @@ app.controller("mainPersonListViewModel", function ($scope, $http, $q, $window, 
     }
 
     initialize();
-
+    
+ 
 
 
     $scope.deletePersonFromList = function (idx) {
@@ -129,48 +176,28 @@ app.controller("mainPersonListViewModel", function ($scope, $http, $q, $window, 
 
     }
      */
-    //$scope.showCustomer = function (customer) {
-    //    $scope.flags.shownFromList = true; // note this object is declared in the RootViewModel
-    //    viewModelHelper.navigateTo('customer/show/' + customer.CustomerId);
-    //}
-
-    //$scope.deletePersonTEST2 = function () {
-    //    alert("delete test 2");
-    //    if (personService.personId != 0) {
-    //        // $scope.flags.shownFromList = false;
-    //        //alert("hello");
-    //        viewModelHelper.navigateTo(
-    //            'person/Delete/' + personService.personId);
-    //        //alert(personService.personId);
-    //    };
-
-    //}
-
-    //DemoApp.controller('DemoController', function DemoController($scope) {
-
-    //function DemoController($scope) {
 
 
-    $scope.dataGridOptions = {
-        //dataSource: customers,
-        //data: customers,
-        data: customers,
-        columnDefs: [
-            { name: "CompanyName", field: "CompanyName" },
-            { name: "City", field: "City" },
-            { name: "State", field: "State" },
-            { name: "Phone", field: "Phone" },
-            { name: "Fax", field: "Fax" },
-            { name: "View", field: 'click', cellTemplate: '<button class="btn primary" ng-click="grid.appScope.sampledetails()">Click Me</button>' },
-            { name: 'isActive', displayName: 'Active', type: 'boolean', cellTemplate: '<input type="checkbox" ng-model="row.entity.isActive">' }
+    //$scope.dataGridOptions = {
+    //    //dataSource: customers,
+    //    //data: customers,
+    //    data: customers,
+    //    columnDefs: [
+    //        { name: "CompanyName", field: "CompanyName" },
+    //        { name: "City", field: "City" },
+    //        { name: "State", field: "State" },
+    //        { name: "Phone", field: "Phone" },
+    //        { name: "Fax", field: "Fax" },
+    //        { name: "View", field: 'click', cellTemplate: '<button class="btn primary" ng-click="grid.appScope.sampledetails()">Click Me</button>' },
+    //        { name: 'isActive', displayName: 'Active', type: 'boolean', cellTemplate: '<input type="checkbox" ng-model="row.entity.isActive">' }
 
-        ],
+    //    ],
 
-        //columns: ["CompanyName", "City", "State", "Phone", "Fax"],
-        showBorders: true,
-        enableRowHeaderSelection: true
+    //    //columns: ["CompanyName", "City", "State", "Phone", "Fax"],
+    //    showBorders: true,
+    //    enableRowHeaderSelection: true
 
-    };
+    //};
 
 
     $scope.sampledetails = function (firstName) {
@@ -188,17 +215,213 @@ app.controller("mainPersonListViewModel", function ($scope, $http, $q, $window, 
             { name: "FirstName", field: "FirstName" },
             { name: "LastName", field: "LastName" },
             { name: "EmailAddress", field: "EmailAddress" },
+            {
+                name: 'isAction', displayName: 'Action', cellTemplate: '<div class="ngCellText ui-grid-cell-contents">' +
+                    ' <div ng-click="grid.appScope.rowClick(row)">{{COL_FIELD}}</div>' +
+                    //'<a href="#" id="aDeleteData" ng-click="grid.appScope.deleteRow(row)" >Delete</a>' +
+                    '<a href="#" id="aDetailsData" ng-click="grid.appScope.detailsRow(row)" >Details</a>' +
+                    '</div>'
+            },
+            { name: "LastName", field: "LastName" },
+            { name: "EmailAddress", field: "EmailAddress" },
+
             { name: "View", field: 'click', cellTemplate: '<button class="btn primary" ng-click="grid.appScope.sampledetails(index)">Click Me</button>' },
             { name: 'isActive', displayName: 'Active', type: 'boolean', cellTemplate: '<input type="checkbox" ng-model="row.entity.isActive">' }
         ],
 
         //columns: ["CompanyName", "City", "State", "Phone", "Fax"],
         showBorders: true,
-        enableRowHeaderSelection: true
-
+        enableRowHeaderSelection: true,
+        enableRowSelection: true
     };
 
+    $scope.detailsRow = function (row) {
+        //debugger;
+
+        var vPersonID = row.entity.PersonID;
+        var index = $scope.dataGridContacts.data.indexOf(row.entity);
+        console.log(index);
+        //$scope.showPerson(COL_FIELD)
 
 
+        $scope.personDetailData = $scope.dataGridContacts.data[index];
+        //viewModelHelper.navigateTo('personDetailsView');
+        viewModelHelper.navigateTo("contact/" + vPersonID);
+
+    }
+
+    //console.log(mailingList);
+
+    $scope.dataGridMailingList = {
+                 //dataSource: $scope.mailingList
+        //}
+        //,
+        dataSource: store,
+        columns: [
+
+            {
+                dataField: "Product",
+                groupIndex: 0
+            },
+
+            'FirstName'
+            ,
+            {
+                dataField: "FirstName",
+                dataType: "string"
+                //,
+                //width: 150
+            },
+            {
+                dataField: "LastName",
+                dataType: "string"
+                //,
+                //width: 150
+            }
+
+
+            //,
+            //{
+            //    dataField: "Amount",
+            //    caption: "Sale Amount",
+            //    dataType: "number",
+            //    format: "currency",
+            //    alignment: "right",
+            //}
+            //,
+
+            //{
+            //    dataField: "Discount",
+            //    caption: "Discount %",
+            //    dataType: "number",
+            //    format: "percent",
+            //    alignment: "right",
+            //    allowGrouping: false,
+            //    cellTemplate: "discountCellTemplate",
+            //    cssClass: "bullet"
+            //},
+            //{
+            //    dataField: "SaleDate",
+            //    dataType: "date"
+            //},
+            //{
+            //    dataField: "Region",
+            //    dataType: "string"
+            //},
+            //{
+            //    dataField: "Sector",
+            //    dataType: "string",
+            //},
+            //{
+            //    dataField: "Channel",
+            //    dataType: "string",
+            //},
+            //{
+            //    dataField: "Customer",
+            //    dataType: "string",
+            //    width: 150
+            //}
+        ]
+
+    }
+
+
+    //$scope.getValue = function (cellValue, colKey, rowIndex) {
+    //    //$('#cellModal').modal('show');
+    //    $scope.cellValue = cellValue;
+    //    colKeyTemp = colKey;
+    //    rowIndexTemp = rowIndex;
+    //};
+
+        /*
+        < div ng - class="'colt' + col.index" ng - input="COL_FIELD" ng - model="COL_FIELD" >
+            <a href="" ng-click="getValue(COL_FIELD, col.field, row.rowIndex )" > {{ COL_FIELD }} </a>
+</div >
+*/
+
+    //$scope.dataGridOptions = {
+    //    dataSource: {
+    //        store: {
+    //            type: "odata",
+    //            url: "https://js.devexpress.com/Demos/SalesViewer/odata/DaySaleDtoes",
+    //            beforeSend: function (request) {
+    //                request.params.startDate = "2018-05-10";
+    //                request.params.endDate = "2018-05-15";
+    //            }
+    //        }
+    //    },
+    //    paging: {
+    //        pageSize: 10
+    //    },
+    //    pager: {
+    //        showPageSizeSelector: true,
+    //        allowedPageSizes: [10, 25, 50, 100]
+    //    },
+    //    remoteOperations: false,
+    //    searchPanel: {
+    //        visible: true,
+    //        highlightCaseSensitive: true
+    //    },
+    //    groupPanel: { visible: true },
+    //    grouping: {
+    //        autoExpandAll: false
+    //    },
+    //    allowColumnReordering: true,
+    //    rowAlternationEnabled: true,
+    //    showBorders: true,
+    //    columns: [
+    //        {
+    //            dataField: "Product",
+    //            groupIndex: 0
+    //        },
+    //        {
+    //            dataField: "Amount",
+    //            caption: "Sale Amount",
+    //            dataType: "number",
+    //            format: "currency",
+    //            alignment: "right",
+    //        },
+    //        {
+    //            dataField: "Discount",
+    //            caption: "Discount %",
+    //            dataType: "number",
+    //            format: "percent",
+    //            alignment: "right",
+    //            allowGrouping: false,
+    //            cellTemplate: "discountCellTemplate",
+    //            cssClass: "bullet"
+    //        },
+    //        {
+    //            dataField: "SaleDate",
+    //            dataType: "date"
+    //        },
+    //        {
+    //            dataField: "Region",
+    //            dataType: "string"
+    //        },
+    //        {
+    //            dataField: "Sector",
+    //            dataType: "string",
+    //        },
+    //        {
+    //            dataField: "Channel",
+    //            dataType: "string",
+    //        },
+    //        {
+    //            dataField: "Customer",
+    //            dataType: "string"
+    //        }
+    //    ],
+    //    onContentReady: function (e) {
+    //        if (!collapsed) {
+    //            collapsed = true;
+    //            e.component.expandRow(["EnviroCare"]);
+    //        }
+    //    }
+    //};
+
+    //$scope.customizeTooltip = function (pointsInfo) {
+    //    return { text: parseInt(pointsInfo.originalValue) + "%" };
+    //};
 
 });

@@ -1,9 +1,9 @@
 ﻿//var commonModule = angular.module('common', ['ngRoute']);
 
 
-var app = angular.module('appJS', ['ngRoute', 'ui.grid', 'ui.grid.pagination','ui.grid.selection'])
+var app = angular.module('appJS', ['ngRoute', 'ui.grid', 'ui.grid.pagination','ui.grid.selection','dx'])
     .config(function ($routeProvider, $locationProvider) {
-
+     
         $routeProvider.when('/contact/create', {
             templateUrl: '/AngularApp/Person/Views/PersonCreateView.html',
             controller: 'personCreateViewModel'

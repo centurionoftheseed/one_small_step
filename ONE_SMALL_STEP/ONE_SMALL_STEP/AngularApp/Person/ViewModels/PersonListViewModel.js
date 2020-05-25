@@ -1,10 +1,5 @@
 ﻿
-
-
 app.controller("personListViewModel", function ($scope, personService, $http, $q, $routeParams, $window, $location, viewModelHelper) {
-
-
-    //personModule.controller("PersonListViewModel", function ($scope, $http, $q, $routeParams, $window, $location, viewModelHelper) {
 
 
     $scope.viewModelHelper = viewModelHelper;
@@ -22,7 +17,8 @@ app.controller("personListViewModel", function ($scope, personService, $http, $q
                 //$scope.customers = result.data;
                 //alert("person list");
                 //console.log(result.data);
-                $scope.persons = result.data;
+                //$scope.persons = result.data;
+                $scope.dataGridContacts.data = result.data;
          
                 //alert("TESTING");
             });
@@ -71,47 +67,74 @@ app.controller("personListViewModel", function ($scope, personService, $http, $q
 
     }
 
+    $scope.dataGridContacts = {
+        //dataSource: customers,
+        //data: customers,
+        //data: $scope.personList,
+        //data: personlstNew,
+        columnDefs: [
+            { name: "FirstName", field: "FirstName" },
+            { name: "LastName", field: "LastName" },
+            { name: "EmailAddress", field: "EmailAddress" },
+            {
+                name: 'isAction', displayName: 'Action', cellTemplate: '<div class="ngCellText ui-grid-cell-contents">' +
+                    ' <div ng-click="grid.appScope.rowClick(row)">{{COL_FIELD}}</div>' +
+                    //'<a href="#" id="aDeleteData" ng-click="grid.appScope.deleteRow(row)" >Delete</a>' +
+                    '<a href="#" id="aDetailsData" ng-click="grid.appScope.detailsRow(row)" >Details</a>' +
+                    '</div>'
+            },
+            { name: "LastName", field: "LastName" },
+            { name: "EmailAddress", field: "EmailAddress" },
 
-    //alert("after initialize");
+            { name: "View", field: 'click', cellTemplate: '<button class="btn primary" ng-click="grid.appScope.sampledetails(index)">Click Me</button>' },
+            { name: 'isActive', displayName: 'Active', type: 'boolean', cellTemplate: '<input type="checkbox" ng-model="row.entity.isActive">' }
+        ],
 
-    /*
-    var url = "http://localhost:54064/api/person";
-    var MainController = function ($scope, $http) {
+        //columns: ["CompanyName", "City", "State", "Phone", "Fax"],
+        showBorders: true,
+        enableRowHeaderSelection: true,
+        enableRowSelection: true
+    };
 
-        var onSuccess = function (response) {
-            $scope.persons = response.data
-        };
-        var onFailure = function (error) {
-            $scope.error = reason
-        };
+    $scope.detailsRow = function (row) {
+        //debugger;
 
-        var getAllPersons = function () {
-            $http.get(url)
-                .then(onSuccess, onFailure)
+        var vPersonID = row.entity.PersonID;
+        var index = $scope.dataGridContacts.data.indexOf(row.entity);
+        console.log(index);
+        //$scope.showPerson(COL_FIELD)
 
-        }
 
-        getAllPersons();
-       
+        $scope.personDetailData = $scope.dataGridContacts.data[index];
+        //viewModelHelper.navigateTo('personDetailsView');
+        viewModelHelper.navigateTo("contact/" + vPersonID);
 
     }
-     */
-    //$scope.showCustomer = function (customer) {
-    //    $scope.flags.shownFromList = true; // note this object is declared in the RootViewModel
-    //    viewModelHelper.navigateTo('customer/show/' + customer.CustomerId);
-    //}
 
-    //$scope.deletePersonTEST2 = function () {
-    //    alert("delete test 2");
-    //    if (personService.personId != 0) {
-    //        // $scope.flags.shownFromList = false;
-    //        //alert("hello");
-    //        viewModelHelper.navigateTo(
-    //            'person/Delete/' + personService.personId);
-    //        //alert(personService.personId);
-    //    };
 
-    //}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
 
 

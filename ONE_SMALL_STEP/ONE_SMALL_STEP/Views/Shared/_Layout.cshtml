@@ -7,8 +7,9 @@
 
 
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/styles/dx")
     @Scripts.Render("~/bundles/modernizr")
-    
+
 
 </head>
 
@@ -26,7 +27,7 @@
 
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/contact">Contact</a>
@@ -90,9 +91,11 @@
         </footer>
     </div>
 
-
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/angular")
     @Scripts.Render("~/bundles/uigrid")
+    @Scripts.Render("~/scripts/dx")
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 

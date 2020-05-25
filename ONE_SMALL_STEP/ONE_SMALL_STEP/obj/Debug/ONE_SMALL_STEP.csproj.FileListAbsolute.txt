@@ -339,7 +339,6 @@ D:\OneDrive\APP_DEV\GitHub\one_small_step\ONE_SMALL_STEP\ONE_SMALL_STEP\obj\Debu
 D:\OneDrive\APP_DEV\GitHub\one_small_step\ONE_SMALL_STEP\ONE_SMALL_STEP\obj\Debug\ONE_SMALL_STEP.csproj.CopyComplete
 D:\OneDrive\APP_DEV\GitHub\one_small_step\ONE_SMALL_STEP\ONE_SMALL_STEP\obj\Debug\ONE_SMALL_STEP.dll
 D:\OneDrive\APP_DEV\GitHub\one_small_step\ONE_SMALL_STEP\ONE_SMALL_STEP\obj\Debug\ONE_SMALL_STEP.pdb
-D:\OneDrive\APP_DEV\GitHub\one_small_step\ONE_SMALL_STEP\ONE_SMALL_STEP\obj\Debug\ONE_SMALL_STEP.csprojAssemblyReference.cache
 D:\OneDrive\APP_DEV\GitHub\one_small_step\ONE_SMALL_STEP\ONE_SMALL_STEP\obj\Debug\ONE_SMALL_STEP.Migrations.latestupdatestocolumns.resources
 D:\OneDrive\APP_DEV\GitHub\one_small_step\ONE_SMALL_STEP\ONE_SMALL_STEP\obj\Debug\ONE_SMALL_STEP.Migrations.reordercolumnsinMessagetable.resources
 D:\OneDrive\APP_DEV\GitHub\one_small_step\ONE_SMALL_STEP\ONE_SMALL_STEP\obj\Debug\ONE_SMALL_STEP.Migrations.reordercolumnsinMessagetable2.resources
@@ -351,3 +350,4 @@ D:\OneDrive\APP_DEV\GitHub\one_small_step\ONE_SMALL_STEP\ONE_SMALL_STEP\obj\Debu
 D:\OneDrive\APP_DEV\GitHub\one_small_step\ONE_SMALL_STEP\ONE_SMALL_STEP\obj\Debug\ONE_SMALL_STEP.Migrations.addedpersontypecontrollerandchanageddatenames.resources
 D:\OneDrive\APP_DEV\GitHub\one_small_step\ONE_SMALL_STEP\ONE_SMALL_STEP\obj\Debug\ONE_SMALL_STEP.Migrations.moredefaultdatesthatweremissing.resources
 D:\OneDrive\APP_DEV\GitHub\one_small_step\ONE_SMALL_STEP\ONE_SMALL_STEP\obj\Debug\ONE_SMALL_STEP.Migrations.updatesforsourcetypeandotherminoritems.resources
+D:\OneDrive\APP_DEV\GitHub\one_small_step\ONE_SMALL_STEP\ONE_SMALL_STEP\obj\Debug\ONE_SMALL_STEP.csprojAssemblyReference.cache

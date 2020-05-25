@@ -39,7 +39,8 @@ namespace ONE_SMALL_STEP
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
             "~/Scripts/angular.js",
-            "~/Scripts/angular-route.js"));
+            "~/Scripts/angular-route.js"
+            ));
 
             bundles.Add(new ScriptBundle("~/bundles/uigrid").Include(
             "~/Scripts/ui-grid.min.js"));

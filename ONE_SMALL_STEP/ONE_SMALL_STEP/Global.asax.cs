@@ -21,6 +21,7 @@ namespace ONE_SMALL_STEP
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            DxBundleConfig.RegisterBundles(BundleTable.Bundles);
             Mapper.Initialize(c => c.AddProfile<MappingProfile>());
    
 
