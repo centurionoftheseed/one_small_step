@@ -86,6 +86,7 @@ namespace ONE_SMALL_STEP.Controllers.api
             var vm = Mapper.Map<IEnumerable<Person>, IEnumerable<PersonViewModel>>(domainModel);
             //var vm = Ok(Mapper.Map<IEnumerable<PersonViewModel>>(domainModel));
             //return (PersonViewModel)vm;
+            
             return vm;
 
         }

@@ -19,7 +19,7 @@ app.controller("mainPersonListViewModel", function ($scope, $http, $q, $window, 
         load: function () {
 
 
-            $scope.refreshPersons()
+            //$scope.refreshPersons()
         }
 
 
@@ -43,6 +43,17 @@ app.controller("mainPersonListViewModel", function ($scope, $http, $q, $window, 
 
         
 });
+
+
+
+    viewModelHelper.apiGet('api/person', null,
+        function (result) {
+            
+            $scope.mailingList = result.data;
+            //console.log($scope.mailingList);
+            
+
+        });
 
 
     var personlstNew = [];
@@ -103,19 +114,30 @@ app.controller("mainPersonListViewModel", function ($scope, $http, $q, $window, 
                 //$scope.dataGridMailingList.dataSource = result.data;
 
                 //console.log("test");
-                //$scope.mailingList = result.data;
-                //console.log($scope.mailingList);
-                //$scope.dataGridContacts.data = result.data;
 
+                $scope.mailingList = result.data;
+                console.log($scope.mailingList);
+                //console.log($scope.mailingList);
+                $scope.dataGridContacts.data = result.data;
+                //console.log($scope.dataGridContacts.data);
                 //this.personlstNew = result.data;
+
+
+                $scope.dataGridMailingList = {
+                    dataSource: $scope.mailingList,
+                    columns: ["EmailAddress", "FirstName", "LastName"],
+                    showBorders: true
+                };
+
 
             });
     }
 
     initialize();
-    
- 
+    console.log("calling data");
+    //console.log($scope.dataGridContacts.data);
 
+    
 
     $scope.deletePersonFromList = function (idx) {
         var personToDelete = $scope.persons[idx];
@@ -252,78 +274,90 @@ app.controller("mainPersonListViewModel", function ($scope, $http, $q, $window, 
 
     //console.log(mailingList);
 
-    $scope.dataGridMailingList = {
-                 //dataSource: $scope.mailingList
-        //}
-        //,
-        dataSource: store,
-        columns: [
+    $scope.gridData = [];
+    var jsonData = $scope.mailingList;
+    $scope.gridData = jsonData;
 
-            {
-                dataField: "Product",
-                groupIndex: 0
-            },
+    console.log($scope.mailingList);
 
-            'FirstName'
-            ,
-            {
-                dataField: "FirstName",
-                dataType: "string"
-                //,
-                //width: 150
-            },
-            {
-                dataField: "LastName",
-                dataType: "string"
-                //,
-                //width: 150
-            }
+    //$scope.dataGridMailingList = {
+    //    dataSource: $scope.gridData,
+    //    columns: ["EmailAddress", "FirstName", "LastName"],
+    //    showBorders: true
+    //};
+
+    //$scope.dataGridMailingList = {
+    //             //dataSource: $scope.mailingList
+    //    //}
+    //    //,
+    //    dataSource: store,
+    //    columns: [
+
+    //        {
+    //            dataField: "Product",
+    //            groupIndex: 0
+    //        },
+
+    //        'FirstName'
+    //        ,
+    //        {
+    //            dataField: "FirstName",
+    //            dataType: "string"
+    //            //,
+    //            //width: 150
+    //        },
+    //        {
+    //            dataField: "LastName",
+    //            dataType: "string"
+    //            //,
+    //            //width: 150
+    //        }
 
 
-            //,
-            //{
-            //    dataField: "Amount",
-            //    caption: "Sale Amount",
-            //    dataType: "number",
-            //    format: "currency",
-            //    alignment: "right",
-            //}
-            //,
+    //        //,
+    //        //{
+    //        //    dataField: "Amount",
+    //        //    caption: "Sale Amount",
+    //        //    dataType: "number",
+    //        //    format: "currency",
+    //        //    alignment: "right",
+    //        //}
+    //        //,
 
-            //{
-            //    dataField: "Discount",
-            //    caption: "Discount %",
-            //    dataType: "number",
-            //    format: "percent",
-            //    alignment: "right",
-            //    allowGrouping: false,
-            //    cellTemplate: "discountCellTemplate",
-            //    cssClass: "bullet"
-            //},
-            //{
-            //    dataField: "SaleDate",
-            //    dataType: "date"
-            //},
-            //{
-            //    dataField: "Region",
-            //    dataType: "string"
-            //},
-            //{
-            //    dataField: "Sector",
-            //    dataType: "string",
-            //},
-            //{
-            //    dataField: "Channel",
-            //    dataType: "string",
-            //},
-            //{
-            //    dataField: "Customer",
-            //    dataType: "string",
-            //    width: 150
-            //}
-        ]
+    //        //{
+    //        //    dataField: "Discount",
+    //        //    caption: "Discount %",
+    //        //    dataType: "number",
+    //        //    format: "percent",
+    //        //    alignment: "right",
+    //        //    allowGrouping: false,
+    //        //    cellTemplate: "discountCellTemplate",
+    //        //    cssClass: "bullet"
+    //        //},
+    //        //{
+    //        //    dataField: "SaleDate",
+    //        //    dataType: "date"
+    //        //},
+    //        //{
+    //        //    dataField: "Region",
+    //        //    dataType: "string"
+    //        //},
+    //        //{
+    //        //    dataField: "Sector",
+    //        //    dataType: "string",
+    //        //},
+    //        //{
+    //        //    dataField: "Channel",
+    //        //    dataType: "string",
+    //        //},
+    //        //{
+    //        //    dataField: "Customer",
+    //        //    dataType: "string",
+    //        //    width: 150
+    //        //}
+    //    ]
 
-    }
+    //}
 
 
     //$scope.getValue = function (cellValue, colKey, rowIndex) {
