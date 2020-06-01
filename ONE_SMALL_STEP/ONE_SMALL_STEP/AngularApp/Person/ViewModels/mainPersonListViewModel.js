@@ -102,7 +102,9 @@ app.controller("mainPersonListViewModel", function ($scope, $http, $q, $window, 
         //alert("initialize")
     }
 
-
+    var isChief = function (position) {
+        return position && ["CEO", "CMO"].indexOf(position.trim().toUpperCase()) >= 0;
+    };
 
     $scope.refreshPersons = function () {
 
@@ -125,8 +127,53 @@ app.controller("mainPersonListViewModel", function ($scope, $http, $q, $window, 
 
                 $scope.dataGridMailingList = {
                     dataSource: $scope.mailingList,
-                    columns: ["EmailAddress", "FirstName", "LastName"],
-                    showBorders: true
+                    showBorders: true,
+                    editing: {
+                        mode: "row",
+                        allowUpdating: true,
+                        allowDeleting: true,
+                        //allowDeleting: function (e) {
+                        //    return !isChief(e.row.data.Position);
+                        //},
+                        useIcons: true
+                    },
+
+                    columns: [
+                        {
+                            type: "buttons",
+                            width: 110,
+                            buttons: ["edit", "delete", {
+                                hint: "Clone",
+                                icon: "repeat",
+                                //visible: function (e) {
+                                //    return !e.row.isEditing && !isChief(e.row.data.Position);
+                                //},
+                                
+                                onClick: function (e) {
+                                    //var clonedItem = angular.copy(e.row.data);
+                                    //alert(e.row.data.PersonID);
+                                    console.log(e.row.data.PersonID);
+                                    //var personId = e.row.data.PersonID;
+                                    //$scope.showPerson(e.row.data.PersonID)
+                                    //$scope.showPerson(personId);
+                                    DevExpress.ui.notify("The button was clicked");
+                                    //viewModelHelper.navigateTo("contact/" + personId)
+
+                                    //clonedItem.ID = ++maxID;
+                                    //employees.splice(e.row.rowIndex, 0, clonedItem);
+                                    //e.component.refresh(true);
+                                    //e.event.preventDefault();
+                                }
+                            }]
+                        },
+                                  "PersonID"
+                                , "EmailAddress"
+                                , "FirstName"
+                                , "LastName"
+                                ]
+                        //},
+                    //],
+                    
                 };
 
 
@@ -274,11 +321,11 @@ app.controller("mainPersonListViewModel", function ($scope, $http, $q, $window, 
 
     //console.log(mailingList);
 
-    $scope.gridData = [];
-    var jsonData = $scope.mailingList;
-    $scope.gridData = jsonData;
+    //$scope.gridData = [];
+    //var jsonData = $scope.mailingList;
+    //$scope.gridData = jsonData;
 
-    console.log($scope.mailingList);
+    //console.log($scope.mailingList);
 
     //$scope.dataGridMailingList = {
     //    dataSource: $scope.gridData,
