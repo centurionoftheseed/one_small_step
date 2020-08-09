@@ -1,9 +1,9 @@
 ﻿//var commonModule = angular.module('common', ['ngRoute']);
 
 
-var app = angular.module('appJS', ['ngRoute', 'ui.grid', 'ui.grid.pagination','ui.grid.selection','dx'])
+var app = angular.module('appJS', ['ngRoute', 'ui.grid', 'ui.grid.pagination', 'ui.grid.selection', 'dx'])
     .config(function ($routeProvider, $locationProvider) {
-     
+
         $routeProvider.when('/contact/create', {
             templateUrl: '/AngularApp/Person/Views/PersonCreateView.html',
             controller: 'personCreateViewModel'
@@ -17,8 +17,8 @@ var app = angular.module('appJS', ['ngRoute', 'ui.grid', 'ui.grid.pagination','u
 
         //$routeProvider.when('/person/show/:personId', {
         $routeProvider.when('/contact/:personId', {
-        templateUrl: '/AngularApp/Person/Views/PersonView.html',
-        controller: 'personViewModel'
+            templateUrl: '/AngularApp/Person/Views/PersonView.html',
+            controller: 'personViewModel'
         });
 
 
@@ -110,7 +110,7 @@ var app = angular.module('appJS', ['ngRoute', 'ui.grid', 'ui.grid.pagination','u
 
 
 
-        
+
 
 
         //$routeProvider.when('/customer/show/:customerId', {
@@ -140,14 +140,14 @@ var app = angular.module('appJS', ['ngRoute', 'ui.grid', 'ui.grid.pagination','u
         //    //controller: 'mainPersonListViewModel'
         //    controller: 'mainPersonListViewModel'
         //})
-    //    //$routeProvider.when('/order/list', { templateUrl: '/App/Order/Views/OrderListView.html', controller: 'orderListViewModel' });
-    //    //$routeProvider.when('/order/show/:orderId', { templateUrl: '/App/Order/Views/OrderView.html', controller: 'orderViewModel' });
-    //    //$routeProvider.when('/order/detail/:orderId/:orderDetailId', { templateUrl: '/App/Order/Views/OrderDetailView.html', controller: 'orderDetailViewModel' });
-    //    //$routeProvider.otherwise({ redirectTo: '/order' });
-    //    $locationProvider.html5Mode({
-    //        enabled: true,
-    //        requireBase: false
-    //    });
+        //    //$routeProvider.when('/order/list', { templateUrl: '/App/Order/Views/OrderListView.html', controller: 'orderListViewModel' });
+        //    //$routeProvider.when('/order/show/:orderId', { templateUrl: '/App/Order/Views/OrderView.html', controller: 'orderViewModel' });
+        //    //$routeProvider.when('/order/detail/:orderId/:orderDetailId', { templateUrl: '/App/Order/Views/OrderDetailView.html', controller: 'orderDetailViewModel' });
+        //    //$routeProvider.otherwise({ redirectTo: '/order' });
+        //    $locationProvider.html5Mode({
+        //        enabled: true,
+        //        requireBase: false
+        //    });
     });
 
 //orderModule.factory('orderService', function ($rootScope, $http, $q, $location, viewModelHelper) { return MyApp.orderService($rootScope, $http, $q, $location, viewModelHelper); });
@@ -189,7 +189,7 @@ app.factory('validator', function () { return valJs.validator(); });
 app.factory('messageTypeService'), function () {
 
     return {
-            showMessageType: function (messageTypeId) {
+        showMessageType: function (messageTypeId) {
             viewModelHelper.navigateTo("messagetype/" + messageTypeId);
         }
 
@@ -419,7 +419,27 @@ app.controller("indexViewModel", function (
                 $location.path(MyApp.rootPath + path);
             else
                 $location.path(MyApp.rootPath + path).search(params);
+
         }
+
+        self.navigateToDX = function (path) {
+       
+            $window.location.href = path;
+
+        }
+
+        /*
+        dataField: "ID", cellTemplate: function (container, options) {
+            $("<a/>").addClass("dx-link")
+                .text(options.data.ID)
+                .attr('title', 'View Batch')
+                .on("dxclick",
+                    function () {
+                        $scope.viewItem(options.data);
+                    })
+                .appendTo(container);
+            */
+
 
         self.refreshPage = function (path) {
             $window.location.href = MyApp.rootPath + path;
